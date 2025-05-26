@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("Attack")
 	elif Input.is_action_pressed("Kick"):
 		animated_sprite.play("Kick")
+		return
 	elif Input.is_action_pressed("Sit") and sitting_status == 0:
 		animated_sprite.play("Sitting")
 		sitting_status = 1
