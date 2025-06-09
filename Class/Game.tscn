@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=7 format=3 uid="uid://dmbajrokfsigx"]
 
 [ext_resource type="PackedScene" uid="uid://blj8hdckpnkne" path="res://Class/character.tscn" id="1_cljnm"]
 [ext_resource type="Texture2D" uid="uid://gx42oxqlov5a" path="res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png" id="2_euffe"]
@@ -929,16 +929,13 @@ position = Vector2(0, -9)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
 position = Vector2(0, 50)
 shape = SubResource("WorldBoundaryShape2D_cljnm")
-one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
 position = Vector2(-172, 52)
 shape = SubResource("SegmentShape2D_tlg5j")
-one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
 position = Vector2(209, 55)
 shape = SubResource("SegmentShape2D_tlg5j")
-one_way_collision = true
 one_way_collision_margin = 6.0
