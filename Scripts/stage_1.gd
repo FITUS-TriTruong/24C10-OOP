@@ -2,9 +2,11 @@ extends Node2D
 
 var entered=false;
 
-func _on_next_level_body_entered(_body: CharacterBody2D) -> void:
+func _on_next_level_body_entered(body: CharacterBody2D) -> void:
 	entered=true
-func _on_next_level_body_exited(_body) -> void:
+
+
+func _on_next_level_body_exited(body) -> void:
 	entered=false
 
 func _process(delta) -> void:
