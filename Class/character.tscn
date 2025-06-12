@@ -280,6 +280,9 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5i3w4"]
+
+
 [node name="Character" type="CharacterBody2D"]
 position = Vector2(1, 1)
 script = ExtResource("1_5i3w4")
@@ -295,8 +298,19 @@ frame_progress = 0.748824
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_ac6iv")
 
+
 [node name="Ladder Raycast" type="RayCast2D" parent="CollisionShape2D"]
 target_position = Vector2(0, -10)
 collision_mask = 2
 hit_from_inside = true
 script = SubResource("GDScript_5i3w4")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_5i3w4")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+

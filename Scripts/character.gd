@@ -6,6 +6,9 @@ const JUMP_VELOCITY = -200.0
 const TILE_SIZE = 16
 const FALL_LMT = 3 * TILE_SIZE
 
+var tree_in_range = false 
+var in_leaf_dec = false 
+
 @onready var animated_sprite = $AnimatedSprite2D
 
 var SPEED = WALK_SPEED
@@ -31,7 +34,16 @@ func _physics_process(delta: float) -> void:
 func _gravity(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	if in_leaf_dec == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			global.found_tree_item = true
+			return 
+	
+	if tree_in_range == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "main")
+			return
+	
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
@@ -90,3 +102,24 @@ func _fall_damage():
 
 		ground_height = 0
 	falling = not is_on_floor()
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	if body.has_method("Tree"):
+		tree_in_range = true
+
+
+func _on_detection_area_body_exited(body: Node2D) -> void:
+	if body.has_method("Tree"):
+		tree_in_range = false
+
+func character():
+	pass 
+
+func _on_leafdetection_body_entered(body: Node2D) -> void:
+	if body.has_method("character"):
+		in_leaf_dec = true 
+
+
+func _on_leafdetection_body_exited(body: Node2D) -> void:
+	if body.has_method("character"):
+		in_leaf_dec = false
