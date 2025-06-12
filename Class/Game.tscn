@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=11 format=3 uid="uid://8x5dtrf1ank4"]
 
+[ext_resource type="Script" uid="uid://7gtbqcdyvhfm" path="res://Scripts/game.gd" id="1_5mx0w"]
 [ext_resource type="PackedScene" uid="uid://blj8hdckpnkne" path="res://Class/character.tscn" id="1_cljnm"]
 [ext_resource type="Texture2D" uid="uid://gx42oxqlov5a" path="res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png" id="2_euffe"]
+[ext_resource type="PackedScene" uid="uid://d368opin1b55u" path="res://Class/Tree.tscn" id="3_d8psl"]
+[ext_resource type="Texture2D" uid="uid://dkt4ij70dnryg" path="res://icon.svg" id="5_s6jxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqi76"]
 texture = ExtResource("2_euffe")
@@ -878,7 +881,11 @@ distance = -11.0
 a = Vector2(1, -135)
 b = Vector2(0, 39)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rd0bc"]
+radius = 12.0
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_5mx0w")
 
 [node name="BG1" type="TileMap" parent="."]
 position = Vector2(5, -11)
@@ -942,3 +949,22 @@ position = Vector2(209, 55)
 shape = SubResource("SegmentShape2D_tlg5j")
 one_way_collision = true
 one_way_collision_margin = 6.0
+
+[node name="Tree" parent="Camera2D" instance=ExtResource("3_d8psl")]
+position = Vector2(-34, 33)
+
+[node name="Leaf" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Leaf"]
+position = Vector2(-160, 46.3906)
+scale = Vector2(0.109375, 0.0998535)
+texture = ExtResource("5_s6jxu")
+
+[node name="leafdetection" type="Area2D" parent="Leaf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leaf/leafdetection"]
+position = Vector2(-160, 46)
+shape = SubResource("CircleShape2D_rd0bc")
+
+[connection signal="body_entered" from="Leaf/leafdetection" to="Character" method="_on_leafdetection_body_entered"]
+[connection signal="body_exited" from="Leaf/leafdetection" to="Character" method="_on_leafdetection_body_exited"]
