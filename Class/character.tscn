@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://blj8hdckpnkne"]
+[gd_scene load_steps=35 format=3 uid="uid://blj8hdckpnkne"]
 
 [ext_resource type="Script" uid="uid://da25xfsssmp8u" path="res://Scripts/character.gd" id="1_5i3w4"]
 [ext_resource type="Texture2D" uid="uid://d3slwtu01n1hf" path="res://Unrefined Assets/Character/AnimationSheet.png" id="1_ac6iv"]
@@ -10,6 +10,22 @@ region = Rect2(96, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_y78io"]
 atlas = ExtResource("1_ac6iv")
 region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjsks"]
+atlas = ExtResource("1_ac6iv")
+region = Rect2(96, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piyke"]
+atlas = ExtResource("1_ac6iv")
+region = Rect2(120, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o36l"]
+atlas = ExtResource("1_ac6iv")
+region = Rect2(144, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73aoe"]
+atlas = ExtResource("1_ac6iv")
+region = Rect2(168, 96, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5i3w4"]
 atlas = ExtResource("1_ac6iv")
@@ -118,6 +134,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_cjsks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piyke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o36l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73aoe")
+}],
+"loop": true,
+"name": &"Dying",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5i3w4")
 }, {
 "duration": 1.0,
@@ -219,11 +252,33 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73aoe")
+}],
+"loop": true,
+"name": &"ded",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ac6iv"]
 radius = 4.0
 height = 14.0
+
+[sub_resource type="GDScript" id="GDScript_5i3w4"]
+script/source = "extends RayCast2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Character" type="CharacterBody2D"]
 position = Vector2(1, 1)
@@ -232,10 +287,16 @@ script = ExtResource("1_5i3w4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_sq2tm")
-animation = &"Kick"
+animation = &"Dying"
 autoplay = "Idle"
-frame_progress = 0.541664
+frame_progress = 0.748824
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_ac6iv")
+
+[node name="Ladder Raycast" type="RayCast2D" parent="CollisionShape2D"]
+target_position = Vector2(0, -10)
+collision_mask = 2
+hit_from_inside = true
+script = SubResource("GDScript_5i3w4")
