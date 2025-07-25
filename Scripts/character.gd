@@ -5,11 +5,24 @@ const JUMP_VELOCITY = -200.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 var sitting_status = 0
+var on_ladder:bool = false
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if !on_ladder:
+			velocity.y += gravity * delta
+		else:
+			velocity += get_gravity() * delta
+	
+	if on_ladder:
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
+			velocity.y = SPEED*delta*20
+		elif Input.is_action_just_pressed("Move down") and is_on_floor():
+			velocity.y = SPEED*delta*20
+		else:
+			velocity.y = 0
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -63,3 +76,11 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
+
+func _on_ladd_er_body_entered(body: CharacterBody2D) -> void:
+	if "animated_sprite" in body.name:
+		on_ladder = true
+
+func _on_ladd_er_body_exited(body: CharacterBody2D) -> void:
+	if "animated_sprite" in body.name:
+		on_ladder = false
