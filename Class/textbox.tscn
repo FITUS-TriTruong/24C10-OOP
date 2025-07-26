@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://citxq30171o4k"]
+
+[ext_resource type="FontFile" uid="uid://ew3b7ire2amh" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_nvorr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypfr"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="textbox" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 119.0
+offset_top = 433.0
+offset_right = 1057.0
+offset_bottom = 603.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uypfr")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="start" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_nvorr")
+theme_override_font_sizes/font_size = 42
+text = "*"
+uppercase = true
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 20.0
+theme_override_fonts/font = ExtResource("1_nvorr")
+theme_override_font_sizes/font_size = 39
+text = "You look inside. There's nothing but ruins clinging to a warm past."
+autowrap_mode = 3
+clip_text = true
+uppercase = true
+
+[node name="Label7" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_nvorr")
+theme_override_font_sizes/font_size = 24
+text = "Enter"
+uppercase = true
