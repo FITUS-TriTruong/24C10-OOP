@@ -1,68 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://citxq30171o4k"]
+[gd_scene load_steps=5 format=3 uid="uid://v0kg40x6fsed"]
 
+[ext_resource type="FontFile" uid="uid://dd1xb0llktgwq" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf" id="1_6fng1"]
 [ext_resource type="FontFile" uid="uid://ew3b7ire2amh" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_nvorr"]
-[ext_resource type="Script" path="res://Class/textbox.gd" id="1_s8xcy"]
+[ext_resource type="Script" path="res://Scripts/textbox.gd" id="1_s8xcy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypfr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7npt"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
-[node name="TextboxContainer" type="CanvasLayer"]
+[node name="Textbox" type="Node2D"]
 script = ExtResource("1_s8xcy")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 119.0
-offset_top = 433.0
-offset_right = 1057.0
-offset_bottom = 603.0
+[node name="Panel" type="Panel" parent="."]
+offset_left = 77.0
+offset_top = 483.0
+offset_right = 1085.0
+offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7npt")
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uypfr")
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 109.0
+offset_top = 509.0
+offset_right = 1052.0
+offset_bottom = 583.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer"]
+[node name="speaker" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(56, 0)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/speaker"]
+position = Vector2(28, 28)
 
-[node name="start" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_nvorr")
-theme_override_font_sizes/font_size = 42
-text = "*"
-uppercase = true
-
-[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 16)
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
-size_flags_stretch_ratio = 20.0
-theme_override_fonts/font = ExtResource("1_nvorr")
-theme_override_font_sizes/font_size = 39
-text = "You look inside. There's nothing but ruins clinging to a warm past."
-autowrap_mode = 3
-clip_text = true
-uppercase = true
 
-[node name="end" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("1_nvorr")
-theme_override_font_sizes/font_size = 24
-text = "Enter"
-uppercase = true
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_6fng1")
+theme_override_fonts/mono_font = ExtResource("1_nvorr")
+bbcode_enabled = true
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="button" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="HBoxContainer/VBoxContainer/button"]

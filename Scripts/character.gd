@@ -8,6 +8,11 @@ var sitting_status = 0
 var on_ladder:bool = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var can_move: bool = true
+
+func _ready() -> void:
+	add_to_group("player")
+
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():

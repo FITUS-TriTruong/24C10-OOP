@@ -1,78 +1,32 @@
-extends CanvasLayer
+extends Node2D
 
-const CHAR_READ_RATE = 0.05
+const DialogueButoonPreload = preload("res://Class/dialogue_button.tscn")
 
-var tween = get_tree().create_tween()
+@onready var DialogueLabel: RichTextLabel = $HBoxContainer/VBoxContainer/RichTextLabel
+@onready var SpeakerSprite: Sprite2D = $HBoxContainer/speaker/Sprite2D
 
-onready var textbox_container = $Textboxonready var start_symbol = 
-onready var end_symbol = 
-onready var label = 
+var dialogue: Array[DE]
+var current_dialogue_item: int = 0
+var next_item: bool = true
 
-enum State {
-	READY,
-	READING,
-	FINISHED
-}
+var player_node = CharacterBody2D
 
-var current_state = State.READY
-var text_queue = []
+func _ready() -> void:
+	visible = false
+	$HBoxContainer/VBoxContainer/button.visible = false
+	
+	for i in get_tree().get_nodes_in_group("player"):
+		player_node = i
+		
+func _process(delta: float) -> void:
+	if current_dialogue_item == dialogue.size():
+		if !player_node:
+			for i in get_tree().get_nodes_in_group("player"):
+				player_node = i
+			return
+		player_node.can_move = true
+		queue_free()
+		return
 
-func _ready():
-	print("Starting state: State.READY")
-	hide_textbox()
-	queue_text("")
-	queue_text("")
-	queue_text("")
-	queue_text("")
-
-func _process(delta):
-	match current_state:
-		State.READY:
-			if !text_queue.empty():
-				display_text()
-		State.READING:
-			if Input.is_action_just_pressed("ui_accept"):
-				label.percent_visible = 1.0
-			tween.stop_all()
-				end_symbol.text = "ENTER"
-				change_state(State.FINISHED)
-		State.FINISHED:
-			if Input.is_action_just_pressed("ui_accept"):
-				change_state(State.READY)
-				hide_textbox()
-
-func queue_text(next_text):
-	text_queue.push_back(next_text)
-
-func hide_textbox():
-	start_symbol.text = ""
-	end_symbol.text = ""
-	label.text = ""
-	textbox_container.hide()
-
-func show_textbox():
-	start_symbol.text = "*"
-	textbox_container.show()
-
-func display_text():
-	var next_text = text_queue.pop_front()
-	label.text = next_text
-	label.percent_visible = 0.0
-	change_state(State.READING)
-	show_textbox()
-	tween.interpolate_property(label, "percent_visible", 0.0, 1.0, len(next_text) * CHAR_READ_RATE, tween.TRANS_LINEAR, tween.EASE_IN_OUT)
-	tween.start()
-
-func change_state(next_state):
-	current_state = next_state
-	match current_state:
-		State.READY:
-			print("Changing state to: State.READY")
-		State.READING:
-			print("Changing state to: State.READING")
-		State.FINISHED:
-			print("Changing state to: State.FINISHED")
-
-func _on_Tween_tween_completed(object, key):
-	end_symbol.text = "v"
-	change_state(State.FINISHED)
+func _function_resource(1: DialogueFunction) -> void:
+	
