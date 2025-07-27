@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://citxq30171o4k"]
+[gd_scene load_steps=4 format=3 uid="uid://citxq30171o4k"]
 
 [ext_resource type="FontFile" uid="uid://ew3b7ire2amh" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_nvorr"]
+[ext_resource type="Script" path="res://Class/textbox.gd" id="1_s8xcy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uypfr"]
 bg_color = Color(0, 0, 0, 1)
@@ -10,7 +11,8 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
-[node name="textbox" type="CanvasLayer"]
+[node name="TextboxContainer" type="CanvasLayer"]
+script = ExtResource("1_s8xcy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 119.0
@@ -45,6 +47,7 @@ text = "*"
 uppercase = true
 
 [node name="Label2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -56,7 +59,7 @@ autowrap_mode = 3
 clip_text = true
 uppercase = true
 
-[node name="Label7" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="end" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("1_nvorr")
