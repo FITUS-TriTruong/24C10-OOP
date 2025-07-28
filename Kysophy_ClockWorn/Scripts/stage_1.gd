@@ -1,0 +1,29 @@
+extends StageTemplate
+
+func _ready() -> void:
+	# Set stage properties
+	stage_name = "Stage 1"
+	next_stage_path = "res://Class/Stage_2.tscn"
+	previous_stage_path = ""  # No previous stage for Stage 1
+	
+	# Call the parent's _ready function
+	super._ready()
+
+func stage_ready() -> void:
+	# Stage 1 specific initialization
+	print("Stage 1 loaded successfully!")
+
+func stage_process(delta: float) -> void:
+	# Stage 1 specific per-frame logic (if needed)
+	pass
+
+# Override transition events if needed
+func on_next_level_entered(body: CharacterBody2D) -> void:
+	print("Player entered the exit area of Stage 1")
+
+func on_next_level_exited(body: CharacterBody2D) -> void:
+	print("Player left the exit area of Stage 1")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

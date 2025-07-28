@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bopo5ggfo07xk"]
+
+[ext_resource type="FontFile" uid="uid://dd1xb0llktgwq" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf" id="1_g7cyu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4y0s1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6m4pb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_261ed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqv88"]
+
+[node name="dialogueButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0.938239, 0.824444, 5.39064e-06, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.938239, 0.824444, 5.39064e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.938239, 0.824444, 5.39064e-06, 1)
+theme_override_fonts/font = ExtResource("1_g7cyu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4y0s1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6m4pb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_261ed")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hqv88")
