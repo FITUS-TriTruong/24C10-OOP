@@ -5,11 +5,16 @@ const RUN_SPEED = 150.0
 const JUMP_VELOCITY = -200.0
 const TILE_SIZE = 16
 const FALL_LMT = 3 * TILE_SIZE
+const STAMINA_RUN_COST = 8.0
+const STAMINA_JUMP_COST = 12.0
+const STAMINA_KICK_COST = 15.0
 
 var tree_in_range = false 
 var in_leaf_dec = false 
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var stamina = $StaminaSystem
+@onready var stamina_bar = get_tree().current_scene.get_node("CanvasLayer/StaminaBar")
 
 var SPEED = WALK_SPEED
 var alive = true
@@ -30,7 +35,10 @@ func _physics_process(delta: float) -> void:
 	_action()
 	
 	move_and_slide()
-
+	
+	# Update stamina bar
+	stamina_bar.value = stamina.current_stamina
+	
 func _gravity(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -45,7 +53,10 @@ func _gravity(delta):
 			return
 	
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		if stamina.use_stamina(STAMINA_JUMP_COST):
+			velocity.y = JUMP_VELOCITY
+		else:
+			return  # Block jump if not enough stamina
 
 	direction = Input.get_axis("Move_left", "Move_right")
 
@@ -65,9 +76,13 @@ func _movement():
 			else:
 				animated_sprite.play("Seatted")
 		else:
-			if Input.is_action_pressed("Shift"):
-				SPEED = RUN_SPEED
-				animated_sprite.play("Run")
+			if Input.is_action_pressed("Shift") and stamina.current_stamina > 0:
+				if stamina.use_stamina(STAMINA_RUN_COST * get_physics_process_delta_time()):
+					SPEED = RUN_SPEED
+					animated_sprite.play("Run")
+				else:
+					SPEED = WALK_SPEED
+					animated_sprite.play("Walk")
 			else:
 				SPEED = WALK_SPEED
 				animated_sprite.play("Walk")
@@ -122,4 +137,4 @@ func _on_leafdetection_body_entered(body: Node2D) -> void:
 
 func _on_leafdetection_body_exited(body: Node2D) -> void:
 	if body.has_method("character"):
-		in_leaf_dec = false
+		in_leaf_dec = false 

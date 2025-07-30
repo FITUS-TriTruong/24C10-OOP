@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://5r6ebhmrlxig"]
+[gd_scene load_steps=16 format=4 uid="uid://5r6ebhmrlxig"]
 
 [ext_resource type="PackedScene" uid="uid://blj8hdckpnkne" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://bgka11kvpfrik" path="res://Scripts/stage_2.gd" id="1_ay16k"]
@@ -3452,6 +3452,9 @@ b = Vector2(28, 10)
 a = Vector2(0, -139)
 b = Vector2(-1, 55)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wwta"]
+bg_color = Color(0.10588235, 0.68235296, 0.9647059, 1)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ay16k")
 
@@ -3516,6 +3519,19 @@ one_way_collision_margin = 3.7
 
 [node name="Marker2D" type="Marker2D" parent="Area2D2"]
 position = Vector2(-180, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaminaBar" type="ProgressBar" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 24)
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 47.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_2wwta")
+value = 100.0
+show_percentage = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

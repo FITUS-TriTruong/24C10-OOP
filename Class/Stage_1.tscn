@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=11 format=4 uid="uid://8x5dtrf1ank4"]
 
 [ext_resource type="Texture2D" uid="uid://gx42oxqlov5a" path="res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="Script" uid="uid://b27xw0tam3ftp" path="res://Scripts/stage_1.gd" id="1_kttdw"]
@@ -1753,6 +1753,9 @@ distance = -11.0
 a = Vector2(1, -135)
 b = Vector2(0, 39)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62apv"]
+bg_color = Color(0.10588235, 0.68235296, 0.9647059, 1)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kttdw")
 
@@ -1857,6 +1860,19 @@ one_way_collision_margin = 6.0
 
 [node name="Marker2D" type="Marker2D" parent="next_level"]
 position = Vector2(112, 12)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaminaBar" type="ProgressBar" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 24)
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 47.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_62apv")
+value = 100.0
+show_percentage = false
 
 [connection signal="body_entered" from="next_level" to="." method="_on_next_level_body_entered"]
 [connection signal="body_exited" from="next_level" to="." method="_on_next_level_body_exited"]
