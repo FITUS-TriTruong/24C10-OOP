@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b14d8pfh86j65"]
+
+[ext_resource type="Script" uid="uid://dnvsa6j61tf4q" path="res://Scripts/click_n_drag.gd" id="1_25umk"]
+[ext_resource type="Texture2D" uid="uid://dkt4ij70dnryg" path="res://icon.svg" id="2_815kx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmfwo"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25umk"]
+size = Vector2(120, 120)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_25umk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 60
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_815kx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 70
+shape = SubResource("RectangleShape2D_rmfwo")
+debug_color = Color(0.952819, 2.59906e-06, 0.556715, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.2, 0.2)
+gravity_space_override = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9.53674e-06, -7.15256e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_25umk")

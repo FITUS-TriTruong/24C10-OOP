@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=34 format=4 uid="uid://8x5dtrf1ank4"]
 
 [ext_resource type="Texture2D" uid="uid://gx42oxqlov5a" path="res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="Script" uid="uid://bmvx3ittg4qqq" path="res://Scripts/stage_1.gd" id="1_kttdw"]
@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ddmfif6n7m7n" path="res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
 [ext_resource type="Texture2D" uid="uid://dkt4ij70dnryg" path="res://icon.svg" id="5_ham6c"]
 [ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/Lamp.tscn" id="6_74wb8"]
+[ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
+[ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="8_dhhav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74wb8"]
-size = Vector2(6, 6)
+size = Vector2(6, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a18ea"]
 texture = ExtResource("1_kmgqk")
@@ -7813,7 +7815,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
-position = Vector2(0, -4)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_74wb8")
 debug_color = Color(0.747274, 0.461592, 0, 0.42)
 
@@ -8012,7 +8014,7 @@ position = Vector2(-259, 196)
 shape = SubResource("RectangleShape2D_y123o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(-3, -3)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Camera2D"]
 position = Vector2(6, 216)
@@ -8048,12 +8050,12 @@ position = Vector2(471, 124)
 scale = Vector2(0.902323, 3.72257)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
-position = Vector2(115, 11)
+position = Vector2(113.042, 37.3398)
 shape = SubResource("SegmentShape2D_tlg5j")
 one_way_collision_margin = 6.0
 
 [node name="Marker2D" type="Marker2D" parent="next_level"]
-position = Vector2(112, 12)
+position = Vector2(111.933, 37.6084)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("6_74wb8")]
 position = Vector2(481, 128)
@@ -8067,6 +8069,18 @@ collision_mask = 3
 position = Vector2(28.5, -3)
 shape = SubResource("RectangleShape2D_ham6c")
 debug_color = Color(0.897705, 0.00018925, 0.77119, 0.42)
+
+[node name="ClickNDrag" parent="." instance=ExtResource("7_b4scb")]
+position = Vector2(311, -101)
+
+[node name="dropZone" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(362, -83)
+
+[node name="dropZone2" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(341, -34)
+
+[node name="dropZone3" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(399, -15)
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]

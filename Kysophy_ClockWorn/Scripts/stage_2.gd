@@ -12,7 +12,6 @@ func _ready() -> void:
 func stage_ready() -> void:
 	# Stage 2 specific initialization
 	print("Stage 2 loaded successfully!")
-	
 	# Handle multiple areas if they exist in the scene
 	setup_stage_2_areas()
 
