@@ -1,3 +1,4 @@
-res://Scripts/character.tscn
+res://Class/character.tscn
 res://Scripts/character.gd
-res://Scripts/stamina_system.gd
+res://Scripts/character.tscn
+res://Class/Stage_1.tscn
