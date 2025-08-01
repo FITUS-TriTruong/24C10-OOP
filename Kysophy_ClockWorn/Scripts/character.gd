@@ -140,19 +140,6 @@ func _handle_input() -> void:
 	if _is_action:
 		return
 	
-	# Handle attacks
-	if Input.is_action_just_pressed("Attack"):
-		if _can_perform_action(STAMINA_ATTACK_COST):
-			_is_action = true
-			animated_sprite.play("Attack")
-		return
-	
-	if Input.is_action_just_pressed("Kick"):
-		if _can_perform_action(STAMINA_KICK_COST):
-			_is_action = true
-			animated_sprite.play("Kick")
-		return
-	
 	# Handle jumping
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		if _can_perform_action(STAMINA_JUMP_COST):
@@ -210,12 +197,6 @@ func _determine_character_state() -> CharacterState:
 	if not _is_alive:
 		return CharacterState.DEAD
 	
-	if _is_action and animated_sprite.animation == "Attack":
-		return CharacterState.ATTACKING
-	
-	if _is_action and animated_sprite.animation == "Kick":
-		return CharacterState.KICKING
-	
 	if not is_on_floor():
 		return CharacterState.JUMPING
 	
@@ -243,11 +224,7 @@ func _play_state_animation(state: CharacterState) -> void:
 		CharacterState.JUMPING:
 			animated_sprite.play("Jump")
 		CharacterState.SITTING:
-			animated_sprite.play("Seatted")  # Note: keeping original spelling
-		CharacterState.ATTACKING:
-			animated_sprite.play("Attack")
-		CharacterState.KICKING:
-			animated_sprite.play("Kick")
+			animated_sprite.play("Seatted")
 		CharacterState.PUSHING:
 			animated_sprite.play("Push")
 		CharacterState.PULLING:
@@ -315,13 +292,13 @@ func _check_fall_damage() -> void:
 	_ground_height = 0.0
 
 func _take_fall_damage() -> void:
+	_die()
 	print("Taken fall damage!")
 	_current_state = CharacterState.DYING
 	animated_sprite.play("Dying")
 	
 	# Wait for animation then die
 	await animated_sprite.animation_finished
-	_die()
 
 func _die() -> void:
 	_is_alive = false

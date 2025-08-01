@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=4 uid="uid://5r6ebhmrlxig"]
 
-[ext_resource type="PackedScene" uid="uid://blj8hdckpnkne" path="res://Scripts/character.tscn" id="1_aq2pl"]
-[ext_resource type="Script" path="res://Scripts/stage_2.gd" id="1_ay16k"]
+[ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
+[ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/stage_2.gd" id="1_ay16k"]
 [ext_resource type="Texture2D" uid="uid://gx42oxqlov5a" path="res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
 [ext_resource type="Texture2D" uid="uid://ddmfif6n7m7n" path="res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
 

@@ -1,66 +1,66 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1754022359
-CHARACTER_REVIEW.md::TextFile::-1::1754021193::0::1::::<><><>0<>0<><>::
-icon.svg::CompressedTexture2D::7902149267212548018::1754021193::1754021262::1::::<><><>0<>0<>bc2f05c7e0d47904ee0cf438ec5c4f40<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-STAGE_TEMPLATE_README.md::TextFile::-1::1754021193::0::1::::<><><>0<>0<><>::
-::res://Class/::1754022027
-character.tscn::PackedScene::8164775975463592746::1754022027::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
-ClickNDrag.tscn::PackedScene::4271439451264488712::1754021193::0::1::::<><><>0<>0<><>::uid://dnvsa6j61tf4q::::res://Scripts/click_n_drag.gd<>uid://dkt4ij70dnryg::::res://icon.svg
-dialogue_button.tscn::PackedScene::3400934097308162016::1754021193::0::1::::<><><>0<>0<><>::uid://dd1xb0llktgwq::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf
-Game.tscn::PackedScene::2365540420030417189::1754021193::0::1::::<><><>0<>0<><>::uid://blj8hdckpnkne::::res://Scripts/character.tscn<>uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png
-Lamp.tscn::PackedScene::4625330414430353487::1754021193::0::1::::<><><>0<>0<><>::uid://cmu8m4d6jbi5t::::res://Scripts/lamp.gd<>uid://hqrygamh8mam::::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/Orange Light/Lantern 1 - Beonze and Orange_000.png<>uid://dnv2x1ebxhxhl::::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/Orange Light/Lantern 1 - Beonze and Orange_009.png<>uid://ccg5vil3ph74c::::res://Template/Interaction/Area/InteractionArea.tscn
-Position.tscn::PackedScene::442030259507285781::1754021193::0::1::::<><><>0<>0<><>::uid://ckj6psawmkysd::::res://Scripts/position.gd
-Stage_1.tscn::PackedScene::2365540420030417189::1754021193::0::1::::<><><>0<>0<><>::uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png<>uid://bmvx3ittg4qqq::::res://Scripts/stage_1.gd<>uid://blj8hdckpnkne::::res://Scripts/character.tscn<>uid://ddmfif6n7m7n::::res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png<>uid://dkt4ij70dnryg::::res://icon.svg<>uid://b65srsxaotn4j::::res://Class/Lamp.tscn<>uid://b14d8pfh86j65::::res://Class/ClickNDrag.tscn<>uid://gkef550nahpl::::res://Class/Position.tscn
-Stage_2.tscn::PackedScene::2142649164816750746::1754021193::0::1::::<><><>0<>0<><>::uid://blj8hdckpnkne::::res://Scripts/character.tscn<>res://Scripts/stage_2.gd<>uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png<>uid://ddmfif6n7m7n::::res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png
-Stage_3.tscn::PackedScene::1598942563882271294::1754021193::0::1::::<><><>0<>0<><>::uid://5r6ebhmrlxig::::res://Class/Stage_2.tscn<>uid://i88y8f4kyxkm::::res://Scripts/stage_3.gd
-textbox.tscn::PackedScene::1526194607825191691::1754021193::0::1::::<><><>0<>0<><>::uid://dd1xb0llktgwq::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf<>uid://ew3b7ire2amh::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf<>res://Scripts/textbox.gd
-::res://Scripts/::1754022286
-character.gd::GDScript::7216863124747335666::1754021643::0::1::::<>CharacterBody2D<><>0<>0<><>::
-character.tscn::PackedScene::3179093685951204350::1754022286::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
-click_n_drag.gd::GDScript::8116163500649866454::1754021193::0::1::::<>CharacterBody2D<><>0<>0<><>::
-dialogResources.gd::GDScript::4474246514354962545::1754021193::0::1::::<>Node<><>0<>0<><>::
-DialogueExportResource.gd::GDScript::857970539084081680::1754021193::0::1::::DE<>Resource<><>0<>0<><>::
-DialogueFunctionResource.gd::GDScript::5252125486821729337::1754021193::0::1::::DialogueFunction<>DE<><>0<>0<><>::
-DialogueTextResource.gd::GDScript::7843607016750153804::1754021193::0::1::::DialogueText<>DE<><>0<>0<><>::
-DialougueChoiceResource.gd::GDScript::425233027916379567::1754021193::0::1::::DialogueChoice<>DE<><>0<>0<><>::
-lamp.gd::GDScript::5658421665644080487::1754021193::0::1::::<>StaticBody2D<><>0<>0<><>::
-position.gd::GDScript::5495219163673737111::1754021193::0::1::::<>Marker2D<><>0<>0<><>::
-StageManager.gd::GDScript::5153716177558203721::1754021193::0::1::::StageManager<>Node<><>0<>0<><>::
-stage_1.gd::GDScript::3273485683658245720::1754021193::0::1::::<>StageTemplate<><>0<>0<><>::
-stage_2.gd::GDScript::1286777423909374801::1754021193::0::1::::<>StageTemplate<><>0<>0<><>::
-stage_3.gd::GDScript::631683477129780220::1754021193::0::1::::<>StageTemplate<><>0<>0<><>::
-stamina_system.gd::GDScript::4289843977615238215::1754021193::0::1::::<>Node2D<><>0<>0<><>::
-textbox.gd::GDScript::5235864612285029298::1754021193::0::1::::<>Node2D<><>0<>0<><>::
-::res://Template/::1754021193
-NewStageTemplate.gd::GDScript::7520369074464722799::1754021193::0::1::::<>StageTemplate<><>0<>0<><>::
-StageTemplate.gd::GDScript::631046153581661347::1754021193::0::1::::StageTemplate<>Node2D<><>0<>0<><>::
-::res://Template/Interaction/::1754021193
-::res://Template/Interaction/Area/::1754021193
-interactionArea.gd::GDScript::5928834810728495344::1754021193::0::1::::InteractionArea<>Area2D<><>0<>0<><>::
-InteractionArea.tscn::PackedScene::4927464771113822020::1754021193::0::1::::<><><>0<>0<><>::uid://cqp8bp30uhoxs::::res://Template/Interaction/Area/interactionArea.gd
-::res://Template/Interaction/Manager/::1754021193
-interactionManager.gd::GDScript::9205455276816492983::1754021193::0::1::::<>Node2D<><>0<>0<><>::
-InteractionManager.tscn::PackedScene::1226026918111908242::1754021193::0::1::::<><><>0<>0<><>::uid://ew3b7ire2amh::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf<>uid://d4fgreaugvo8v::::res://Template/Interaction/Manager/interactionManager.gd
-::res://Unrefined Assets/::1754021193
-::res://Unrefined Assets/Character/::1754021263
-AnimationSections.png::CompressedTexture2D::2179622648906113895::1754021193::1754021263::1::::<><><>0<>0<>8b29ce803607c0aa5405ce31f89863dc<>res://.godot/imported/AnimationSections.png-6a6c0818f6c3b4268bda6f1ee5480789.ctex::
-AnimationSheet2.png::CompressedTexture2D::7996931933293537883::1754021193::1754021262::1::::<><><>0<>0<>24fd3fc1bb53b52ab9219fa037931b86<>res://.godot/imported/AnimationSheet2.png-416a3e5cb8b5805f7038a02f50a4cbb2.ctex::
-AnimationSheet.png::CompressedTexture2D::9162416676914537347::1754021193::1754021262::1::::<><><>0<>0<>43db462dda3333e7b56a9ed8c3b7b275<>res://.godot/imported/AnimationSheet.png-fa7e76339d8ee24c06b9afe64ffe0a6d.ctex::
-::res://Unrefined Assets/Font/::1754021193
-::res://Unrefined Assets/Font/Abaddon_Fonts_v1.2/::1754021262
-Abaddon Bold.ttf::FontFile::2381858515231812239::1754021193::1754021262::1::::<><><>0<>0<>7c0c1794bb77da2f3d7a4dbeb47f3561<>res://.godot/imported/Abaddon Bold.ttf-3e5537712773478ac5fcfcaf702cc035.fontdata::
-Abaddon Light.ttf::FontFile::1779174359299381087::1754021193::1754021262::1::::<><><>0<>0<>7b1d4c4a91570b78d3a86c7a38c28392<>res://.godot/imported/Abaddon Light.ttf-4b33d1834c9810590df98b05d6f5a61a.fontdata::
-readme.txt::TextFile::-1::1754021193::0::1::::<><><>0<>0<><>::
-::res://Unrefined Assets/Font/determination-mono-web-font/::1754021262
-DeterminationMonoWebRegular-Z5oq.ttf::FontFile::327875240617259607::1754021193::1754021262::1::::<><><>0<>0<>0db235d266326e0447d5482541a67a28<>res://.godot/imported/DeterminationMonoWebRegular-Z5oq.ttf-8ce4a9c2649481d542a85c3462f870dd.fontdata::
-DeterminationSansWebRegular-369X.ttf::FontFile::7424902010816997740::1754021193::1754021262::1::::<><><>0<>0<>287d1f381b600c7b3dfc6a19a55b9467<>res://.godot/imported/DeterminationSansWebRegular-369X.ttf-699c58fb088eee984a76109f2b6c3652.fontdata::
-info.txt::TextFile::-1::1754021193::0::1::::<><><>0<>0<><>::
-::res://Unrefined Assets/Pixel Art Lantern Pack/::1754021193
-::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/::1754021193
-::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/::1754021193
-::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/Orange Light/::1754021262
-Lantern 1 - Beonze and Orange_000.png::CompressedTexture2D::525427313157921716::1754021193::1754021262::1::::<><><>0<>0<>ef696c905471d08b6386382b252e36c4<>res://.godot/imported/Lantern 1 - Beonze and Orange_000.png-94e8e612905c546fc502d67833d76846.ctex::
-Lantern 1 - Beonze and Orange_009.png::CompressedTexture2D::8116750755136281117::1754021193::1754021262::1::::<><><>0<>0<>13ba5231678b88c8d07a3c5e7e4c987c<>res://.godot/imported/Lantern 1 - Beonze and Orange_009.png-5aca2de9e2b6e246dfa7fbdda90c075d.ctex::
-::res://Unrefined Assets/Post Apocalipse City Ver2/::1754021262
-Background00.png::CompressedTexture2D::217497626396964973::1754021193::1754021262::1::::<><><>0<>0<>e852a1fcca6a783b0c7b07d0fe0d40ae<>res://.godot/imported/Background00.png-b2a766fb0e95b4a9a4e37e2cfba03d77.ctex::
-TileSet00.png::CompressedTexture2D::470423530996874416::1754021193::1754021262::1::::<><><>0<>0<>6df1ffdc80642d86d4d6aecdff57e75b<>res://.godot/imported/TileSet00.png-4c9b994e6ca931dd89b8c9af65330395.ctex::
+::res://::1754023643
+CHARACTER_REVIEW.md::TextFile::-1::1754023620::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::7902149267212548018::1754023620::1754023643::1::::<><><>0<>0<>bc2f05c7e0d47904ee0cf438ec5c4f40<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+STAGE_TEMPLATE_README.md::TextFile::-1::1754023620::0::1::::<><><>0<>0<><>::
+::res://Class/::1754023620
+character.tscn::PackedScene::8164775975463592746::1754023620::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
+ClickNDrag.tscn::PackedScene::4271439451264488712::1754023620::0::1::::<><><>0<>0<><>::uid://dnvsa6j61tf4q::::res://Scripts/click_n_drag.gd<>uid://dkt4ij70dnryg::::res://icon.svg
+dialogue_button.tscn::PackedScene::3400934097308162016::1754023620::0::1::::<><><>0<>0<><>::uid://dd1xb0llktgwq::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf
+Game.tscn::PackedScene::2365540420030417189::1754023734::0::1::::<><><>0<>0<><>::uid://blj8hdckpnkne::::res://Scripts/character.tscn<>uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png
+Lamp.tscn::PackedScene::4625330414430353487::1754023620::0::1::::<><><>0<>0<><>::uid://cmu8m4d6jbi5t::::res://Scripts/lamp.gd<>uid://hqrygamh8mam::::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/Orange Light/Lantern 1 - Beonze and Orange_000.png<>uid://dnv2x1ebxhxhl::::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/Orange Light/Lantern 1 - Beonze and Orange_009.png<>uid://ccg5vil3ph74c::::res://Template/Interaction/Area/InteractionArea.tscn
+Position.tscn::PackedScene::442030259507285781::1754023620::0::1::::<><><>0<>0<><>::uid://ckj6psawmkysd::::res://Scripts/position.gd
+Stage_1.tscn::PackedScene::2365540420030417189::1754023734::0::1::::<><><>0<>0<><>::uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png<>uid://bmvx3ittg4qqq::::res://Scripts/stage_1.gd<>uid://blj8hdckpnkne::::res://Scripts/character.tscn<>uid://ddmfif6n7m7n::::res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png<>uid://dkt4ij70dnryg::::res://icon.svg<>uid://b65srsxaotn4j::::res://Class/Lamp.tscn<>uid://b14d8pfh86j65::::res://Class/ClickNDrag.tscn<>uid://gkef550nahpl::::res://Class/Position.tscn
+Stage_2.tscn::PackedScene::2142649164816750746::1754023734::0::1::::<><><>0<>0<><>::uid://blj8hdckpnkne::::res://Scripts/character.tscn<>uid://sllbh2w7hjo0::::res://Scripts/stage_2.gd<>uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png<>uid://ddmfif6n7m7n::::res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png
+Stage_3.tscn::PackedScene::1598942563882271294::1754023620::0::1::::<><><>0<>0<><>::uid://5r6ebhmrlxig::::res://Class/Stage_2.tscn<>uid://i88y8f4kyxkm::::res://Scripts/stage_3.gd
+textbox.tscn::PackedScene::1526194607825191691::1754023620::0::1::::<><><>0<>0<><>::uid://dd1xb0llktgwq::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf<>uid://ew3b7ire2amh::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf<>res://Scripts/textbox.gd
+::res://Scripts/::1754023620
+character.gd::GDScript::7216863124747335666::1754023620::0::1::::<>CharacterBody2D<><>0<>0<><>::
+character.tscn::PackedScene::3179093685951204350::1754023620::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
+click_n_drag.gd::GDScript::8116163500649866454::1754023620::0::1::::<>CharacterBody2D<><>0<>0<><>::
+dialogResources.gd::GDScript::4474246514354962545::1754023620::0::1::::<>Node<><>0<>0<><>::
+DialogueExportResource.gd::GDScript::857970539084081680::1754023620::0::1::::DE<>Resource<><>0<>0<><>::
+DialogueFunctionResource.gd::GDScript::5252125486821729337::1754023620::0::1::::DialogueFunction<>DE<><>0<>0<><>::
+DialogueTextResource.gd::GDScript::7843607016750153804::1754023620::0::1::::DialogueText<>DE<><>0<>0<><>::
+DialougueChoiceResource.gd::GDScript::425233027916379567::1754023620::0::1::::DialogueChoice<>DE<><>0<>0<><>::
+lamp.gd::GDScript::5658421665644080487::1754023620::0::1::::<>StaticBody2D<><>0<>0<><>::
+position.gd::GDScript::5495219163673737111::1754023620::0::1::::<>Marker2D<><>0<>0<><>::
+StageManager.gd::GDScript::5153716177558203721::1754023620::0::1::::StageManager<>Node<><>0<>0<><>::
+stage_1.gd::GDScript::3273485683658245720::1754023620::0::1::::<>StageTemplate<><>0<>0<><>::
+stage_2.gd::GDScript::1286777423909374801::1754023620::0::1::::<>StageTemplate<><>0<>0<><>::
+stage_3.gd::GDScript::631683477129780220::1754023620::0::1::::<>StageTemplate<><>0<>0<><>::
+stamina_system.gd::GDScript::4289843977615238215::1754023620::0::1::::<>Node2D<><>0<>0<><>::
+textbox.gd::GDScript::5235864612285029298::1754023620::0::1::::<>Node2D<><>0<>0<><>::
+::res://Template/::1754023620
+NewStageTemplate.gd::GDScript::7520369074464722799::1754023620::0::1::::<>StageTemplate<><>0<>0<><>::
+StageTemplate.gd::GDScript::631046153581661347::1754023620::0::1::::StageTemplate<>Node2D<><>0<>0<><>::
+::res://Template/Interaction/::1754023620
+::res://Template/Interaction/Area/::1754023620
+interactionArea.gd::GDScript::5928834810728495344::1754023620::0::1::::InteractionArea<>Area2D<><>0<>0<><>::
+InteractionArea.tscn::PackedScene::4927464771113822020::1754023620::0::1::::<><><>0<>0<><>::uid://cqp8bp30uhoxs::::res://Template/Interaction/Area/interactionArea.gd
+::res://Template/Interaction/Manager/::1754023620
+interactionManager.gd::GDScript::9205455276816492983::1754023620::0::1::::<>Node2D<><>0<>0<><>::
+InteractionManager.tscn::PackedScene::1226026918111908242::1754023620::0::1::::<><><>0<>0<><>::uid://ew3b7ire2amh::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf<>uid://d4fgreaugvo8v::::res://Template/Interaction/Manager/interactionManager.gd
+::res://Unrefined Assets/::1754023620
+::res://Unrefined Assets/Character/::1754023643
+AnimationSections.png::CompressedTexture2D::2179622648906113895::1754023620::1754023643::1::::<><><>0<>0<>8b29ce803607c0aa5405ce31f89863dc<>res://.godot/imported/AnimationSections.png-6a6c0818f6c3b4268bda6f1ee5480789.ctex::
+AnimationSheet2.png::CompressedTexture2D::7996931933293537883::1754023620::1754023643::1::::<><><>0<>0<>24fd3fc1bb53b52ab9219fa037931b86<>res://.godot/imported/AnimationSheet2.png-416a3e5cb8b5805f7038a02f50a4cbb2.ctex::
+AnimationSheet.png::CompressedTexture2D::9162416676914537347::1754023620::1754023643::1::::<><><>0<>0<>43db462dda3333e7b56a9ed8c3b7b275<>res://.godot/imported/AnimationSheet.png-fa7e76339d8ee24c06b9afe64ffe0a6d.ctex::
+::res://Unrefined Assets/Font/::1754023620
+::res://Unrefined Assets/Font/Abaddon_Fonts_v1.2/::1754023643
+Abaddon Bold.ttf::FontFile::2381858515231812239::1754023620::1754023643::1::::<><><>0<>0<>7c0c1794bb77da2f3d7a4dbeb47f3561<>res://.godot/imported/Abaddon Bold.ttf-3e5537712773478ac5fcfcaf702cc035.fontdata::
+Abaddon Light.ttf::FontFile::1779174359299381087::1754023620::1754023643::1::::<><><>0<>0<>7b1d4c4a91570b78d3a86c7a38c28392<>res://.godot/imported/Abaddon Light.ttf-4b33d1834c9810590df98b05d6f5a61a.fontdata::
+readme.txt::TextFile::-1::1754023620::0::1::::<><><>0<>0<><>::
+::res://Unrefined Assets/Font/determination-mono-web-font/::1754023643
+DeterminationMonoWebRegular-Z5oq.ttf::FontFile::327875240617259607::1754023620::1754023643::1::::<><><>0<>0<>0db235d266326e0447d5482541a67a28<>res://.godot/imported/DeterminationMonoWebRegular-Z5oq.ttf-8ce4a9c2649481d542a85c3462f870dd.fontdata::
+DeterminationSansWebRegular-369X.ttf::FontFile::7424902010816997740::1754023620::1754023643::1::::<><><>0<>0<>287d1f381b600c7b3dfc6a19a55b9467<>res://.godot/imported/DeterminationSansWebRegular-369X.ttf-699c58fb088eee984a76109f2b6c3652.fontdata::
+info.txt::TextFile::-1::1754023620::0::1::::<><><>0<>0<><>::
+::res://Unrefined Assets/Pixel Art Lantern Pack/::1754023620
+::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/::1754023620
+::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/::1754023620
+::res://Unrefined Assets/Pixel Art Lantern Pack/Lantern 1/Bronze/Orange Light/::1754023643
+Lantern 1 - Beonze and Orange_000.png::CompressedTexture2D::525427313157921716::1754023620::1754023643::1::::<><><>0<>0<>ef696c905471d08b6386382b252e36c4<>res://.godot/imported/Lantern 1 - Beonze and Orange_000.png-94e8e612905c546fc502d67833d76846.ctex::
+Lantern 1 - Beonze and Orange_009.png::CompressedTexture2D::8116750755136281117::1754023620::1754023643::1::::<><><>0<>0<>13ba5231678b88c8d07a3c5e7e4c987c<>res://.godot/imported/Lantern 1 - Beonze and Orange_009.png-5aca2de9e2b6e246dfa7fbdda90c075d.ctex::
+::res://Unrefined Assets/Post Apocalipse City Ver2/::1754023643
+Background00.png::CompressedTexture2D::217497626396964973::1754023620::1754023643::1::::<><><>0<>0<>e852a1fcca6a783b0c7b07d0fe0d40ae<>res://.godot/imported/Background00.png-b2a766fb0e95b4a9a4e37e2cfba03d77.ctex::
+TileSet00.png::CompressedTexture2D::470423530996874416::1754023620::1754023643::1::::<><><>0<>0<>6df1ffdc80642d86d4d6aecdff57e75b<>res://.godot/imported/TileSet00.png-4c9b994e6ca931dd89b8c9af65330395.ctex::

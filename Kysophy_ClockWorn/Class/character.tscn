@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://da25xfsssmp8u" path="res://Scripts/character.gd" id="1_5i3w4"]
 [ext_resource type="Texture2D" uid="uid://d3slwtu01n1hf" path="res://Unrefined Assets/Character/AnimationSheet.png" id="1_ac6iv"]
-[ext_resource type="Texture2D" uid="uid://dl61khp2fcmql" path="res://Unrefined Assets/Character/AnimationSheet2.png" id="3_qwf8a"]
-[ext_resource type="Script" uid="uid://b2ebdryhkwg84" path="res://Scripts/stamina_system.gd" id="4_sq2tm"]
+[ext_resource type="Texture2D" uid="uid://dl61khp2fcmql" path="res://Unrefined Assets/Character/AnimationSheet2.png" id="3_4klk2"]
+[ext_resource type="Script" uid="uid://b2ebdryhkwg84" path="res://Scripts/stamina_system.gd" id="4_6sok6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i862u"]
 atlas = ExtResource("1_ac6iv")
@@ -62,19 +62,19 @@ atlas = ExtResource("1_ac6iv")
 region = Rect2(168, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73aoe"]
-atlas = ExtResource("3_qwf8a")
+atlas = ExtResource("3_4klk2")
 region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjsks"]
-atlas = ExtResource("3_qwf8a")
+atlas = ExtResource("3_4klk2")
 region = Rect2(48, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_piyke"]
-atlas = ExtResource("3_qwf8a")
+atlas = ExtResource("3_4klk2")
 region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6o36l"]
-atlas = ExtResource("3_qwf8a")
+atlas = ExtResource("3_4klk2")
 region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nchnf"]
@@ -335,8 +335,9 @@ custom_minimum_size = Vector2(200, 24)
 offset_right = 391.0
 offset_bottom = 34.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_qwf8a")
-value = 100.0
+max_value = 500.0
+value = 500.0
 show_percentage = false
 
 [node name="StaminaSystem" type="Node2D" parent="."]
-script = ExtResource("4_sq2tm")
+script = ExtResource("4_6sok6")
