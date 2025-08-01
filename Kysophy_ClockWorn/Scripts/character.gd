@@ -27,12 +27,12 @@ func _ready() -> void:
 	add_to_group("player")
 	Anim.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	
-func _process(delta: float) -> void:
-	progress_bar.value = stamina_system.get_stamina_percent() * 100
-	# Handle stamina exhaustion effects
-	if stamina_system.exhausted:
-		# You might want to slow down or prevent running when exhausted
-		pass
+#func _process(delta: float) -> void:
+	#progress_bar.value = stamina_system.get_stamina_percent() * 100
+	## Handle stamina exhaustion effects
+	#if stamina_system.exhausted:
+		## You might want to slow down or prevent running when exhausted
+		#pass
 
 func can_perform_action(stamina_cost: float) -> bool:
 	return stamina_system.use_stamina(stamina_cost)
@@ -44,15 +44,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y += gravity * delta
 		else:
 			velocity += get_gravity() * delta
-	
-	# Ladder controls
-	if on_ladder:
-		if Input.is_action_just_pressed("Jump") and is_on_floor():
-			velocity.y = SPEED * delta * 20
-		elif Input.is_action_just_pressed("Move down") and is_on_floor():
-			velocity.y = SPEED * delta * 20
-		else:
-			velocity.y = 0
 
 	# Push cooldown countdown
 	if push_cooldown_timer > 0:
@@ -97,12 +88,12 @@ func _physics_process(delta: float) -> void:
 
 	# Jump
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		if can_perform_action(STAMINA_JUMP_COST):
+		#if can_perform_action(STAMINA_JUMP_COST):
 			velocity.y = JUMP_VELOCITY
 			Anim.play("Jump")
-		else:
-			# Play some exhausted animation or sound
-			pass
+		#else:
+			## Play some exhausted animation or sound
+			#pass
 
 	# Modified Movement section to use stamina for running
 	var direction := Input.get_axis("ui_left", "ui_right")
