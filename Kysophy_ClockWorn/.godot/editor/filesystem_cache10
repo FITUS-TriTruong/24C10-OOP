@@ -1,10 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1754021262
+::res://::1754022359
 CHARACTER_REVIEW.md::TextFile::-1::1754021193::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::7902149267212548018::1754021193::1754021262::1::::<><><>0<>0<>bc2f05c7e0d47904ee0cf438ec5c4f40<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 STAGE_TEMPLATE_README.md::TextFile::-1::1754021193::0::1::::<><><>0<>0<><>::
-::res://Class/::1754021193
-character.tscn::PackedScene::3179093685951204350::1754021193::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
+::res://Class/::1754022027
+character.tscn::PackedScene::8164775975463592746::1754022027::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
 ClickNDrag.tscn::PackedScene::4271439451264488712::1754021193::0::1::::<><><>0<>0<><>::uid://dnvsa6j61tf4q::::res://Scripts/click_n_drag.gd<>uid://dkt4ij70dnryg::::res://icon.svg
 dialogue_button.tscn::PackedScene::3400934097308162016::1754021193::0::1::::<><><>0<>0<><>::uid://dd1xb0llktgwq::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf
 Game.tscn::PackedScene::2365540420030417189::1754021193::0::1::::<><><>0<>0<><>::uid://blj8hdckpnkne::::res://Scripts/character.tscn<>uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png
@@ -14,8 +14,9 @@ Stage_1.tscn::PackedScene::2365540420030417189::1754021193::0::1::::<><><>0<>0<>
 Stage_2.tscn::PackedScene::2142649164816750746::1754021193::0::1::::<><><>0<>0<><>::uid://blj8hdckpnkne::::res://Scripts/character.tscn<>res://Scripts/stage_2.gd<>uid://gx42oxqlov5a::::res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png<>uid://ddmfif6n7m7n::::res://Unrefined Assets/Post Apocalipse City Ver2/Background00.png
 Stage_3.tscn::PackedScene::1598942563882271294::1754021193::0::1::::<><><>0<>0<><>::uid://5r6ebhmrlxig::::res://Class/Stage_2.tscn<>uid://i88y8f4kyxkm::::res://Scripts/stage_3.gd
 textbox.tscn::PackedScene::1526194607825191691::1754021193::0::1::::<><><>0<>0<><>::uid://dd1xb0llktgwq::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf<>uid://ew3b7ire2amh::::res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf<>res://Scripts/textbox.gd
-::res://Scripts/::1754021349
-character.gd::GDScript::7216863124747335666::1754021193::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/::1754022286
+character.gd::GDScript::7216863124747335666::1754021643::0::1::::<>CharacterBody2D<><>0<>0<><>::
+character.tscn::PackedScene::3179093685951204350::1754022286::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png<>uid://b2ebdryhkwg84::::res://Scripts/stamina_system.gd
 click_n_drag.gd::GDScript::8116163500649866454::1754021193::0::1::::<>CharacterBody2D<><>0<>0<><>::
 dialogResources.gd::GDScript::4474246514354962545::1754021193::0::1::::<>Node<><>0<>0<><>::
 DialogueExportResource.gd::GDScript::857970539084081680::1754021193::0::1::::DE<>Resource<><>0<>0<><>::
@@ -24,7 +25,6 @@ DialogueTextResource.gd::GDScript::7843607016750153804::1754021193::0::1::::Dial
 DialougueChoiceResource.gd::GDScript::425233027916379567::1754021193::0::1::::DialogueChoice<>DE<><>0<>0<><>::
 lamp.gd::GDScript::5658421665644080487::1754021193::0::1::::<>StaticBody2D<><>0<>0<><>::
 position.gd::GDScript::5495219163673737111::1754021193::0::1::::<>Marker2D<><>0<>0<><>::
-character.tscn::PackedScene::5406328428983173901::1754021349::0::1::::<><><>0<>0<><>::uid://da25xfsssmp8u::::res://Scripts/character.gd<>uid://d3slwtu01n1hf::::res://Unrefined Assets/Character/AnimationSheet.png<>uid://dl61khp2fcmql::::res://Unrefined Assets/Character/AnimationSheet2.png
 StageManager.gd::GDScript::5153716177558203721::1754021193::0::1::::StageManager<>Node<><>0<>0<><>::
 stage_1.gd::GDScript::3273485683658245720::1754021193::0::1::::<>StageTemplate<><>0<>0<><>::
 stage_2.gd::GDScript::1286777423909374801::1754021193::0::1::::<>StageTemplate<><>0<>0<><>::

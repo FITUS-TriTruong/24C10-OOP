@@ -1,8 +1,8 @@
 #class_name StaminaSystem
 extends Node2D
 
-@export var max_stamina: float = 100.0
-@export var regen_rate: float = 10.0
+@export var max_stamina: float = 500.0
+@export var regen_rate: float = 0.0
 @export var regen_delay: float = 1.5
 
 var current_stamina: float

@@ -1,2 +1,3 @@
 res://Scripts/character.tscn
 res://Scripts/character.gd
+res://Scripts/stamina_system.gd

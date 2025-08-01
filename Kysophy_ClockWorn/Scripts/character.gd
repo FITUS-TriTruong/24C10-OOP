@@ -79,7 +79,7 @@ func _ready() -> void:
 		animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta: float) -> void:
-	progress_bar.value = get_stamina_percent() * 100
+	progress_bar.value = get_stamina_percent() * 500
 	if is_stamina_exhausted() :
 		pass
 	
