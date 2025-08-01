@@ -1,2 +1,5 @@
 res://Scripts/character.gd
 res://Class/Stage_1.tscn
+res://Scripts/character_improved.gd
+res://Class/character.tscn
+res://Class/Lamp.tscn
