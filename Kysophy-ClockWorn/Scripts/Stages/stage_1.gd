@@ -1,5 +1,8 @@
 extends StageTemplate
 
+@onready var pause_menu = $PauseMenu
+var paused = false 
+
 func _ready() -> void:
 	# Set stage properties
 	stage_name = "Stage 1"
@@ -25,3 +28,16 @@ func on_next_level_entered(body: CharacterBody2D) -> void:
 func on_next_level_exited(body: CharacterBody2D) -> void:
 	print("Player left the exit area of Stage 1")
 	can_go_to_next_level = false
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+
+func pauseMenu():
+	paused = !paused
+	if not paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else: 
+		pause_menu.show()
+		Engine.time_scale = 0
