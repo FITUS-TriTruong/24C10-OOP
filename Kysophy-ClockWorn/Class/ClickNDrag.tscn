@@ -28,5 +28,4 @@ gravity_space_override = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-9.53674e-06, -7.15256e-06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_25umk")
