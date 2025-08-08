@@ -1,9 +1,9 @@
 [gd_scene load_steps=36 format=4 uid="uid://8x5dtrf1ank4"]
 
-[ext_resource type="Texture2D" uid="uid://byw4n4vm1ya2f" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
+[ext_resource type="Texture2D" uid="uid://cbmgq733aa5jd" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="Script" uid="uid://bmvx3ittg4qqq" path="res://Scripts/Stages/stage_1.gd" id="1_kttdw"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
-[ext_resource type="Texture2D" uid="uid://xjarb087q1rr" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="Texture2D" uid="uid://caworrr7ko4g4" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
 [ext_resource type="Texture2D" uid="uid://bp0ocee7vphme" path="res://icon.svg" id="5_ham6c"]
 [ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/Lamp.tscn" id="6_74wb8"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
@@ -8055,6 +8055,8 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(113.042, 37.3398)
 shape = SubResource("CircleShape2D_dhhav")
 one_way_collision_margin = 6.0
@@ -8089,10 +8091,6 @@ position = Vector2(399, -15)
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_63rak")]
 visible = false
-offset_left = 197.0
-offset_top = 197.0
-offset_right = 197.0
-offset_bottom = 197.0
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]

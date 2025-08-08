@@ -6,6 +6,10 @@ class_name StageTemplate
 @export var next_stage_path: String = ""
 @export var previous_stage_path: String = ""
 
+# Pause Menu properties
+@onready var pause_menu = $PauseMenu
+var paused = false 
+
 # Transition states
 var can_go_to_next_level: bool = false
 var can_go_to_previous_level: bool = false
@@ -49,7 +53,6 @@ func _process(delta: float) -> void:
 	elif can_go_to_previous_level and previous_stage_path != "":
 		change_to_previous_stage()
 		
-	
 	# Call child-specific process function
 	stage_process(delta)
 
@@ -60,6 +63,8 @@ func stage_ready() -> void:
 
 func stage_process(delta: float) -> void:
 	# Override in child classes for stage-specific per-frame logic
+	if(Input.is_action_just_pressed("pause")) :
+		pauseMenu()
 	pass
 
 # Stage transition functions
@@ -136,3 +141,13 @@ func get_stage_info() -> Dictionary:
 func set_stage_paths(next: String, previous: String = "") -> void:
 	next_stage_path = next
 	previous_stage_path = previous
+
+# Pause Menu
+func pauseMenu():
+	paused = !paused
+	if not paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else: 
+		pause_menu.show()
+		Engine.time_scale = 0
