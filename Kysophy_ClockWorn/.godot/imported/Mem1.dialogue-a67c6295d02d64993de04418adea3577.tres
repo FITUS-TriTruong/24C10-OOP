@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_h7pf2"]
+
+[resource]
+script = ExtResource("1_h7pf2")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Memory no.1")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Memory no.1",
+&"id": "1",
+&"next_id": "2",
+&"text": "\"Human fire back. Retrieve.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Memory no.1",
+&"id": "2",
+&"next_id": "3",
+&"text": "System can't analyze human. Connection lost.",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Memory no.1",
+&"id": "3",
+&"next_id": "4",
+&"text": "Goal: KΓûíΓûíl all human.",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Memory no.1",
+&"id": "4",
+&"next_id": "5",
+&"text": "Error update.\"",
+&"type": "dialogue"
+},
+"5": {
+&"id": "5",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"type": ""
+},
+"7": {
+&"id": "7",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ start
+Memory no.1: \"Human fire back. Retrieve.
+Memory no.1: System can't analyze human. Connection lost.
+Memory no.1: Goal: KΓûíΓûíl all human.
+Memory no.1: Error update.\"
+=> END
+"
+metadata/dialogue_manager_version = "3.7.1"

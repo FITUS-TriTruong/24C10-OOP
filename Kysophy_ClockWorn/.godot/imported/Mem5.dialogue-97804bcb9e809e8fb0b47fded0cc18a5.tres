@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_yi3lw"]
+
+[resource]
+script = ExtResource("1_yi3lw")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Memory no.5")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Memory no.5",
+&"id": "1",
+&"next_id": "2",
+&"text": "\"Conflict. Hatred. Anger. Human.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Memory no.5",
+&"id": "2",
+&"next_id": "3",
+&"text": "Despair. Pain. Suffer. WΓûír.",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Memory no.5",
+&"id": "3",
+&"next_id": "4",
+&"text": "Love...",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Memory no.5",
+&"id": "4",
+&"next_id": "5",
+&"text": "Love?\"",
+&"type": "dialogue"
+},
+"5": {
+&"id": "5",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"type": ""
+},
+"7": {
+&"id": "7",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ start
+Memory no.5: \"Conflict. Hatred. Anger. Human.
+Memory no.5: Despair. Pain. Suffer. WΓûír.
+Memory no.5: Love...
+Memory no.5: Love?\"
+=> END
+"
+metadata/dialogue_manager_version = "3.7.1"

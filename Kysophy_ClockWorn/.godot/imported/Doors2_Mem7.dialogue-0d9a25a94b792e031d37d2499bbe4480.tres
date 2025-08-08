@@ -1,0 +1,144 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_1n3fh"]
+
+[resource]
+script = ExtResource("1_1n3fh")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Door2", "Memory no.7")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "found_key"
+}, {
+&"i": 20,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 23,
+&"type": &"variable",
+&"value": "false"
+}])
+},
+&"id": "1",
+&"next_id": "2",
+&"next_id_after": "11",
+&"next_sibling_id": "3",
+&"type": "condition"
+},
+"10": {
+&"character": "Memory no.7",
+&"id": "10",
+&"next_id": "11",
+&"text": "People who gave it a nΓûíΓûíe.\"",
+&"type": "dialogue"
+},
+"11": {
+&"id": "11",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"12": {
+&"id": "12",
+&"next_id": "13",
+&"type": ""
+},
+"13": {
+&"id": "13",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"2": {
+&"character": "Door2",
+&"id": "2",
+&"next_id": "11",
+&"text": "Locked.",
+&"type": "dialogue"
+},
+"3": {
+&"condition": {},
+&"id": "3",
+&"next_id": "4",
+&"next_id_after": "11",
+&"type": "condition"
+},
+"4": {
+&"character": "Door2",
+&"id": "4",
+&"next_id": "5",
+&"text": "Unlocked.",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Memory no.7",
+&"id": "5",
+&"next_id": "6",
+&"text": "\"This house lingers a sense of 'lΓûíve'.",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Memory no.7",
+&"id": "6",
+&"next_id": "7",
+&"text": "The robot recalled this place.",
+&"type": "dialogue"
+},
+"7": {
+&"character": "Memory no.7",
+&"id": "7",
+&"next_id": "8",
+&"text": "...",
+&"type": "dialogue"
+},
+"8": {
+&"character": "Memory no.7",
+&"id": "8",
+&"next_id": "9",
+&"text": "'Home'.",
+&"type": "dialogue"
+},
+"9": {
+&"character": "Memory no.7",
+&"id": "9",
+&"next_id": "10",
+&"text": "People that teached it what 'home' is.",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+if Global.found_key == false
+	Door2: Locked.
+else:
+	Door2: Unlocked.
+	Memory no.7: \"This house lingers a sense of 'lΓûíve'.
+	Memory no.7: The robot recalled this place.
+	Memory no.7: ...
+	Memory no.7: 'Home'.
+	Memory no.7: People that teached it what 'home' is.
+	Memory no.7: People who gave it a nΓûíΓûíe.\"
+=> END
+"
+metadata/dialogue_manager_version = "3.7.1"

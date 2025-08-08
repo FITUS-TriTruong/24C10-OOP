@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_i3fu2"]
+
+[resource]
+script = ExtResource("1_i3fu2")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Memory no.6")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Memory no.6",
+&"id": "1",
+&"next_id": "2",
+&"text": "\"Beep...beep...",
+&"type": "dialogue"
+},
+"10": {
+&"character": "Memory no.6",
+&"id": "10",
+&"next_id": "11",
+&"text": "What's my name again?\"",
+&"type": "dialogue"
+},
+"11": {
+&"id": "11",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"12": {
+&"id": "12",
+&"next_id": "13",
+&"type": ""
+},
+"13": {
+&"id": "13",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"2": {
+&"character": "Memory no.6",
+&"id": "2",
+&"next_id": "3",
+&"text": "\"Long, long time ago...\"",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Memory no.6",
+&"id": "3",
+&"next_id": "4",
+&"text": "\"What?\"",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Memory no.6",
+&"id": "4",
+&"next_id": "5",
+&"text": "\"Do robots have name?\"",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Memory no.6",
+&"id": "5",
+&"next_id": "6",
+&"text": "\"Of course not. What are you talking about?\"",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Memory no.6",
+&"id": "6",
+&"next_id": "7",
+&"text": "\"But I have a name!\"",
+&"type": "dialogue"
+},
+"7": {
+&"character": "Memory no.6",
+&"id": "7",
+&"next_id": "8",
+&"text": "\"Wrong. You are number 4 of type CWP-A.\"",
+&"type": "dialogue"
+},
+"8": {
+&"character": "Memory no.6",
+&"id": "8",
+&"next_id": "9",
+&"text": "\"You're wrong. I'm\"",
+&"type": "dialogue"
+},
+"9": {
+&"character": "Memory no.6",
+&"id": "9",
+&"next_id": "10",
+&"text": "\"I'm...\"",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+Memory no.6: \"Beep...beep...
+Memory no.6: \"Long, long time ago...\"
+Memory no.6: \"What?\"
+Memory no.6: \"Do robots have name?\"
+Memory no.6: \"Of course not. What are you talking about?\"
+Memory no.6: \"But I have a name!\"
+Memory no.6: \"Wrong. You are number 4 of type CWP-A.\"
+Memory no.6: \"You're wrong. I'm\"
+Memory no.6: \"I'm...\"
+Memory no.6: What's my name again?\"
+=> END
+"
+metadata/dialogue_manager_version = "3.7.1"

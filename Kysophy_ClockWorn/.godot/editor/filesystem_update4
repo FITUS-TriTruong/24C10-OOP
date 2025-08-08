@@ -1,12 +1,1 @@
-res://Scripts/character.gd
-res://Scripts/click_n_drag.gd
-res://Scripts/lamp.gd
-res://Scripts/position.gd
-res://Scripts/stage_1.gd
-res://Scripts/stage_2.gd
-res://Scripts/stage_3.gd
-res://Scripts/stamina_system.gd
-res://Template/StageTemplate.gd
-res://Template/Interaction/Area/interactionArea.gd
-res://Template/Interaction/Area/InteractionArea.tscn
-res://Template/Interaction/Manager/interactionManager.gd
+res://Class/textbox.tscn

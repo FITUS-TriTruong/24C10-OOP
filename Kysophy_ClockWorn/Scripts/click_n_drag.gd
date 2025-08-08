@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
 var selected := false
-var rest_point
-var rest_nodes = []
+var rest_point: Vector2
+var rest_nodes := []
 
 @onready var sprite = $Sprite2D
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("Zone")
-	rest_point = rest_nodes[0].global_position
-	rest_nodes[0].select()
+	if rest_nodes.size() > 0:
+		rest_point = rest_nodes[0].global_position
+		if rest_nodes[0].has_method("select"):
+			rest_nodes[0].select()
 	$Area2D.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
@@ -22,17 +24,20 @@ func _physics_process(delta):
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				selected = true
-			else:
-				selected = false
-				var shortest_dist = 10
-				for child in rest_nodes:
-					var dist = global_position.distance_to(child.global_position)
-					if dist < shortest_dist:
-						child.select()
-						rest_point = child.global_position
-						shortest_dist = dist
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			selected = true
+		else:
+			selected = false
+			var closest_node = null
+			var shortest_dist = INF
+			for child in rest_nodes:
+				var dist = global_position.distance_to(child.global_position)
+				if dist < shortest_dist:
+					shortest_dist = dist
+					closest_node = child
+			if closest_node:
+				if closest_node.has_method("select"):
+					closest_node.select()
+				rest_point = closest_node.global_position
