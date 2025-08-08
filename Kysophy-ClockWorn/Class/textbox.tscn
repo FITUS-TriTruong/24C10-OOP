@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://v0kg40x6fsed"]
 
-[ext_resource type="FontFile" uid="uid://dd1xb0llktgwq" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf" id="1_6fng1"]
-[ext_resource type="FontFile" uid="uid://ew3b7ire2amh" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_nvorr"]
-[ext_resource type="Script" path="res://Scripts/textbox.gd" id="1_s8xcy"]
+[ext_resource type="FontFile" uid="uid://bjj2fuj15r18w" path="res://Assets/Font/determination-mono-web-font/DeterminationSansWebRegular-369X.ttf" id="1_6fng1"]
+[ext_resource type="FontFile" uid="uid://bvol2cpmhp6vu" path="res://Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_nvorr"]
+[ext_resource type="Script" uid="uid://cguj6pr4koqww" path="res://Scripts/textbox.gd" id="1_s8xcy"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7npt"]
 bg_color = Color(0, 0, 0, 1)

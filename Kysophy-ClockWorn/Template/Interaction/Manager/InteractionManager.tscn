@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://rp5qp0v8j0ss"]
 
-[ext_resource type="FontFile" uid="uid://ew3b7ire2amh" path="res://Unrefined Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_1027u"]
+[ext_resource type="FontFile" uid="uid://bvol2cpmhp6vu" path="res://Assets/Font/determination-mono-web-font/DeterminationMonoWebRegular-Z5oq.ttf" id="1_1027u"]
 [ext_resource type="Script" uid="uid://d4fgreaugvo8v" path="res://Template/Interaction/Manager/interactionManager.gd" id="1_infue"]
+
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_infue")

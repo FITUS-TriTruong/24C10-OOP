@@ -1,17 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://ubnmu2h50p58"]
 
 [ext_resource type="Script" uid="uid://c5ji72xv4vg0d" path="res://UI/Scripts/main_menu.gd" id="1_670pd"]
-[ext_resource type="Texture2D" uid="uid://b1ww7q1avebdx" path="res://UI/assets/menu_img.png" id="2_pfng4"]
-[ext_resource type="FontFile" uid="uid://c57jr5voblnsh" path="res://UI/assets/GrapeSoda.ttf" id="3_rfn2e"]
-[ext_resource type="Texture2D" uid="uid://dqhsb6vo6lxbq" path="res://Unrefined Assets/Menu/ClockWorn.png" id="4_pfng4"]
+[ext_resource type="Texture2D" uid="uid://b3e2ha8t4b2k5" path="res://Assets/UI/menu_img.png" id="2_pfng4"]
+[ext_resource type="FontFile" uid="uid://bs1812gmtjxk5" path="res://Assets/Font/GrapeSoda.ttf" id="3_rfn2e"]
+[ext_resource type="Texture2D" uid="uid://p747k44lpn7h" path="res://Assets/UI/ClockWorn.png" id="4_rfn2e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6syg"]
 texture = ExtResource("2_pfng4")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b37jj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6syg"]
-bg_color = Color(0.894922, 0.894922, 0.894923, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b37jj"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -26,16 +24,18 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b37jj"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6syg"]
+bg_color = Color(0.894922, 0.894922, 0.894923, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b37jj"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfn2e"]
-texture = ExtResource("4_pfng4")
+texture = ExtResource("4_rfn2e")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -73,55 +73,55 @@ theme_override_constants/separation = 8
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
 text = "PLAY"
 
 [node name="OptionButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
 text = "OPTION"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
 text = "QUIT
 "
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 56.0
-offset_right = 893.0
-offset_bottom = 211.0
+offset_left = 221.0
+offset_top = 90.0
+offset_right = 968.0
+offset_bottom = 207.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rfn2e")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

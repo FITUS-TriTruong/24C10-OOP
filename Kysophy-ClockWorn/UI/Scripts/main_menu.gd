@@ -10,7 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_play_button_pressed() -> void:
 	print("Start button pressed.")
 	get_tree().change_scene_to_file("res://Class/Stage_1.tscn")

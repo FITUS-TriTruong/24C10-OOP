@@ -1,9 +1,10 @@
 [gd_scene load_steps=42 format=3 uid="uid://dolcwxss8g3ji"]
 
-[ext_resource type="Script" uid="uid://da25xfsssmp8u" path="res://Scripts/character.gd" id="1_5i3w4"]
-[ext_resource type="Texture2D" uid="uid://d3slwtu01n1hf" path="res://Unrefined Assets/Character/AnimationSheet.png" id="1_ac6iv"]
-[ext_resource type="Texture2D" uid="uid://dl61khp2fcmql" path="res://Unrefined Assets/Character/AnimationSheet2.png" id="3_4klk2"]
+[ext_resource type="Script" uid="uid://u6bgp43qn0sd" path="res://Scripts/Character/character_main.gd" id="1_5i3w4"]
+[ext_resource type="Texture2D" uid="uid://cdd3s88ehh7ix" path="res://Assets/Character/AnimationSheet.png" id="1_ac6iv"]
+[ext_resource type="Texture2D" uid="uid://bgrilqmwvc252" path="res://Assets/Character/AnimationSheet2.png" id="3_4klk2"]
 [ext_resource type="Script" uid="uid://b2ebdryhkwg84" path="res://Scripts/stamina_system.gd" id="4_6sok6"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i862u"]
 atlas = ExtResource("1_ac6iv")

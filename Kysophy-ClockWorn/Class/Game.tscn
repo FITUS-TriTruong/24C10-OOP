@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://8x5dtrf1ank4"]
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_cljnm"]
-[ext_resource type="Texture2D" uid="uid://gx42oxqlov5a" path="res://Unrefined Assets/Post Apocalipse City Ver2/TileSet00.png" id="2_euffe"]
+[ext_resource type="Texture2D" uid="uid://cbmgq733aa5jd" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="2_euffe"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqi76"]
 texture = ExtResource("2_euffe")

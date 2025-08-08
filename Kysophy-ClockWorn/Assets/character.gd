@@ -22,8 +22,6 @@ enum CharacterState {
 	RUNNING,
 	JUMPING,
 	SITTING,
-	ATTACKING,
-	KICKING,
 	PUSHING,
 	PULLING,
 	DYING,
@@ -48,7 +46,6 @@ var _facing_right: bool = true
 var _is_action: bool = false
 var _is_pushing: bool = false
 var _push_cooldown_timer: float = 0.0
-var _on_ladder: bool = false
 
 # Interaction flags
 var _tree_in_range: bool = false
@@ -99,8 +96,7 @@ func _physics_process(delta: float) -> void:
 # === GRAVITY & PHYSICS ===
 func _apply_gravity(delta: float) -> void:
 	if not is_on_floor():
-		if not _on_ladder:
-			velocity += get_gravity() * delta
+		velocity += get_gravity() * delta
 	
 	# Track ground height for fall damage
 	if not is_on_floor() and _ground_height == 0.0:
@@ -344,15 +340,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		body.collision_layer = 2
 		body.collision_mask = 2
 
-# === LADDER SYSTEM HANDLERS ===
-func _on_ladder_body_entered(body: CharacterBody2D) -> void:
-	if body == self or body.name == "Character":
-		_on_ladder = true
-
-func _on_ladder_body_exited(body: CharacterBody2D) -> void:
-	if body == self or body.name == "Character":
-		_on_ladder = false
-
 # === ANIMATION HANDLERS ===
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "Kick" or animated_sprite.animation == "Attack":
@@ -389,9 +376,6 @@ func is_stamina_exhausted() -> bool:
 
 func is_facing_right() -> bool:
 	return _facing_right
-
-func is_on_ladder() -> bool:
-	return _on_ladder
 
 # Required for identification in other scripts
 func character() -> void:
