@@ -20,10 +20,8 @@ func stage_process(delta: float) -> void:
 # Override transition events if needed
 func on_next_level_entered(body: CharacterBody2D) -> void:
 	print("Player entered the exit area of Stage 1")
+	can_go_to_next_level = true
 
 func on_next_level_exited(body: CharacterBody2D) -> void:
 	print("Player left the exit area of Stage 1")
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	can_go_to_next_level = false

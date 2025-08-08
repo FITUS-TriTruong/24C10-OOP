@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=35 format=4 uid="uid://8x5dtrf1ank4"]
 
 [ext_resource type="Texture2D" uid="uid://cbmgq733aa5jd" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="Script" uid="uid://bmvx3ittg4qqq" path="res://Scripts/Stages/stage_1.gd" id="1_kttdw"]
@@ -7788,6 +7788,8 @@ b = Vector2(1, 173)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4scb"]
 size = Vector2(14, 14)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhhav"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ham6c"]
 size = Vector2(79, 14)
 
@@ -7797,7 +7799,7 @@ script = ExtResource("1_kttdw")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(842, 252)
+position = Vector2(1124, 558)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -8048,10 +8050,12 @@ texture = ExtResource("5_ham6c")
 [node name="next_level" type="Area2D" parent="."]
 position = Vector2(471, 124)
 scale = Vector2(0.902323, 3.72257)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
 position = Vector2(113.042, 37.3398)
-shape = SubResource("SegmentShape2D_tlg5j")
+shape = SubResource("CircleShape2D_dhhav")
 one_way_collision_margin = 6.0
 
 [node name="Marker2D" type="Marker2D" parent="next_level"]

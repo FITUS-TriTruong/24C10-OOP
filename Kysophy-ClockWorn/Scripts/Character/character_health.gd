@@ -12,7 +12,7 @@ var _ground_height: float = 0.0
 var _was_on_floor_last_frame: bool = true
 
 # === EXPORTED VARIABLES ===
-@export var fall_damage_enabled: bool = true
+@export var fall_damage_enabled: bool = false
 
 # === NODE REFERENCES ===
 var animation_controller: CharacterAnimationController

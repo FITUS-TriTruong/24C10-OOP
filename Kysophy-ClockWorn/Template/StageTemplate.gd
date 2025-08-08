@@ -48,6 +48,7 @@ func _process(delta: float) -> void:
 		change_to_next_stage()
 	elif can_go_to_previous_level and previous_stage_path != "":
 		change_to_previous_stage()
+		
 	
 	# Call child-specific process function
 	stage_process(delta)
@@ -64,32 +65,46 @@ func stage_process(delta: float) -> void:
 # Stage transition functions
 func change_to_next_stage() -> void:
 	print("Transitioning to next stage: " + next_stage_path)
-	get_tree().change_scene_to_file(next_stage_path)
+	if next_stage_path != "" and FileAccess.file_exists(next_stage_path):
+		get_tree().change_scene_to_file(next_stage_path)
+	else:
+		print("ERROR: Next stage file not found: " + next_stage_path)
 
 func change_to_previous_stage() -> void:
 	print("Transitioning to previous stage: " + previous_stage_path)
-	get_tree().change_scene_to_file(previous_stage_path)
+	if previous_stage_path != "" and FileAccess.file_exists(previous_stage_path):
+		get_tree().change_scene_to_file(previous_stage_path)
+	else:
+		print("ERROR: Previous stage file not found: " + previous_stage_path)
 
 # Signal handlers for next level area
 func _on_next_level_body_entered(body: CharacterBody2D) -> void:
-	if body.name == "Character":  # Ensure it's the player character
+	# Check if it's the player character (more flexible detection)
+	if body.name == "Character" or body.is_in_group("player") or body.has_method("character"):
 		can_go_to_next_level = true
+		print("Player detected entering next level area: ", body.name)
 		on_next_level_entered(body)
 
 func _on_next_level_body_exited(body: CharacterBody2D) -> void:
-	if body.name == "Character":
+	# Check if it's the player character (more flexible detection)
+	if body.name == "Character" or body.is_in_group("player") or body.has_method("character"):
 		can_go_to_next_level = false
+		print("Player detected exiting next level area: ", body.name)
 		on_next_level_exited(body)
 
 # Signal handlers for previous level area
 func _on_previous_level_body_entered(body: CharacterBody2D) -> void:
-	if body.name == "Character":  # Ensure it's the player character
+	# Check if it's the player character (more flexible detection)
+	if body.name == "Character" or body.is_in_group("player") or body.has_method("character"):
 		can_go_to_previous_level = true
+		print("Player detected entering previous level area: ", body.name)
 		on_previous_level_entered(body)
 
 func _on_previous_level_body_exited(body: CharacterBody2D) -> void:
-	if body.name == "Character":
+	# Check if it's the player character (more flexible detection)
+	if body.name == "Character" or body.is_in_group("player") or body.has_method("character"):
 		can_go_to_previous_level = false
+		print("Player detected exiting previous level area: ", body.name)
 		on_previous_level_exited(body)
 
 # Virtual functions for level transition events (can be overridden)
