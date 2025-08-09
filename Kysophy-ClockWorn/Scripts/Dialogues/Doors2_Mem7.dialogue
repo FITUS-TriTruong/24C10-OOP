@@ -1,0 +1,12 @@
+~ start
+if Global.found_key == false
+	Door2: Locked.
+else:
+	Door2: Unlocked.
+	Memory no.7: "This house lingers a sense of 'l□ve'.
+	Memory no.7: The robot recalled this place.
+	Memory no.7: ...
+	Memory no.7: 'Home'.
+	Memory no.7: People that teached it what 'home' is.
+	Memory no.7: People who gave it a n□□e."
+=> END
