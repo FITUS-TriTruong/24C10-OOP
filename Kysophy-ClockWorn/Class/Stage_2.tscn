@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
-[ext_resource type="Texture2D" uid="uid://b86tlgbrm4cs6" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
-[ext_resource type="Texture2D" uid="uid://ccvtpp44815sf" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
+[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
+[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="5_kq63o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lubu"]
