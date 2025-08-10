@@ -1,18 +1,18 @@
 [gd_scene load_steps=41 format=4 uid="uid://8x5dtrf1ank4"]
 
+[ext_resource type="Script" uid="uid://bnbpso01yxc7d" path="res://Scripts/Items/fall_dmg.gd" id="1_ibpph"]
 [ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
-[ext_resource type="Script" uid="uid://bmvx3ittg4qqq" path="res://Scripts/Stages/stage_1.gd" id="1_kttdw"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
 [ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
 [ext_resource type="Texture2D" uid="uid://belr62aj1er4a" path="res://icon.svg" id="5_ham6c"]
-[ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/Lamp.tscn" id="6_74wb8"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="8_dhhav"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="9_63rak"]
 [ext_resource type="PackedScene" uid="uid://c5a1hpn5e7vuq" path="res://Class/Note.tscn" id="10_21hh7"]
 [ext_resource type="PackedScene" uid="uid://odmx85xg4rnk" path="res://Class/door2.tscn" id="11_4iars"]
 [ext_resource type="PackedScene" uid="uid://dr2qx8cwhqjt6" path="res://Class/key.tscn" id="12_t47l4"]
-[ext_resource type="PackedScene" uid="uid://b8fxx3f7tl8gm" path="res://Class/fallDmgSign.tscn" id="14_ibpph"]
+[ext_resource type="PackedScene" uid="uid://boue3o78rvtjq" path="res://Class/fallDmg.tscn" id="14_b2uls"]
+[ext_resource type="PackedScene" uid="uid://dwb5f0j5ke7bi" path="res://Class/energyWarn.tscn" id="14_gtngy"]
 [ext_resource type="PackedScene" uid="uid://cwxs28s1ouav" path="res://Class/door1.tscn" id="16_bufok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74wb8"]
@@ -7801,7 +7801,7 @@ size = Vector2(79, 14)
 
 [node name="Game" type="Node2D"]
 position = Vector2(580, 330)
-script = ExtResource("1_kttdw")
+script = ExtResource("1_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
@@ -8094,9 +8094,6 @@ position = Vector2(399, -15)
 [node name="PauseMenu" parent="." instance=ExtResource("9_63rak")]
 visible = false
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_74wb8")]
-position = Vector2(-240, 216)
-
 [node name="Door1" parent="." instance=ExtResource("16_bufok")]
 position = Vector2(133, 236)
 
@@ -8109,7 +8106,10 @@ position = Vector2(227, 228)
 [node name="Note" parent="." instance=ExtResource("10_21hh7")]
 position = Vector2(69, 236)
 
-[node name="fallDmgSign" parent="." instance=ExtResource("14_ibpph")]
+[node name="energyWarn" parent="." instance=ExtResource("14_gtngy")]
+position = Vector2(-363, 252)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("14_b2uls")]
 position = Vector2(-187, 219)
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
