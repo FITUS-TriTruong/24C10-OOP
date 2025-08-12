@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var interaction_area = $InteractionArea
 @onready var collision_shape = $CollisionShape2D
 
-func Sign():
+func fallDmg():
 	pass
 
 func _ready():
