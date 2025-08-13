@@ -8092,6 +8092,7 @@ position = Vector2(133, 236)
 position = Vector2(197, 252)
 
 [node name="Key" parent="." instance=ExtResource("12_t47l4")]
+visible = false
 position = Vector2(227, 228)
 
 [node name="Note" parent="." instance=ExtResource("10_21hh7")]
