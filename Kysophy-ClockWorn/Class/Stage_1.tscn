@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=40 format=4 uid="uid://8x5dtrf1ank4"]
 
 [ext_resource type="Script" uid="uid://bnbpso01yxc7d" path="res://Scripts/Items/fall_dmg.gd" id="1_ibpph"]
 [ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
@@ -7779,9 +7779,6 @@ texture = ExtResource("1_kmgqk")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6aldv")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y123o"]
-size = Vector2(14, 81)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cljnm"]
 distance = -11.0
 
@@ -8015,12 +8012,6 @@ position = Vector2(675, 2)
 tile_map_data = PackedByteArray("AAAEAAEAAAAeACIAAAAEAAIAAAAeACMAAAAFAAEAAAAfACIAAAAFAAIAAAAfACMAAAAHAAIAAAAZACwAAGDt//P/AAASACsAABDt//T/AAASACsAABDt//X/AAASACsAAADt//b/AAASACsAAADt//f/AAASACwAAAD3//L/AAAGAAEAAAD3//P/AAABAAUAAAD4/+7/AAARAAEAABD4//L/AAACAAEAAAD4//P/AAAJAAIAAAD5/+7/AAAQAAEAABD5//L/AAADAAEAAAD5//P/AAAJAAIAAAD5//T/AAASACsAAAD5//X/AAASACsAAAD5//b/AAASACwAAAD6/+7/AAAPAAEAABD6/+//AAAPAAIAABD6//D/AAAPAAMAABD6//H/AAAPAAQAABD6//L/AAACAAEAAAD6//P/AAAKAAIAAAD6//T/AAACAAMAAAD6//X/AAACAAMAAAD6//b/AAABAAQAAAD7/+7/AAAOAAEAABD7//D/AAAOAAMAABD7//H/AAAOAAQAABD7//L/AAACAAEAAAD7//P/AAAJAAEAAAD7//T/AAAKAAUAAAD7//X/AAAKAAYAAAD7//b/AAACAAQAAAD8/+7/AAANAAEAABD8//L/AAADAAEAAAD8//P/AAAKAAEAAAD8//T/AAALAAUAAAD8//X/AAALAAYAAAD9//L/AAAEAAEAAAD9//P/AAAJAAEAAAD9//T/AAAGAAUAAAD9//X/AAAGAAYAAAD+//P/AAAJAAQAAAD+//T/AAAHAAUAAAD+//X/AAAHAAYAAAD///T/AAADAAEAAAD///X/AAAKAAQAABD///b/AAALAAUAAAD7/+//AAAOAAIAABD8//D/AAANAAMAABD8//H/AAANAAQAABD8//b/AAAEAAQAAAD9/+7/AAAMAAEAABD+//L/AAAJAAMAAAD///P/AAAJAAMAAAAAAPT/AAAJAAMAAAAAAPX/AAACAAEAAAAAAPb/AAAKAAUAAAAMAAAAAAAWACkAAAAMAAEAAAAWACoAAAAMAAIAAAAWACsAAAANAAAAAAAXACkAAAANAAEAAAAXACoAAAANAAIAAAAXACsAAAD8/wIAAAAQACsAAAD6/wIAAAAUACsAAAAIAAIAAAATACkAAAAKAAIAAAAQAC8AAADn/wEAAAARAC0AAADn/wIAAAARAC4AAADo/wEAAAASAC0AAADo/wIAAAASAC4AAADp/wIAAAAQAC0AABDl/wIAAAAQAC8AAAABAPX/AAAJAAMAAAA=")
 tile_set = SubResource("TileSet_3ofdi")
 
-[node name="laddEr" type="Area2D" parent="."]
-position = Vector2(-259, 196)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="laddEr"]
-shape = SubResource("RectangleShape2D_y123o")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, -3)
 
@@ -8109,12 +8100,10 @@ position = Vector2(69, 236)
 [node name="energyWarn" parent="." instance=ExtResource("14_gtngy")]
 position = Vector2(-363, 252)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("14_b2uls")]
-position = Vector2(-187, 219)
+[node name="fallWarn" parent="." instance=ExtResource("14_b2uls")]
+position = Vector2(-187, 220)
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="laddEr" to="Character" method="_on_ladd_er_body_entered"]
-[connection signal="body_exited" from="laddEr" to="Character" method="_on_ladd_er_body_exited"]
 [connection signal="body_entered" from="next_level" to="." method="_on_next_level_body_entered"]
 [connection signal="body_exited" from="next_level" to="." method="_on_next_level_body_exited"]

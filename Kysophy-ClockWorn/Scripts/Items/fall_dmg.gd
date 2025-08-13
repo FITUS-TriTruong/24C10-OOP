@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 @onready var interaction_area = $InteractionArea
 @onready var collision_shape = $CollisionShape2D
