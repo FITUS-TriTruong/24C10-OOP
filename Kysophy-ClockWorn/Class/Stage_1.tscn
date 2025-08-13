@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=41 format=4 uid="uid://8x5dtrf1ank4"]
 
 [ext_resource type="Script" uid="uid://bnbpso01yxc7d" path="res://Scripts/Items/fall_dmg.gd" id="1_ibpph"]
-[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
+[ext_resource type="Texture2D" uid="uid://ddw6cgyia3bo8" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
-[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
-[ext_resource type="Texture2D" uid="uid://belr62aj1er4a" path="res://icon.svg" id="5_ham6c"]
+[ext_resource type="Texture2D" uid="uid://6grsoh7aoexj" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="Texture2D" uid="uid://bl84b2n5mc8ho" path="res://icon.svg" id="5_ham6c"]
+[ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/Lamp.tscn" id="6_gtngy"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="8_dhhav"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="9_63rak"]
@@ -7791,10 +7792,10 @@ b = Vector2(1, 173)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4scb"]
 size = Vector2(14, 14)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhhav"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ham6c"]
 size = Vector2(79, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhhav"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(580, 330)
@@ -7802,7 +7803,7 @@ script = ExtResource("1_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(375, 563)
+position = Vector2(850, 590)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -8044,21 +8045,8 @@ position = Vector2(-3.24999, -13)
 scale = Vector2(0.113281, 0.109375)
 texture = ExtResource("5_ham6c")
 
-[node name="next_level" type="Area2D" parent="."]
-position = Vector2(471, 124)
-scale = Vector2(0.902323, 3.72257)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(113.042, 37.3398)
-shape = SubResource("CircleShape2D_dhhav")
-one_way_collision_margin = 6.0
-
-[node name="Marker2D" type="Marker2D" parent="next_level"]
-position = Vector2(111.933, 37.6084)
+[node name="StaticBody2D" parent="." instance=ExtResource("6_gtngy")]
+position = Vector2(352, 246)
 
 [node name="hitbox for boxes" type="StaticBody2D" parent="."]
 position = Vector2(244, -55)
@@ -8103,6 +8091,23 @@ position = Vector2(-363, 252)
 
 [node name="fallWarn" parent="." instance=ExtResource("14_b2uls")]
 position = Vector2(-187, 220)
+
+[node name="next_level" type="Area2D" parent="."]
+position = Vector2(471, 124)
+scale = Vector2(0.902323, 3.72257)
+collision_layer = 255
+collision_mask = 255
+collision_priority = 99999.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(111.933, 37.6084)
+shape = SubResource("CircleShape2D_dhhav")
+one_way_collision_margin = 6.0
+
+[node name="Marker2D" type="Marker2D" parent="next_level"]
+position = Vector2(111.933, 37.6084)
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]

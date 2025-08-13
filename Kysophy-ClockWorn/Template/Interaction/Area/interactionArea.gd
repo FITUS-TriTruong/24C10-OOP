@@ -8,9 +8,9 @@ var interact: Callable = func():
 	pass
 
 func _on_body_entered(_body: Node2D):
-	print("entered")
+	# print("entered")
 	InteractionManager.register_area(self)
 
 func _on_body_exited(_body: Node2D):
-	print("exited")
+	# print("exited")
 	InteractionManager.unregister_area(self)
