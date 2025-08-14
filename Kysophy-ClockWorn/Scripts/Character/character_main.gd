@@ -105,6 +105,7 @@ func _on_health_changed(new_health: int) -> void:
 
 func _on_died() -> void:
 	died.emit()
+	get_tree().change_scene_to_file("res://Class/level_select.tscn")
 
 func _on_interaction_performed(interaction_type: String) -> void:
 	print("Interaction performed: ", interaction_type)

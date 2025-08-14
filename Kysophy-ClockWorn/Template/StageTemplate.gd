@@ -57,6 +57,7 @@ func stage_process(delta: float) -> void:
 
 func change_to_next_stage() -> void:
 	print("Transitioning to next stage: " + next_stage_path)
+	print("DEBUG: Before unlock, unlocked_level =", Global.game_data.unlocked_level)
 
 	# 🔹 Unlock next stage before switching
 	if next_stage_path != "":
@@ -65,9 +66,9 @@ func change_to_next_stage() -> void:
 			var match = regex.search(next_stage_path)
 			if match:
 				var next_num = int(match.get_string(1))
-				if Engine.has_singleton("Global"): # If Global is autoload
-					Global.unlock_level(next_num)
-					Global.save_game() # ✅ Save immediately after unlocking
+ # If Global is autoload
+				Global.unlock_level(next_num)
+				Global.save_game() # ✅ Save immediately after unlocking
 
 	# 🔹 Load the next stage
 	if FileAccess.file_exists(next_stage_path):

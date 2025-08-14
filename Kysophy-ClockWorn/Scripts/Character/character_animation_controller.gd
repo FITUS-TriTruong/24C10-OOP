@@ -60,6 +60,7 @@ func play_state_animation(state: CharacterState.State) -> void:
 			animated_sprite.play("Dying")
 		CharacterState.State.DEAD:
 			animated_sprite.play("ded")
+			
 
 func play_idle_animation() -> void:
 	if not animated_sprite:

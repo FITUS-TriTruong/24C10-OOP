@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
-[ext_resource type="Texture2D" uid="uid://ddw6cgyia3bo8" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
-[ext_resource type="Texture2D" uid="uid://6grsoh7aoexj" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
+[ext_resource type="Texture2D" uid="uid://byw4n4vm1ya2f" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
+[ext_resource type="Texture2D" uid="uid://xjarb087q1rr" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="5_kq63o"]
 [ext_resource type="PackedScene" uid="uid://dr2qx8cwhqjt6" path="res://Class/key.tscn" id="8_iiyir"]
 
@@ -6263,7 +6263,7 @@ tile_map_data = PackedByteArray("AAD8/wUAAAADAAgAAAD9/wUAAAADAAgAAAAGAAUAAAADAAg
 tile_set = SubResource("TileSet_mrbji")
 
 [node name="Character" parent="." instance=ExtResource("1_aq2pl")]
-position = Vector2(-400, 250)
+position = Vector2(-420, 254)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
