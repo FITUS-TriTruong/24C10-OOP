@@ -1,10 +1,9 @@
 [gd_scene load_steps=41 format=4 uid="uid://8x5dtrf1ank4"]
 
-[ext_resource type="Script" uid="uid://bnbpso01yxc7d" path="res://Scripts/Items/fall_dmg.gd" id="1_ibpph"]
-[ext_resource type="Texture2D" uid="uid://ddw6cgyia3bo8" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
+[ext_resource type="Texture2D" uid="uid://byw4n4vm1ya2f" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
-[ext_resource type="Texture2D" uid="uid://6grsoh7aoexj" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
-[ext_resource type="Texture2D" uid="uid://bl84b2n5mc8ho" path="res://icon.svg" id="5_ham6c"]
+[ext_resource type="Texture2D" uid="uid://xjarb087q1rr" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="Texture2D" uid="uid://bp0ocee7vphme" path="res://icon.svg" id="5_ham6c"]
 [ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/Lamp.tscn" id="6_gtngy"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="8_dhhav"]
@@ -15,6 +14,32 @@
 [ext_resource type="PackedScene" uid="uid://boue3o78rvtjq" path="res://Class/fallDmg.tscn" id="14_b2uls"]
 [ext_resource type="PackedScene" uid="uid://dwb5f0j5ke7bi" path="res://Class/energyWarn.tscn" id="14_gtngy"]
 [ext_resource type="PackedScene" uid="uid://cwxs28s1ouav" path="res://Class/door1.tscn" id="16_bufok"]
+
+[sub_resource type="GDScript" id="GDScript_ibpph"]
+script/source = "extends StageTemplate
+
+var current_level_number = 1 
+
+func _ready() -> void:
+	# Set stage properties
+	stage_name = \"Stage 1\"
+	next_stage_path = \"res://Class/Stage_2.tscn\"
+	previous_stage_path = \"\"  # No previous stage for Stage 1
+	
+	# Call the parent's _ready function
+	super._ready()
+
+func stage_ready() -> void:
+	# Stage 1 specific initialization
+	print(\"Stage 1 loaded successfully!\")
+
+# Override transition events if needed
+func on_next_level_entered(body: CharacterBody2D) -> void:
+	print(\"Player entered the exit area of Stage 1\")
+
+func on_next_level_exited(body: CharacterBody2D) -> void:
+	print(\"Player left the exit area of Stage 1\")
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74wb8"]
 size = Vector2(6, 7)
@@ -7799,7 +7824,7 @@ size = Vector2(79, 14)
 
 [node name="Game" type="Node2D"]
 position = Vector2(580, 330)
-script = ExtResource("1_ibpph")
+script = SubResource("GDScript_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true

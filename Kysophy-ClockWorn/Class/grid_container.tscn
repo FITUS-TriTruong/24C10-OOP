@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://26akd4o0mes6"]
+
+[ext_resource type="PackedScene" uid="uid://doahvsqchabtg" path="res://Class/level_button.tscn" id="1_hauu7"]
+
+[node name="GridContainer" type="GridContainer"]
+custom_minimum_size = Vector2(387, 160)
+offset_right = 387.0
+offset_bottom = 160.0
+columns = 2
+
+[node name="LevelButton" parent="." instance=ExtResource("1_hauu7")]
+layout_mode = 2
+
+[node name="LevelButton2" parent="." instance=ExtResource("1_hauu7")]
+layout_mode = 2

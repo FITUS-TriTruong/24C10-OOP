@@ -1,17 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://ubnmu2h50p58"]
 
 [ext_resource type="Script" uid="uid://c5ji72xv4vg0d" path="res://UI/Scripts/main_menu.gd" id="1_670pd"]
-[ext_resource type="Texture2D" uid="uid://ccc2jurysta52" path="res://Assets/UI/menu_img.png" id="2_pfng4"]
-[ext_resource type="FontFile" uid="uid://cfhq430ucrp5w" path="res://Assets/Font/GrapeSoda.ttf" id="3_rfn2e"]
-[ext_resource type="Texture2D" uid="uid://bqkn77qkrx6f4" path="res://Assets/UI/ClockWorn.png" id="4_rfn2e"]
+[ext_resource type="Texture2D" uid="uid://dixj5862ypxp5" path="res://Assets/UI/menu_img.png" id="2_pfng4"]
+[ext_resource type="FontFile" uid="uid://bi0b0jtj6u31v" path="res://Assets/Font/GrapeSoda.ttf" id="3_rfn2e"]
+[ext_resource type="Texture2D" uid="uid://cts74o555boej" path="res://Assets/UI/ClockWorn.png" id="4_rfn2e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6syg"]
 texture = ExtResource("2_pfng4")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b37jj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6syg"]
-bg_color = Color(0.894922, 0.894922, 0.894923, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b37jj"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -26,13 +24,15 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b37jj"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6syg"]
+bg_color = Color(0.894922, 0.894922, 0.894923, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b37jj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfn2e"]
 texture = ExtResource("4_rfn2e")
@@ -73,46 +73,46 @@ theme_override_constants/separation = 8
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
 text = "PLAY"
 
 [node name="OptionButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
 text = "OPTION"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
 text = "QUIT
 "
 

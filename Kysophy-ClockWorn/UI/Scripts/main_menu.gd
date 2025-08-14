@@ -12,10 +12,10 @@ func _process(delta: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	print("Start button pressed.")
-	get_tree().change_scene_to_file("res://Class/Stage_1.tscn")
+	get_tree().change_scene_to_file("res://Class/level_select.tscn")
 
 func _on_option_button_pressed() -> void:
-	print("Option butotn pressed.")
+	print("Option button pressed.")
 
 
 func _on_quit_button_pressed() -> void:
