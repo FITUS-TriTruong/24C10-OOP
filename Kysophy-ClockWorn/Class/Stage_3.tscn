@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bq72h3oetptpx"]
+[gd_scene load_steps=24 format=4 uid="uid://bq72h3oetptpx"]
 
 [ext_resource type="Texture2D" uid="uid://lxq3cvbdvdsw" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
 [ext_resource type="Texture2D" uid="uid://b2lk2vtuq4027" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dg8xsxc6ary68" path="res://Assets/Environments/sci-fi-environment-background-files/PNG/sci-fi-environment-tileset.png" id="6_a2eh7"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="6_cw2t4"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="7_a2eh7"]
+[ext_resource type="PackedScene" uid="uid://bs36tdhu6d4pc" path="res://Class/memory0.tscn" id="10_hlng1"]
+[ext_resource type="PackedScene" uid="uid://w8b0j0qgvlew" path="res://Class/memory1.tscn" id="11_1p7nd"]
+[ext_resource type="PackedScene" uid="uid://52c6rxfslxdi" path="res://Class/memory2.tscn" id="12_kp5m6"]
+[ext_resource type="PackedScene" uid="uid://dcc6cbjt0n3y1" path="res://Class/memory3.tscn" id="13_g0keq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vba5r"]
 texture = ExtResource("1_50uq0")
@@ -2601,8 +2605,20 @@ tile_set = SubResource("TileSet_kp5m6")
 [node name="TileMapLayer9" type="TileMapLayer" parent="p1"]
 tile_set = SubResource("TileSet_kp5m6")
 
+[node name="mem0" parent="." instance=ExtResource("10_hlng1")]
+position = Vector2(1083, 476)
+
+[node name="mem1" parent="." instance=ExtResource("11_1p7nd")]
+position = Vector2(263, 95)
+
+[node name="mem2" parent="." instance=ExtResource("12_kp5m6")]
+position = Vector2(568, 465)
+
+[node name="mem3" parent="." instance=ExtResource("13_g0keq")]
+position = Vector2(926, 100)
+
 [node name="Character" parent="." instance=ExtResource("6_cw2t4")]
-position = Vector2(25, 421)
+position = Vector2(589, 478)
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 position = Vector2(2, -14)
@@ -2615,7 +2631,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="TileMapLayer14" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AABFABwABgAQAAUAAABFAB0ABgAQAAYAAABFAB4ABgAQAAcAAABFAB8ABgAQAAgAAAA=")
+tile_map_data = PackedByteArray("AABFABwABgAQAAUAAABFAB0ABgAQAAYAAABFAB4ABgAQAAcAAABFAB8ABgAQAAgAAABGABsABgATAAQAAABGABwABgATAAUAAABGAB0ABgATAAYAAABGAB4ABgAOAAcAAABGAB8ABgAOAAgAAABHABsABgAUAAQAAABHABwABgAUAAUAAABHAB0ABgAUAAYAAABHAB4ABgAUAAcAAABHAB8ABgAUAAgAAABIABsABgAVAAQAAABIABwABgAVAAUAAABIAB0ABgAVAAYAAABIAB4ABgAVAAcAAABIAB8ABgAVAAgAAABJABsABgAWAAQAAABJABwABgAWAAUAAABJAB0ABgAWAAYAAAA=")
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="Camera2D" type="Camera2D" parent="."]

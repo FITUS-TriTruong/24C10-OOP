@@ -4,6 +4,15 @@ const SAVE_PATH = "user://progress.dat"
 
 var found_key = false
 var given_key = false
+var memory0 = false
+var memory1 = false
+var memory2 = false
+var memory3 = false
+var memory4 = false
+var memory5 = false
+var memory6 = false
+var memory7 = false
+var memory8 = false
 
 var game_data = {
 	"unlocked_level": 1

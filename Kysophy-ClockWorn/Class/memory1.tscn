@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://w8b0j0qgvlew"]
+[gd_scene load_steps=10 format=3 uid="uid://w8b0j0qgvlew"]
 
 [ext_resource type="Texture2D" uid="uid://bxp3biljx2u2l" path="res://Assets/Particle FX 1.3 Free/Spritesheets/Poison Cloud-Sheet.png" id="1_wfj6t"]
+[ext_resource type="Script" uid="uid://c05d3b30cx785" path="res://Scripts/memories/memory_1.gd" id="1_yraub"]
 [ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="2_yraub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j13wn"]
@@ -39,7 +40,11 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yraub"]
+radius = 36.4006
+
 [node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_yraub")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 2)
@@ -50,3 +55,5 @@ frame_progress = 0.402978
 [node name="InteractionArea" parent="." instance=ExtResource("2_yraub")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, 20)
+shape = SubResource("CircleShape2D_yraub")

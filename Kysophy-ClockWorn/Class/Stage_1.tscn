@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="9_63rak"]
 [ext_resource type="PackedScene" uid="uid://c5a1hpn5e7vuq" path="res://Class/Note.tscn" id="10_21hh7"]
 [ext_resource type="PackedScene" uid="uid://odmx85xg4rnk" path="res://Class/door2.tscn" id="11_4iars"]
-[ext_resource type="PackedScene" uid="uid://dr2qx8cwhqjt6" path="res://Class/key.tscn" id="12_t47l4"]
 [ext_resource type="PackedScene" uid="uid://boue3o78rvtjq" path="res://Class/fallDmg.tscn" id="14_b2uls"]
 [ext_resource type="PackedScene" uid="uid://dwb5f0j5ke7bi" path="res://Class/energyWarn.tscn" id="14_gtngy"]
+[ext_resource type="PackedScene" uid="uid://wi5ku4bgt7o6" path="res://Class/memory8.tscn" id="15_gtngy"]
 [ext_resource type="PackedScene" uid="uid://cwxs28s1ouav" path="res://Class/door1.tscn" id="16_bufok"]
 
 [sub_resource type="GDScript" id="GDScript_ibpph"]
@@ -7828,7 +7828,7 @@ script = SubResource("GDScript_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(850, 590)
+position = Vector2(263, 473)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -8105,10 +8105,6 @@ position = Vector2(133, 236)
 [node name="Door2" parent="." instance=ExtResource("11_4iars")]
 position = Vector2(197, 252)
 
-[node name="Key" parent="." instance=ExtResource("12_t47l4")]
-visible = false
-position = Vector2(227, 228)
-
 [node name="Note" parent="." instance=ExtResource("10_21hh7")]
 position = Vector2(69, 236)
 
@@ -8117,6 +8113,9 @@ position = Vector2(-363, 252)
 
 [node name="fallWarn" parent="." instance=ExtResource("14_b2uls")]
 position = Vector2(-187, 220)
+
+[node name="mem8" parent="." instance=ExtResource("15_gtngy")]
+position = Vector2(-389, 133)
 
 [node name="next_level" type="Area2D" parent="."]
 position = Vector2(471, 124)

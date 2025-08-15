@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://wi5ku4bgt7o6"]
+
+[ext_resource type="Script" uid="uid://uu7g0s8gxsau" path="res://Scripts/memories/memory_8.gd" id="1_g1cws"]
+[ext_resource type="Texture2D" uid="uid://b1qtu5x3xdo7f" path="res://Assets/Particle FX 1.3 Free/Spritesheets/Sakuras.png" id="1_i5r1q"]
+[ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="2_g1cws"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_760s0"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axsq3"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc2e0"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27lnk"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1do63"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pcmm"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6bct"]
+atlas = ExtResource("1_i5r1q")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5ue2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_760s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axsq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc2e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27lnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1do63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pcmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6bct")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhh3o"]
+radius = 63.0714
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_g1cws")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s5ue2")
+frame = 6
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_g1cws")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_fhh3o")
