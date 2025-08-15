@@ -7813,7 +7813,7 @@ b = Vector2(1, 173)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t47l4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21hh7"]
-size = Vector2(17, 27)
+size = Vector2(17, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iars"]
 size = Vector2(237, 41)
@@ -8065,14 +8065,14 @@ lock_rotation = true
 linear_damp = 2.04
 
 [node name="Sprite2D" type="Sprite2D" parent="PushableObject"]
-position = Vector2(0.5, -1.75)
-scale = Vector2(1.0625, 1.15217)
+position = Vector2(0.5, -1.99998)
+scale = Vector2(1.0625, 1.13043)
 texture = ExtResource("1_kmgqk")
 region_enabled = true
 region_rect = Rect2(463.924, 552.777, 16.0876, 23.23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushableObject"]
-position = Vector2(0.5, -1.5)
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_21hh7")
 
 [node name="HitboxesForRigid" type="StaticBody2D" parent="."]
