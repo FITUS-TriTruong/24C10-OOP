@@ -5,8 +5,9 @@ var rest_point
 var rest_nodes = []
 
 @onready var sprite = $Sprite2D
-var max_drag_distance := 150
-var mouse_detecttion_Range := 50
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+var max_drag_distance := 80
+var mouse_detecttion_Range := 20
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("Zone")
@@ -41,8 +42,11 @@ func _input(event):
 				# Only allow selecting when mouse is close
 				if global_position.distance_to(get_global_mouse_position()) < mouse_detecttion_Range:
 					selected = true
+					collision_shape_2d.disabled = true
 			else:
 				selected = false
+				collision_shape_2d.disabled = false
+				
 				var shortest_dist = 10
 				for child in rest_nodes:
 					var dist = global_position.distance_to(child.global_position)

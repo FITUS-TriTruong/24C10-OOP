@@ -1,12 +1,14 @@
 extends Marker2D
 
 func _draw():
-	draw_circle(Vector2.ZERO, 7, Color.BLANCHED_ALMOND)
+	#draw_circle(Vector2.ZERO, 7, Color.BLANCHED_ALMOND)
+	pass
 	
 func select():
 	for child in get_tree().get_nodes_in_group("Zone"):
 		child.deselect()
-	modulate = Color.WEB_MAROON
+	#modulate = Color.WEB_MAROON
 	
 func deselect():
-	modulate = Color.WHITE
+	#modulate = Color.WHITE
+	pass

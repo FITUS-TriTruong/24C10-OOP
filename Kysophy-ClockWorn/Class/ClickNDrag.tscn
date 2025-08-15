@@ -1,21 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b14d8pfh86j65"]
+[gd_scene load_steps=4 format=3 uid="uid://b14d8pfh86j65"]
 
 [ext_resource type="Script" uid="uid://dnvsa6j61tf4q" path="res://Scripts/click_n_drag.gd" id="1_25umk"]
-[ext_resource type="Texture2D" uid="uid://dkt4ij70dnryg" path="res://icon.svg" id="2_815kx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmfwo"]
-size = Vector2(24, 24)
+size = Vector2(24, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25umk"]
-size = Vector2(120, 120)
+size = Vector2(120, 80)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_25umk")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 60
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_815kx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 70
@@ -27,5 +21,6 @@ scale = Vector2(0.2, 0.2)
 gravity_space_override = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-9.53674e-06, -7.15256e-06)
+position = Vector2(-2.68221e-06, 1.04308e-06)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_25umk")
