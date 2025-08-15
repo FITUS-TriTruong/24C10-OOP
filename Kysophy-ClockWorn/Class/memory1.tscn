@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://w8b0j0qgvlew"]
+
+[ext_resource type="Texture2D" uid="uid://bxp3biljx2u2l" path="res://Assets/Particle FX 1.3 Free/Spritesheets/Poison Cloud-Sheet.png" id="1_wfj6t"]
+[ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="2_yraub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j13wn"]
+atlas = ExtResource("1_wfj6t")
+region = Rect2(0, 0, 144, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g44qa"]
+atlas = ExtResource("1_wfj6t")
+region = Rect2(144, 0, 144, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bmsf"]
+atlas = ExtResource("1_wfj6t")
+region = Rect2(288, 0, 144, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8of3f"]
+atlas = ExtResource("1_wfj6t")
+region = Rect2(432, 0, 144, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0his2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j13wn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g44qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bmsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8of3f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 2)
+scale = Vector2(0.5, 0.546791)
+sprite_frames = SubResource("SpriteFrames_0his2")
+frame_progress = 0.402978
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_yraub")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
