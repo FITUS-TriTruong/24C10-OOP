@@ -1,10 +1,13 @@
-[gd_scene load_steps=23 format=4 uid="uid://5r6ebhmrlxig"]
+[gd_scene load_steps=26 format=4 uid="uid://5r6ebhmrlxig"]
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
-[ext_resource type="Texture2D" uid="uid://byw4n4vm1ya2f" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
-[ext_resource type="Texture2D" uid="uid://xjarb087q1rr" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
+[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
+[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="5_kq63o"]
+[ext_resource type="PackedScene" uid="uid://d1bndlhdsml0m" path="res://Class/indoorNote.tscn" id="6_nnto4"]
+[ext_resource type="PackedScene" uid="uid://dj7qcxscseld" path="res://Class/warnStage2.tscn" id="7_nqqtr"]
+[ext_resource type="PackedScene" uid="uid://b86vk0o5nup3x" path="res://Class/book.tscn" id="7_nsl3p"]
 [ext_resource type="PackedScene" uid="uid://dr2qx8cwhqjt6" path="res://Class/key.tscn" id="8_iiyir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lubu"]
@@ -6262,6 +6265,18 @@ tile_set = SubResource("TileSet_mrbji")
 tile_map_data = PackedByteArray("AAD8/wUAAAADAAgAAAD9/wUAAAADAAgAAAAGAAUAAAADAAgAAAAIAAUAAAADAAgAAAD5/wUAAAADAAgAAAD+/wUAAAAEAAgAAAAAAAUAAAAEAAgAAAAFAAUAAAAEAAgAAAAJAAUAAAAEAAgAAAAKAAUAAAAEAAgAAAAHAAUAAAADAAcAAAD//wUAAAADAAcAAAABAAUAAAADAAcAAAD6/wUAAAABAAcAAAD7/wUAAAAEAAgAAAALAAUAAAACAAgAAAAMAAQAAAABAAcAAAD//wYAAAADAAgAAAABAAYAAAADAAgAAAD8/wYAAAAEAAgAAAD9/wYAAAAEAAgAAAD5/wYAAAAEAAgAAAAGAAYAAAAEAAgAAAAIAAYAAAAEAAgAAAAHAAYAAAADAAgAAAA=")
 tile_set = SubResource("TileSet_mrbji")
 
+[node name="StaticBody2D" parent="." instance=ExtResource("8_iiyir")]
+position = Vector2(-394, 250)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_nqqtr")]
+position = Vector2(395, 70)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("6_nnto4")]
+position = Vector2(-254, 247)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("7_nsl3p")]
+position = Vector2(-381, 182)
+
 [node name="Character" parent="." instance=ExtResource("1_aq2pl")]
 position = Vector2(-420, 254)
 collision_layer = 2
@@ -6316,9 +6331,6 @@ position = Vector2(554, 265)
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_kq63o")]
 visible = false
-
-[node name="StaticBody2D" parent="." instance=ExtResource("8_iiyir")]
-position = Vector2(-347, 238)
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]
