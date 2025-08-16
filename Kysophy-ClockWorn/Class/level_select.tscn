@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi4qkupp86sb0"]
+[gd_scene load_steps=12 format=3 uid="uid://bi4qkupp86sb0"]
 
 [ext_resource type="Script" uid="uid://ccosihpfv75oh" path="res://Class/level_select.gd" id="1_7qvd8"]
 [ext_resource type="Texture2D" uid="uid://dixj5862ypxp5" path="res://Assets/UI/menu_img.png" id="1_ip06w"]
 [ext_resource type="Texture2D" uid="uid://bh74lwgq7k6a" path="res://Assets/UI/9faade10-8081-4c09-a861-e9a73dadb13a.jpg" id="2_7qvd8"]
+[ext_resource type="Texture2D" uid="uid://r67dopqro6gh" path="res://Assets/f3951929-64e8-4f08-b68d-d51b553ccf6e.jpg" id="3_7qvd8"]
 [ext_resource type="Texture2D" uid="uid://cts74o555boej" path="res://Assets/UI/ClockWorn.png" id="3_cab3y"]
 [ext_resource type="PackedScene" uid="uid://26akd4o0mes6" path="res://Class/grid_container.tscn" id="5_ve2ya"]
 
@@ -41,6 +42,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ip06w")
 expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 36.0
+offset_right = 1115.0
+offset_bottom = 111.0
+texture_normal = ExtResource("3_7qvd8")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="LevelMenu" type="TextureRect" parent="."]
 layout_mode = 1
@@ -122,5 +133,6 @@ texture_normal = SubResource("AtlasTexture_xcrjd")
 ignore_texture_size = true
 stretch_mode = 5
 
+[connection signal="pressed" from="Background/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="LevelMenu/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="LevelMenu/NextButton" to="." method="_on_next_button_pressed"]
