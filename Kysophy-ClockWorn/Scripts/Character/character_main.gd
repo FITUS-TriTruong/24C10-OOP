@@ -104,7 +104,21 @@ func _on_health_changed(new_health: int) -> void:
 	health_changed.emit(new_health)
 
 func _on_died() -> void:
+	"""Handle character death signal"""
+	# Save current stamina before death
+	if stamina_system and stamina_system.has_method("save_current_stamina"):
+		stamina_system.save_current_stamina()
+	
+	# Emit died signal for other systems
 	died.emit()
+	get_tree().change_scene_to_file("res://UI/Class/death_screen.tscn")
+
+func respawn() -> void:
+	"""Handle character respawn after death"""
+	# Save current stamina before respawning
+	if stamina_system and stamina_system.has_method("save_current_stamina"):
+		stamina_system.save_current_stamina()
+	
 	get_tree().change_scene_to_file("res://Class/level_select.tscn")
 
 func _on_interaction_performed(interaction_type: String) -> void:

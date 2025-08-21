@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcwjubvwxtqun"]
+
+[ext_resource type="PackedScene" uid="uid://bd0worp5ywqtv" path="res://UI/Class/Settings/display_session.tscn" id="1_yxp60"]
+[ext_resource type="Script" uid="uid://ca7jetjdcjuds" path="res://UI/Scripts/window_mode.gd" id="2_knfnw"]
+
+[node name="Control" instance=ExtResource("1_yxp60")]
+script = ExtResource("2_knfnw")
+
+[node name="HBoxContainer" parent="." index="0"]
+offset_right = 774.0
+offset_bottom = 64.0
+
+[node name="Label" parent="HBoxContainer" index="0"]
+custom_minimum_size = Vector2(400, 30)
+text = "Window Mode"

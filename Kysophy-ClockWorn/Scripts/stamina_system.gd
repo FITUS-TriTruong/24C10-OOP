@@ -8,9 +8,17 @@ extends Node2D
 var current_stamina: float
 var exhausted: bool = false
 var time_since_use: float = 0.0
+var last_saved_stamina: float = 0.0  # Track when we last saved
 
 func _ready():
-	current_stamina = max_stamina
+	# Load stamina from Global save data
+	if Global:
+		current_stamina = Global.get_saved_stamina()
+		print("Loaded stamina from save: %.1f" % current_stamina)
+	else:
+		current_stamina = max_stamina
+	
+	last_saved_stamina = current_stamina
 
 func _process(delta):
 	if current_stamina < max_stamina:
@@ -21,6 +29,16 @@ func _process(delta):
 
 	if exhausted and current_stamina >= max_stamina * 0.2:
 		exhausted = false
+	
+	# Save stamina periodically if it has changed significantly
+	_auto_save_stamina()
+
+func _auto_save_stamina():
+	# Save stamina if it has changed by more than 10 points or every few seconds
+	if abs(current_stamina - last_saved_stamina) >= 10.0:
+		if Global:
+			Global.update_stamina(current_stamina)
+			last_saved_stamina = current_stamina
 
 func use_stamina(amount: float) -> bool:
 	if exhausted:
@@ -38,3 +56,18 @@ func use_stamina(amount: float) -> bool:
 
 func get_stamina_percent() -> float:
 	return current_stamina / max_stamina
+
+# === PERSISTENCE FUNCTIONS ===
+func save_current_stamina():
+	"""Manually save the current stamina - call this when changing stages"""
+	if Global:
+		Global.save_stamina(current_stamina)
+		last_saved_stamina = current_stamina
+
+func set_stamina(amount: float):
+	"""Set stamina to a specific amount (useful for power-ups or stage events)"""
+	current_stamina = clamp(amount, 0.0, max_stamina)
+	if current_stamina <= 0:
+		exhausted = true
+	elif current_stamina >= max_stamina * 0.2:
+		exhausted = false

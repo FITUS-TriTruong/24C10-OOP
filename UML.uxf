@@ -1,0 +1,352 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>732</x><y>0</y><w>252</w><h>186</h></coordinates><panel_attributes>Character
+--
+COMPONENT PATTERN
+--
+-fall_damage_enabled: bool
+-movement_controller: CharacterMovement
+-animation_controller: CharacterAnimationController
+-health_controller: CharacterHealth
+-interaction_controller: CharacterInteraction
+-animated_sprite: AnimatedSprite2D
+-stamina_system: Node2D
+-progress_bar: ProgressBar
+--
++_ready(): void
++_setup_components(): void
++_connect_signals(): void
++_physics_process(delta: float): void
+--
+ENCAPSULATION: Private fields (_)
+COMPOSITION: Contains components</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>252</y><w>222</w><h>162</h></coordinates><panel_attributes>CharacterMovement
+--
+Component
+--
+-_character: CharacterBody2D
+-_current_speed: float
+-_direction: float
+-_facing_right: bool
+-_is_sitting: bool
+-_is_action: bool
+-_is_pushing: bool
+-_push_cooldown_timer: float
+-_current_state: CharacterState.State
+-_on_ladder: bool
+-stamina_system: Node2D
+--
++initialize(character, stamina_ref): void
++handle_movement(delta: float): void
++handle_input(): void
++update_state(): void
++get_direction(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>252</y><w>240</w><h>120</h></coordinates><panel_attributes>CharacterAnimationController
+--
+Component
+--
+-animated_sprite: AnimatedSprite2D
+-movement_controller: CharacterMovement
+--
++initialize(sprite, movement): void
++update_animations(): void
++play_state_animation(state: State): void
++_on_animation_finished(): void
+--
+POLYMORPHISM: State-based behavior</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>822</x><y>252</y><w>240</w><h>120</h></coordinates><panel_attributes>CharacterHealth
+--
+Component
+--
+-_character: CharacterBody2D
+-_is_alive: bool
+-_ground_height: float
+-_was_on_floor_last_frame: bool
+-fall_damage_enabled: bool
+-animation_controller: CharacterAnimationController
+--
++initialize(character, anim_controller): void
++handle_fall_damage(): void
++track_fall_height(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1110</x><y>252</y><w>240</w><h>144</h></coordinates><panel_attributes>CharacterInteraction
+--
+Component
+--
+-_character: CharacterBody2D
+-_tree_in_range: bool
+-_leaf_item_in_range: bool
+-stamina_system: Node2D
+-movement_controller: CharacterMovement
+--
++initialize(character, stamina_ref, movement): void
++handle_input(): void
++_interact_with_leaf_item(): void
++_can_perform_action(cost: float): bool
++_on_area_2d_body_entered(body): void
++_on_area_2d_body_exited(body): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>6</y><w>168</w><h>186</h></coordinates><panel_attributes>CharacterState
+--
+enumeration
+STATE PATTERN
+--
+IDLE
+WALKING
+RUNNING
+JUMPING
+SITTING
+ATTACKING
+KICKING
+PUSHING
+PULLING
+ON_LADDER
+DEAD
+--
+States define character behavior</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>492</x><y>6</y><w>186</w><h>168</h></coordinates><panel_attributes>CharacterConstants
+--
+constants
+--
++WALK_SPEED: float = 150.0
++RUN_SPEED: float = 250.0
++JUMP_VELOCITY: float = -300.0
++PUSH_SPEED: float = 50.0
++PULL_SPEED: float = 50.0
++PUSH_COOLDOWN: float = 2.0
++FALL_DAMAGE_HEIGHT: float = 200.0
++FALL_DAMAGE_AMOUNT: int = 10
+--
+Defines game constants</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>468</y><w>270</w><h>204</h></coordinates><panel_attributes>StageTemplate
+--
+abstract
+TEMPLATE METHOD PATTERN
+--
+#stage_num: int
+#current_stage: Node2D
+#character: CharacterBody2D
+#energy_warning: Control
+#memory_collectable: Area2D
+#other_collectables: Array
+#completed: bool
+--
++_ready(): void [final]
++stage_ready(): void [abstract]
++stage_process(delta: float): void [abstract]
++_physics_process(delta: float): void [final]
++change_scene(path: String): void
++memory_collected(): void
++complete_stage(): void
+--
+INHERITANCE: Template defines workflow
+ABSTRACTION: Subclasses implement specifics</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>582</x><y>468</y><w>210</w><h>144</h></coordinates><panel_attributes>StageManager
+--
+SINGLETON PATTERN
+--
+-instance: StageManager
+-current_stage: int
+-total_stages: int
+-stage_completion_data: Dictionary
+--
++get_instance(): StageManager
++load_stage(stage_num: int): void
++complete_stage(stage_num: int): void
++is_stage_unlocked(stage_num: int): bool
++get_completion_percentage(): float
+--
+SINGLETON: Only one instance exists</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>468</y><w>240</w><h>180</h></coordinates><panel_attributes>StaminaSystem
+--
+OBSERVER PATTERN
+--
+-current_stamina: float
+-max_stamina: float
+-stamina_regen_rate: float
+-stamina_drain_rate: float
+-is_regenerating: bool
+-observers: Array[Node]
+--
++add_observer(observer: Node): void
++remove_observer(observer: Node): void
++notify_observers(): void
++consume_stamina(amount: float): bool
++regenerate_stamina(delta: float): void
++get_stamina_percentage(): float
++is_exhausted(): bool
+--
+OBSERVER: Notifies UI of stamina changes</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1140</x><y>468</y><w>210</w><h>162</h></coordinates><panel_attributes>Global
+--
+SINGLETON PATTERN
+--
+-instance: Global
+-game_data: Dictionary
+-current_level: int
+-total_levels_unlocked: int
+-player_progress: Dictionary
+-game_settings: Dictionary
+--
++get_instance(): Global
++save_game(): void
++load_game(): void
++unlock_level(level: int): void
++is_level_unlocked(level: int): bool
++set_setting(key: String, value): void
++get_setting(key: String): Variant
+--
+SINGLETON: Global game state management</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>726</y><w>186</w><h>108</h></coordinates><panel_attributes>InteractiveObject
+--
+abstract
+--
+#interaction_prompt: String
+#is_interactable: bool
+#interaction_area: Area2D
+--
++_ready(): void
++interact(): void [abstract]
++show_prompt(): void
++hide_prompt(): void
++_on_body_entered(body): void
++_on_body_exited(body): void
+--
+INHERITANCE: Base for all interactive objects</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>612</x><y>798</y><w>126</w><h>72</h></coordinates><panel_attributes>Memory
+--
+concrete
+--
+-memory_id: int
+-is_collected: bool
+--
++interact(): void
++collect(): void
+--
+Inherits from InteractiveObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>636</x><y>678</y><w>102</w><h>60</h></coordinates><panel_attributes>Key
+--
+concrete
+--
+-key_id: String
+--
++interact(): void
++use_key(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>804</x><y>678</y><w>102</w><h>60</h></coordinates><panel_attributes>Note
+--
+concrete
+--
+-note_content: String
+--
++interact(): void
++read_note(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>966</x><y>678</y><w>102</w><h>60</h></coordinates><panel_attributes>Lamp
+--
+concrete
+--
+-is_lit: bool
+--
++interact(): void
++toggle_light(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>804</x><y>798</y><w>102</w><h>60</h></coordinates><panel_attributes>Door
+--
+concrete
+--
+-is_locked: bool
+--
++interact(): void
++unlock(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>966</x><y>798</y><w>102</w><h>60</h></coordinates><panel_attributes>Book
+--
+concrete
+--
+-book_content: String
+--
++interact(): void
++read_book(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>138</x><y>888</y><w>168</w><h>90</h></coordinates><panel_attributes>UIController
+--
+abstract
+--
+#ui_elements: Array[Control]
+#is_visible: bool
+--
++show(): void [abstract]
++hide(): void [abstract]
++update_ui(): void [abstract]
++handle_input(event): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>1038</y><w>126</w><h>90</h></coordinates><panel_attributes>MainMenu
+--
+-start_button: Button
+-options_button: Button
+-quit_button: Button
+--
++show(): void
++hide(): void
++update_ui(): void
++_on_start_pressed(): void
++_on_options_pressed(): void
++_on_quit_pressed(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>138</x><y>1164</y><w>168</w><h>108</h></coordinates><panel_attributes>LevelSelect
+--
+-level_buttons: Array[Button]
+-back_button: Button
+-level_data: Array[Dictionary]
+--
++show(): void
++hide(): void
++update_ui(): void
++populate_levels(): void
++_on_level_selected(level: int): void
++update_level_status(): void
++_on_back_pressed(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>462</x><y>1176</y><w>126</w><h>72</h></coordinates><panel_attributes>OptionsMenu
+--
+-volume_slider: HSlider
+-fullscreen_toggle: CheckBox
+--
++show(): void
++hide(): void
++update_ui(): void
++apply_settings(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>462</x><y>1044</y><w>126</w><h>72</h></coordinates><panel_attributes>PauseMenu
+--
+-resume_button: Button
+-options_button: Button
+-quit_button: Button
+--
++show(): void
++hide(): void
++update_ui(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>264</x><y>1290</y><w>384</w><h>168</h></coordinates><panel_attributes>OOP PRINCIPLES DEMONSTRATED:
+
+1. ENCAPSULATION
+   - Private fields with underscore prefix
+   - Public methods for controlled access
+   - Data hiding in component classes
+
+2. INHERITANCE
+   - StageTemplate as abstract base class
+   - InteractiveObject hierarchy
+   - UIController inheritance
+
+3. POLYMORPHISM
+   - Virtual methods in base classes
+   - State-based behavior in animations
+   - Interface implementations
+
+4. ABSTRACTION
+   - Abstract classes define contracts
+   - Implementation details hidden
+   - High-level interfaces</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>678</x><y>1290</y><w>384</w><h>168</h></coordinates><panel_attributes>DESIGN PATTERNS IMPLEMENTED:
+
+1. COMPONENT PATTERN
+   - Character composed of separate components
+   - Modular, reusable functionality
+
+2. TEMPLATE METHOD PATTERN
+   - StageTemplate defines algorithm structure
+   - Subclasses implement specific steps
+
+3. SINGLETON PATTERN
+   - Global game state management
+   - StageManager instance control
+
+4. OBSERVER PATTERN
+   - StaminaSystem notifies UI observers
+   - Event-driven architecture
+
+5. STATE PATTERN
+   - CharacterState enumeration
+   - Behavior changes based on state</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1092</x><y>1290</y><w>252</w><h>168</h></coordinates><panel_attributes>VISUAL INDICATORS:
+
+Component Classes:
+- Character system components
+
+Template Classes:
+- Abstract base classes
+
+Singleton Classes:
+- Single instance managers
+
+Interactive Objects:
+- Game world interactions
+
+UI Controllers:
+- User interface management
+
+Enumerations:
+- State and constant definitions</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>216</y><w>294</w><h>48</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;60;10;10;470;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>216</y><w>210</w><h>48</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;60;10;10;330;10</additional_attributes></element><element><id>Relation</id><coordinates><x>924</x><y>216</y><w>18</w><h>48</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>852</x><y>180</y><w>378</w><h>84</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>610;120;610;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>834</y><w>96</w><h>108</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>140;10;140;160;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>828</y><w>96</w><h>264</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>140;10;140;420;10;420</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>828</y><w>96</w><h>396</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>140;10;140;640;10;640</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>828</y><w>96</w><h>396</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;640;140;640</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>834</y><w>96</w><h>258</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;410;140;410</additional_attributes></element><element><id>Relation</id><coordinates><x>852</x><y>732</y><w>18</w><h>78</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>756</y><w>204</w><h>18</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;320;10</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>756</y><w>336</w><h>18</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;540;10</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>756</y><w>462</w><h>18</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;750;10</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>756</y><w>570</w><h>18</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;930;10</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>756</y><w>570</w><h>18</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;930;10</additional_attributes></element><element><id>Relation</id><coordinates><x>684</x><y>732</y><w>18</w><h>78</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>1014</x><y>732</y><w>18</w><h>78</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>342</x><y>168</y><w>252</w><h>66</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;40;10;90;400;90;400;10</additional_attributes></element></diagram>

@@ -5,6 +5,5 @@ extends Control
 func _on_resume_pressed() -> void:
 	main.pauseMenu()
 
-
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://UI/Class/main_menu.tscn")

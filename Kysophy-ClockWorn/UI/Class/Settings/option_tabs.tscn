@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://3it3dpypgpc6"]
+
+[ext_resource type="PackedScene" uid="uid://cykge75gjj540" path="res://UI/Class/Settings/rebind_session.tscn" id="1_gkpdu"]
+[ext_resource type="Script" uid="uid://b0ppq8m4hw4gq" path="res://UI/Scripts/option_tabs.gd" id="1_ydrdh"]
+[ext_resource type="PackedScene" uid="uid://dcwjubvwxtqun" path="res://UI/Class/Settings/window_mode.tscn" id="2_8vj8d"]
+[ext_resource type="PackedScene" uid="uid://bq8chde811e4v" path="res://UI/Class/Settings/resolution_mode.tscn" id="3_gtqr1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydrdh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cimqh"]
+
+[node name="OptionTabs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ydrdh")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 70.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+
+[node name="Graphics" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 80
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Graphics/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ydrdh")
+
+[node name="Window_mode" parent="TabContainer/Graphics/ScrollContainer/VBoxContainer" instance=ExtResource("2_8vj8d")]
+layout_mode = 2
+
+[node name="Resolution_mode" parent="TabContainer/Graphics/ScrollContainer/VBoxContainer" instance=ExtResource("3_gtqr1")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Graphics/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cimqh")
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ydrdh")
+
+[node name="Move_left_rebind" parent="TabContainer/Controls/ScrollContainer/VBoxContainer" instance=ExtResource("1_gkpdu")]
+layout_mode = 2
+action_name = "Move_left"
+
+[node name="Move_right_rebind" parent="TabContainer/Controls/ScrollContainer/VBoxContainer" instance=ExtResource("1_gkpdu")]
+layout_mode = 2
+action_name = "Move_right"
+
+[node name="Jump_rebind" parent="TabContainer/Controls/ScrollContainer/VBoxContainer" instance=ExtResource("1_gkpdu")]
+layout_mode = 2
+action_name = "Jump"
+
+[node name="Shift_rebind" parent="TabContainer/Controls/ScrollContainer/VBoxContainer" instance=ExtResource("1_gkpdu")]
+layout_mode = 2
+action_name = "Shift"
+
+[node name="Interaction_rebind" parent="TabContainer/Controls/ScrollContainer/VBoxContainer" instance=ExtResource("1_gkpdu")]
+layout_mode = 2
+action_name = "Interaction"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cimqh")
+
+[node name="Accessibility" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2

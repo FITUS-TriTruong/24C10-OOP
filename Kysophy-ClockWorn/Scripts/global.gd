@@ -15,7 +15,8 @@ var memory7 = false
 var memory8 = false
 
 var game_data = {
-	"unlocked_level": 1
+	"unlocked_level": 1,
+	"current_stamina": 500.0
 }
 
 func _ready():
@@ -44,6 +45,7 @@ func load_game():
 
 func reset_progress():
 	game_data.unlocked_level = 1
+	game_data.current_stamina = 500.0
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(game_data))
@@ -51,3 +53,17 @@ func reset_progress():
 		print("Progress reset to Stage 1 and saved to:", SAVE_PATH)
 	else:
 		print("Failed to reset progress: could not open file.")
+
+# === STAMINA PERSISTENCE FUNCTIONS ===
+func save_stamina(stamina_value: float):
+	game_data.current_stamina = stamina_value
+	save_game()
+	print("Stamina saved: %.1f" % stamina_value)
+
+func get_saved_stamina() -> float:
+	return game_data.get("current_stamina", 500.0)
+
+func update_stamina(stamina_value: float):
+	game_data.current_stamina = stamina_value
+	# Auto-save stamina every time it's updated
+	save_game()

@@ -54,4 +54,4 @@ func animateGridPosition(finalValue):
 
 
 func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/Class/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://UI/Class/main_menu.tscn")

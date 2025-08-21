@@ -59,6 +59,9 @@ func change_to_next_stage() -> void:
 	print("Transitioning to next stage: " + next_stage_path)
 	print("DEBUG: Before unlock, unlocked_level =", Global.game_data.unlocked_level)
 
+	# 🔹 Save character's stamina before stage transition
+	_save_character_stamina()
+
 	# 🔹 Unlock next stage before switching
 	if next_stage_path != "":
 		var regex = RegEx.new()
@@ -78,6 +81,10 @@ func change_to_next_stage() -> void:
 
 func change_to_previous_stage() -> void:
 	print("Transitioning to previous stage: " + previous_stage_path)
+	
+	# 🔹 Save character's stamina before stage transition
+	_save_character_stamina()
+	
 	if previous_stage_path != "" and FileAccess.file_exists(previous_stage_path):
 		get_tree().change_scene_to_file(previous_stage_path)
 	else:
@@ -142,3 +149,28 @@ func pauseMenu():
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
+
+# === STAMINA PERSISTENCE HELPER ===
+func _save_character_stamina():
+	"""Find the character in the scene and save their current stamina"""
+	# Try multiple ways to find the character
+	var character = find_child("Character", true, false)
+	if not character:
+		character = get_node_or_null("Character")
+	if not character:
+		# Look in all children for something with a stamina system
+		for child in get_children():
+			if child.has_method("character") or child.is_in_group("player"):
+				character = child
+				break
+	
+	if character:
+		# Try to access stamina system
+		var stamina_system = character.get_node_or_null("StaminaSystem")
+		if stamina_system and stamina_system.has_method("save_current_stamina"):
+			stamina_system.save_current_stamina()
+			print("Saved character stamina: %.1f" % stamina_system.current_stamina)
+		else:
+			print("Warning: Character found but no stamina system to save")
+	else:
+		print("Warning: Character not found in scene, cannot save stamina")

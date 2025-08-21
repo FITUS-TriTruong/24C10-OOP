@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuvl6j1ra4or3"]
+
+[ext_resource type="Script" uid="uid://duv6ya3unnkx8" path="res://UI/Scripts/option_menu.gd" id="1_awtfk"]
+[ext_resource type="FontFile" uid="uid://bi0b0jtj6u31v" path="res://Assets/Font/GrapeSoda.ttf" id="2_ewwq4"]
+[ext_resource type="PackedScene" uid="uid://3it3dpypgpc6" path="res://UI/Class/Settings/option_tabs.tscn" id="3_h5wht"]
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_awtfk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="title_panel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_ewwq4")
+theme_override_font_sizes/font_size = 64
+text = "Options"
+
+[node name="OptionTabs" parent="MarginContainer" instance=ExtResource("3_h5wht")]
+layout_mode = 2
+
+[node name="exit_button" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "Exit"
