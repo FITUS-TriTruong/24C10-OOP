@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bq72h3oetptpx"]
+[gd_scene load_steps=26 format=4 uid="uid://bq72h3oetptpx"]
 
 [ext_resource type="Texture2D" uid="uid://d3ckinjfgo7ru" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
 [ext_resource type="Texture2D" uid="uid://qadqty5wptkw" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://w8b0j0qgvlew" path="res://Class/memory1.tscn" id="11_1p7nd"]
 [ext_resource type="PackedScene" uid="uid://52c6rxfslxdi" path="res://Class/memory2.tscn" id="12_kp5m6"]
 [ext_resource type="PackedScene" uid="uid://dcc6cbjt0n3y1" path="res://Class/memory3.tscn" id="13_g0keq"]
+[ext_resource type="PackedScene" uid="uid://51wbfi1fyjb4" path="res://Class/ClickNDrag_2.tscn" id="14_kp5m6"]
+[ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="15_g0keq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vba5r"]
 texture = ExtResource("1_50uq0")
@@ -2557,7 +2559,6 @@ tile_map_data = PackedByteArray("AAAjACYAAAAAAAYAAAAjACUAAAAAAAYAAAAjACQAAAAAAAY
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="TileMapLayer14" type="TileMapLayer" parent="p2"]
-tile_map_data = PackedByteArray("AAAyAB4ABAAcACEAAAAzAB4ABAAdACEAAAAiABEABAAaACEAAAAjABEABAAbACEAAAA9ABUABAAaACEAAAA+ABUABAAbACEAAAA=")
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="TileMapLayer15" type="TileMapLayer" parent="p2"]
@@ -2587,11 +2588,11 @@ tile_map_data = PackedByteArray("AAAAACAABAABAAEAAAAAACEABAABAAIAAAABACAABAACAAE
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="TileMapLayer12" type="TileMapLayer" parent="p1"]
-tile_map_data = PackedByteArray("AAAQABkABAAcACEAAAARABkABAAdACEAAAATABEABAAaACEAAAAUABEABAAbACEAAAARAAsABAAaACEAAAASAAsABAAbACEAAAABABoABAAaACEAAAACABoABAAbACEAAAA=")
+tile_map_data = PackedByteArray("AAAQABkABAAcACEAAAARABkABAAdACEAAAA=")
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="TileMapLayer6" type="TileMapLayer" parent="p1"]
-tile_map_data = PackedByteArray("AAAEACIABAAMAAEAAAAFACIABAANAAEAAAAFACQABAANAAMAAAAFACUABAANAAQAAAAGACIABAAOAAEAAAAGACMABAAOAAIAAAAGACQABAAOAAMAAAAGACUABAAOAAQAAAAHACIABAAPAAEAAAAHACMABAAPAAIAAAAHACQABAAPAAMAAAAHACUABAAPAAQAAAAIACIABAAQAAEAAAAJACIABAARAAEAAAAEACEABAAaACEAAAAFACEABAAbACEAAAAdACcABAAaACEAAAAeACcABAAbACEAAAA=")
+tile_map_data = PackedByteArray("AAAEACIABAAMAAEAAAAFACIABAANAAEAAAAFACQABAANAAMAAAAFACUABAANAAQAAAAGACIABAAOAAEAAAAGACMABAAOAAIAAAAGACQABAAOAAMAAAAGACUABAAOAAQAAAAHACIABAAPAAEAAAAHACMABAAPAAIAAAAHACQABAAPAAMAAAAHACUABAAPAAQAAAAIACIABAAQAAEAAAAJACIABAARAAEAAAA=")
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="TileMapLayer7" type="TileMapLayer" parent="p1"]
@@ -2667,3 +2668,166 @@ position = Vector2(554, 265)
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_a2eh7")]
 visible = false
+
+[node name="DraggableThing" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(475, 632)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="DraggableThing2" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(76, 536)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing2"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="DraggableThing3" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(25, 424)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing3"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="DraggableThing4" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(315.48, 280)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing4"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="DraggableThing6" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(620, 280)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing6"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="DraggableThing7" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(980, 344)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing7"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="DraggableThing8" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(810, 488)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing8"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(447.83, 527.992, 23.2418, 16.0464)
+
+[node name="DraggableThing5" parent="." instance=ExtResource("14_kp5m6")]
+position = Vector2(283, 184)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableThing5"]
+texture = ExtResource("5_4axa8")
+region_enabled = true
+region_rect = Rect2(415.973, 527.992, 23.0797, 16.0464)
+
+[node name="dropZone" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(475, 632)
+
+[node name="dropZone2" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(509, 520)
+
+[node name="dropZone3" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(76, 536)
+
+[node name="dropZone4" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(46, 504)
+
+[node name="dropZone5" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(25, 424)
+
+[node name="dropZone6" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(105, 371)
+
+[node name="dropZone7" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(173, 360)
+
+[node name="dropZone8" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(317, 280)
+
+[node name="dropZone9" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(347, 216)
+
+[node name="dropZone10" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(354, 216)
+
+[node name="dropZone11" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(361, 216)
+
+[node name="dropZone12" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(283, 184)
+
+[node name="dropZone13" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(288, 120)
+
+[node name="dropZone14" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(293, 120)
+
+[node name="dropZone15" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(620, 280)
+
+[node name="dropZone16" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(741, 264)
+
+[node name="dropZone17" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(754, 264)
+
+[node name="dropZone18" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(832, 264)
+
+[node name="dropZone19" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(875, 200)
+
+[node name="dropZone20" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(873, 327)
+
+[node name="dropZone21" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(865, 327)
+
+[node name="dropZone22" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(980, 344)
+
+[node name="dropZone23" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(1057, 407)
+
+[node name="dropZone24" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(1048, 407)
+
+[node name="dropZone25" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(1067, 407)
+
+[node name="dropZone26" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(1130, 505)
+
+[node name="dropZone27" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(1131, 436)
+
+[node name="dropZone28" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(1073, 505)
+
+[node name="dropZone29" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(810, 488)
+
+[node name="dropZone30" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(628, 503)
+
+[node name="dropZone31" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(568, 472)
+
+[node name="dropZone32" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(629, 392)
+
+[node name="dropZone33" parent="." instance=ExtResource("15_g0keq")]
+position = Vector2(617, 392)

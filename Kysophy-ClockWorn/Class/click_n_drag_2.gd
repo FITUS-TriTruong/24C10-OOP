@@ -5,8 +5,8 @@ var rest_point
 var rest_nodes = []
 
 # Ellipse drag limits
-var ellipse_a := 100   # horizontal radius
-var ellipse_b := 190   # vertical radius
+var ellipse_a := 140   # horizontal radius
+var ellipse_b := 200   # vertical radius
 var mouse_detection_range := 20
 
 func _ready():
