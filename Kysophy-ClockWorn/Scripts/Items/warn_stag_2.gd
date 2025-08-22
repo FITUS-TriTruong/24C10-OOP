@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var interaction_area = $InteractionArea
-@onready var collision_shape = $CollisionShape2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 func warn2():
 	pass

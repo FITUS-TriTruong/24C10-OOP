@@ -5,14 +5,26 @@ var rest_point
 var rest_nodes = []
 
 # Ellipse drag limits
-var ellipse_a := 60   # horizontal radius
-var ellipse_b := 20   # vertical radius
+var ellipse_a := 100   # horizontal radius
+var ellipse_b := 190   # vertical radius
 var mouse_detection_range := 20
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("Zone")
-	rest_point = rest_nodes[0].global_position
-	rest_nodes[0].select()
+
+	var closest_dist = INF
+	var closest_zone = null
+	for z in rest_nodes:
+		var d = global_position.distance_to(z.global_position)
+		if d < closest_dist:
+			closest_dist = d
+			closest_zone = z
+	
+	if closest_zone:
+		rest_point = closest_zone.global_position
+		closest_zone.select()
+	else:
+		rest_point = global_position
 
 func _physics_process(delta):
 	if selected:
