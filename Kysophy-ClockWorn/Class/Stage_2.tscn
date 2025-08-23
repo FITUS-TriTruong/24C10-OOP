@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://5r6ebhmrlxig"]
+[gd_scene load_steps=33 format=4 uid="uid://5r6ebhmrlxig"]
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
@@ -6136,20 +6136,6 @@ texture = ExtResource("1_iy6na")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_od55q")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tc0s8"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tl1xt"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f3mqg"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7jm7e"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gu2kl"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3pgrh"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_yom5f"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq63o"]
 size = Vector2(6, 7)
 
@@ -6289,54 +6275,6 @@ tile_set = SubResource("TileSet_mrbji")
 tile_map_data = PackedByteArray("AAD8/wUAAAADAAgAAAD9/wUAAAADAAgAAAAGAAUAAAADAAgAAAAIAAUAAAADAAgAAAD5/wUAAAADAAgAAAD+/wUAAAAEAAgAAAAAAAUAAAAEAAgAAAAFAAUAAAAEAAgAAAAJAAUAAAAEAAgAAAAKAAUAAAAEAAgAAAAHAAUAAAADAAcAAAD//wUAAAADAAcAAAABAAUAAAADAAcAAAD6/wUAAAABAAcAAAD7/wUAAAAEAAgAAAALAAUAAAACAAgAAAAMAAQAAAABAAcAAAD//wYAAAADAAgAAAABAAYAAAADAAgAAAD8/wYAAAAEAAgAAAD9/wYAAAAEAAgAAAD5/wYAAAAEAAgAAAAGAAYAAAAEAAgAAAAIAAYAAAAEAAgAAAAHAAYAAAADAAgAAAA=")
 tile_set = SubResource("TileSet_mrbji")
 
-[node name="key" parent="." instance=ExtResource("8_iiyir")]
-position = Vector2(-394, 250)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key"]
-position = Vector2(789, -180)
-shape = SubResource("CircleShape2D_tc0s8")
-
-[node name="warnsign" parent="." instance=ExtResource("7_nqqtr")]
-position = Vector2(395, 70)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="warnsign"]
-shape = SubResource("CircleShape2D_tl1xt")
-
-[node name="door" parent="." instance=ExtResource("6_nnto4")]
-position = Vector2(-254, 247)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
-position = Vector2(649, -177)
-shape = SubResource("CircleShape2D_f3mqg")
-
-[node name="book" parent="." instance=ExtResource("7_nsl3p")]
-position = Vector2(-381, 182)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="book"]
-position = Vector2(776, -112)
-shape = SubResource("CircleShape2D_7jm7e")
-
-[node name="mem5" parent="." instance=ExtResource("8_c0ix1")]
-position = Vector2(-1, -89)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mem5"]
-position = Vector2(396, 159)
-shape = SubResource("CircleShape2D_gu2kl")
-
-[node name="mem6" parent="." instance=ExtResource("9_tc0s8")]
-position = Vector2(281, -301)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mem6"]
-position = Vector2(114, 371)
-shape = SubResource("CircleShape2D_3pgrh")
-
-[node name="mem4" parent="." instance=ExtResource("10_tl1xt")]
-position = Vector2(200, 271)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mem4"]
-position = Vector2(195, -201)
-shape = SubResource("CircleShape2D_yom5f")
-
 [node name="Character" parent="." instance=ExtResource("1_aq2pl")]
 position = Vector2(150, 45)
 collision_layer = 2
@@ -6359,6 +6297,27 @@ collision_mask = 3
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_kq63o")
 debug_color = Color(0.747274, 0.461592, 0, 0.42)
+
+[node name="key" parent="." instance=ExtResource("8_iiyir")]
+position = Vector2(-394, 250)
+
+[node name="warnsign" parent="." instance=ExtResource("7_nqqtr")]
+position = Vector2(395, 70)
+
+[node name="door" parent="." instance=ExtResource("6_nnto4")]
+position = Vector2(-254, 247)
+
+[node name="book" parent="." instance=ExtResource("7_nsl3p")]
+position = Vector2(-381, 182)
+
+[node name="mem5" parent="." instance=ExtResource("8_c0ix1")]
+position = Vector2(-1, -89)
+
+[node name="mem6" parent="." instance=ExtResource("9_tc0s8")]
+position = Vector2(281, -301)
+
+[node name="mem4" parent="." instance=ExtResource("10_tl1xt")]
+position = Vector2(200, 271)
 
 [node name="PushableObject" type="RigidBody2D" parent="." groups=["RigidBody"]]
 light_mask = 1055

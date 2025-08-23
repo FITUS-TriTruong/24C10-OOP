@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://52c6rxfslxdi"]
 
 [ext_resource type="Script" uid="uid://tjigj6lw6i7t" path="res://Scripts/memories/memory_2.gd" id="1_18wvj"]
-[ext_resource type="Texture2D" uid="uid://cooyhh5lyfot4" path="res://Assets/Particle FX 1.3 Free/Spritesheets/Blood Splat.png" id="1_eo76b"]
+[ext_resource type="Texture2D" uid="uid://cclvjg0gqsaug" path="res://Assets/Particle FX 1.3 Free/Spritesheets/Blood Splat.png" id="1_eo76b"]
 [ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="2_18wvj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ubab"]
