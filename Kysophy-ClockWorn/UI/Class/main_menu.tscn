@@ -239,7 +239,7 @@ bus = &"SFX"
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_v2lxb")
-volume_db = -10.348
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="ColorRect" type="ColorRect" parent="."]

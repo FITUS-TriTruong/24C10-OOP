@@ -20,6 +20,9 @@ signal health_changed(new_health: int)
 signal state_changed(new_state: CharacterState.State)
 signal died()
 
+# === jump sound ===
+@onready var jump: AudioStreamPlayer = $Jump
+
 func _ready() -> void:
 	# Ensure we have the character name for identification
 	name = "Character"
@@ -95,6 +98,11 @@ func _handle_input() -> void:
 	# Let both controllers handle their respective inputs
 	interaction_controller.handle_input()
 	movement_controller.handle_input()
+		
+	# Play jump sound when pressing jump
+	if Input.is_action_just_pressed("Jump"):
+		if jump and not is_on_ladder(): # optional: prevent ladder jump sound
+			jump.play()
 
 # === SIGNAL HANDLERS ===
 func _on_state_changed(new_state: CharacterState.State) -> void:

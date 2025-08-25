@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 InteractionManager="*res://Template/Interaction/Manager/InteractionManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Global="*res://Scripts/global.gd"
+GlobalMenu="*res://Scripts/Menu/Global.gd"
 
 [display]
 

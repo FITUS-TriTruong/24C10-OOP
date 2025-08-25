@@ -1,4 +1,7 @@
-[gd_scene load_steps=0 format=3 uid="uid://bd0worp5ywqtv"]
+[gd_scene load_steps=3 format=3 uid="uid://bd0worp5ywqtv"]
+
+[ext_resource type="Script" uid="uid://c0x1e1jvfnmcw" path="res://UI/Class/Settings/option_button.gd" id="1_xaj5u"]
+[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="2_6g1q3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,3 +28,9 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
+script = ExtResource("1_xaj5u")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6g1q3")
+volume_db = -15.0
+bus = &"SFX"

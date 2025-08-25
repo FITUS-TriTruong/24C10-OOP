@@ -30,7 +30,13 @@ var current_offset: Vector2 = Vector2()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	background_initial_pos = background.position
-	introSequence()
+	if GlobalMenu.alreadyPlayed:
+		bg_music.play()
+		color_rect.queue_free()
+		team_clockworn.queue_free()
+	else:
+		GlobalMenu.alreadyPlayed = true
+		introSequence()
 	
 	for child in v_box_container.get_children():
 		if child is Button:  # make sure it's a button
@@ -49,6 +55,9 @@ func _process(_delta):
 	current_offset = current_offset.lerp(target_offset, smoothness)
 	background.position = background_initial_pos + current_offset
 	
+	if not GlobalMenu.alreadyPlayed and Input.is_action_just_pressed("skip_intro"):
+		_skip_intro()
+	
 func introSequence():
 	animation_player.play("Intro")
 	await get_tree().create_timer(1.7).timeout
@@ -59,7 +68,14 @@ func introSequence():
 	await animation_player.animation_finished 
 	color_rect.queue_free()
 	team_clockworn.queue_free()
-
+	
+func _skip_intro():
+	animation_player.stop()
+	bg_music.play()
+	color_rect.queue_free()
+	team_clockworn.queue_free()
+	GlobalMenu.alreadyPlayed = true
+	
 func press_play() -> void:
 	print("Start button pressed.")
 	get_tree().change_scene_to_packed(level_selector)

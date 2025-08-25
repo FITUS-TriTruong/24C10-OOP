@@ -13,3 +13,6 @@ offset_bottom = 64.0
 [node name="Label" parent="HBoxContainer" index="0"]
 custom_minimum_size = Vector2(400, 30)
 text = "Resolution"
+
+[node name="ButtonClick" parent="." index="1"]
+bus = &"SFX"
