@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Clockworn"
-run/main_scene="uid://bq72h3oetptpx"
+run/main_scene="uid://dle5qbhoq8hkc"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,19 +1,111 @@
-[gd_scene load_steps=12 format=3 uid="uid://dle5qbhoq8hkc"]
+[gd_scene load_steps=19 format=3 uid="uid://dle5qbhoq8hkc"]
 
 [ext_resource type="Script" uid="uid://c5ji72xv4vg0d" path="res://UI/Scripts/main_menu.gd" id="1_670pd"]
-[ext_resource type="Texture2D" uid="uid://dixj5862ypxp5" path="res://Assets/UI/menu_img.png" id="2_pfng4"]
-[ext_resource type="FontFile" uid="uid://bi0b0jtj6u31v" path="res://Assets/Font/GrapeSoda.ttf" id="3_rfn2e"]
-[ext_resource type="Texture2D" uid="uid://cts74o555boej" path="res://Assets/UI/ClockWorn.png" id="4_rfn2e"]
+[ext_resource type="Texture2D" uid="uid://b31mymbe2myk1" path="res://Assets/UI/architecture-after-civilization-.png" id="2_hwkil"]
+[ext_resource type="FontFile" uid="uid://dlbimd8v1uvsy" path="res://Assets/Font/GrapeSoda.ttf" id="3_rfn2e"]
+[ext_resource type="Texture2D" uid="uid://cuu1wk66eq4rh" path="res://Assets/UI/ClockWorn.png" id="4_rfn2e"]
 [ext_resource type="PackedScene" uid="uid://cuvl6j1ra4or3" path="res://UI/Class/Settings/option_menu.tscn" id="5_wsmwr"]
+[ext_resource type="AudioStream" uid="uid://cssvm0oib1vs8" path="res://Music & SFX/menu.mp3" id="6_lixrk"]
+[ext_resource type="AudioStream" uid="uid://b8s282hrkp72m" path="res://Music & SFX/Ding.mp3" id="7_vvjdh"]
+[ext_resource type="Texture2D" uid="uid://cfujrs6yrrx87" path="res://Assets/UI/TeamClockworn.png" id="8_gjtv6"]
+[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="8_v2lxb"]
+
+[sub_resource type="Animation" id="Animation_hwkil"]
+resource_name = "Intro"
+length = 7.1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.03333, 6, 7.03333),
+"transitions": PackedFloat32Array(99999, 1, 1),
+"update": 0,
+"values": [Color(0.891711, 0.579404, 0.499136, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("teamClockworn:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.76667, 2, 5.7, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("teamClockworn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.76667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(650, 300), Vector2(650, 350)]
+}
+
+[sub_resource type="Animation" id="Animation_v2lxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("teamClockworn:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("teamClockworn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(650, 350)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lixrk"]
+_data = {
+&"Intro": SubResource("Animation_hwkil"),
+&"RESET": SubResource("Animation_v2lxb")
+}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6syg"]
-texture = ExtResource("2_pfng4")
+texture = ExtResource("2_hwkil")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfn2e"]
 texture = ExtResource("4_rfn2e")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b37jj"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b37jj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6syg"]
+bg_color = Color(0.894922, 0.894922, 0.894923, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -28,15 +120,13 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6syg"]
-bg_color = Color(0.894922, 0.894922, 0.894923, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b37jj"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b37jj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -47,10 +137,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_670pd")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lixrk")
+}
+
 [node name="BackgroundPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 1380.0
+offset_bottom = 820.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_t6syg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -70,7 +167,7 @@ theme_override_constants/separation = 16
 alignment = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(800, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rfn2e")
 
@@ -79,16 +176,16 @@ custom_minimum_size = Vector2(180, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
 text = "PLAY"
 
 [node name="OptionButton" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -96,16 +193,16 @@ custom_minimum_size = Vector2(180, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
 text = "OPTION"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -113,22 +210,49 @@ custom_minimum_size = Vector2(180, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rfn2e")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b37jj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6syg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8aown")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b37jj")
 text = "QUIT
 "
 
 [node name="OptionMenu" parent="." instance=ExtResource("5_wsmwr")]
 visible = false
 layout_mode = 1
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lixrk")
+volume_db = -10.348
+bus = &"Music"
+
+[node name="Ding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vvjdh")
+volume_db = -10.348
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_v2lxb")
+volume_db = -10.348
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 1380.0
+offset_bottom = 820.0
+
+[node name="teamClockworn" type="Sprite2D" parent="."]
+position = Vector2(650, 350)
+scale = Vector2(3, 3.102)
+texture = ExtResource("8_gjtv6")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
