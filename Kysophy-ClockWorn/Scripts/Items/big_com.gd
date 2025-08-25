@@ -1,0 +1,18 @@
+extends StaticBody2D
+
+@onready var interaction_area = $InteractionArea
+@onready var collision_shape = $CollisionShape2D
+signal conversation_finished
+
+func com():
+	pass
+
+func _ready():
+	if interaction_area:
+		interaction_area.interact = Callable(self, "_show_dialogue")
+	
+func _show_dialogue():
+	DialogueManager.show_example_dialogue_balloon(load("res://Scripts/Dialogues/bigCom.dialogue"), "start")
+
+func _end_conversation():
+	emit_signal("conversation_finished")

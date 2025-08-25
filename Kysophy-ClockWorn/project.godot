@@ -13,6 +13,9 @@ config_version=5
 config/name="Clockworn"
 run/main_scene="uid://bq72h3oetptpx"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/image="uid://6l25vwplaebc"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -90,7 +93,7 @@ pause={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Scripts/Dialogues/Doors1.dialogue", "res://Scripts/Dialogues/Doors2_Mem7.dialogue", "res://Scripts/Dialogues/Mem0.dialogue", "res://Scripts/Dialogues/Mem1.dialogue", "res://Scripts/Dialogues/Mem2.dialogue", "res://Scripts/Dialogues/Mem3.dialogue", "res://Scripts/Dialogues/Mem4.dialogue", "res://Scripts/Dialogues/Mem5.dialogue", "res://Scripts/Dialogues/Mem6.dialogue", "res://Scripts/Dialogues/Mem8.dialogue", "res://Scripts/Dialogues/Note1.dialogue", "res://Scripts/Dialogues/Package.dialogue", "res://Scripts/Dialogues/WarningSignstage3.dialogue", "res://Scripts/Dialogues/warnFalldmg.dialogue", "res://Scripts/Dialogues/energyWarn.dialogue", "res://Scripts/Dialogues/indoorNote.dialogue", "res://Scripts/Dialogues/book.dialogue", "res://Scripts/Dialogues/warnStage2.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Scripts/Dialogues/Doors1.dialogue", "res://Scripts/Dialogues/Doors2_Mem7.dialogue", "res://Scripts/Dialogues/Mem0.dialogue", "res://Scripts/Dialogues/Mem1.dialogue", "res://Scripts/Dialogues/Mem2.dialogue", "res://Scripts/Dialogues/Mem3.dialogue", "res://Scripts/Dialogues/Mem4.dialogue", "res://Scripts/Dialogues/Mem5.dialogue", "res://Scripts/Dialogues/Mem6.dialogue", "res://Scripts/Dialogues/Mem8.dialogue", "res://Scripts/Dialogues/Note1.dialogue", "res://Scripts/Dialogues/Package.dialogue", "res://Scripts/Dialogues/WarningSignstage3.dialogue", "res://Scripts/Dialogues/warnFalldmg.dialogue", "res://Scripts/Dialogues/energyWarn.dialogue", "res://Scripts/Dialogues/indoorNote.dialogue", "res://Scripts/Dialogues/book.dialogue", "res://Scripts/Dialogues/warnStage2.dialogue", "res://Scripts/Dialogues/ending.dialogue", "res://Scripts/Dialogues/bigCom.dialogue", "res://Scripts/Dialogues/smallCom.dialogue")
 
 [layer_names]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://gomtvngwsd3g"]
+
+[ext_resource type="Script" uid="uid://dxcucr1paijk8" path="res://Scripts/ending_2.gd" id="1_k1fkm"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_k1fkm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1282.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 207.0
+offset_top = 330.0
+offset_right = 1076.0
+offset_bottom = 353.0

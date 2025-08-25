@@ -1,0 +1,11 @@
+~ start
+Big machine: Do you wish to submit the package?
+- Yes
+	Big machine: You submitted the package.
+	Global.package = false
+	Big machine: A loud series of cling and clang filled the air.
+	Big machine: It seems like some kind of machine worked again after a long time.
+- Leave
+- Start again => start
+- End => END
+=> END

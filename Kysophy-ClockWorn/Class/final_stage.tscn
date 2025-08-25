@@ -1,23 +1,25 @@
-[gd_scene load_steps=40 format=4 uid="uid://ijj0uwcogwn"]
+[gd_scene load_steps=42 format=4 uid="uid://ijj0uwcogwn"]
 
-[ext_resource type="Texture2D" uid="uid://bojqwumg5uuuu" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/back.png" id="1_8ch3n"]
-[ext_resource type="Texture2D" uid="uid://biofe8qigu328" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/cyberpunk-corridor-foreground.png" id="2_picgc"]
-[ext_resource type="Texture2D" uid="uid://dop52bs2fcfbe" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/cyberpunk-corridor.png" id="3_8i1q1"]
-[ext_resource type="Texture2D" uid="uid://chgsbldct54p4" path="res://Assets/Environments/bulkhead-walls/PNG/bg-wall-with-supports.png" id="4_f6v0v"]
-[ext_resource type="Texture2D" uid="uid://d4ih6t5bjfoh" path="res://Assets/Environments/bulkhead-walls/PNG/bg-wall.png" id="5_2v1yj"]
-[ext_resource type="Texture2D" uid="uid://cedlmi10itv1f" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/server-gabinetes.png" id="6_bd2d2"]
-[ext_resource type="Texture2D" uid="uid://chwgpxg3r2j6f" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/small-terminal.png" id="7_i5nmx"]
-[ext_resource type="Texture2D" uid="uid://caqvlry8p3lys" path="res://Assets/Environments/bulkhead-walls/PNG/floor.png" id="8_0eed3"]
-[ext_resource type="Texture2D" uid="uid://dyo75gvvc63s3" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/big-computer.png" id="8_picgc"]
-[ext_resource type="Texture2D" uid="uid://intg4tt8iyd0" path="res://Assets/Environments/bulkhead-walls/PNG/foreground.png" id="9_dduy6"]
-[ext_resource type="Texture2D" uid="uid://c0k6u3ovy0yrk" path="res://Assets/Character/AnimationSections.png" id="10_2shxv"]
-[ext_resource type="Texture2D" uid="uid://da8u4jalamgdq" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/cryo-pod.png" id="11_abu7t"]
-[ext_resource type="Texture2D" uid="uid://bdcrc4sot8y2r" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/cyberpunk-props-preview.png" id="12_frqin"]
-[ext_resource type="Texture2D" uid="uid://diwmx3jys365n" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/elevator-track.png" id="13_wds32"]
-[ext_resource type="Texture2D" uid="uid://dsoq4wdr1d1ia" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/elevator.png" id="14_s4mvq"]
-[ext_resource type="Texture2D" uid="uid://cjtatbw7ob527" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/hanging-terminal.png" id="15_g16ut"]
+[ext_resource type="Texture2D" uid="uid://1sedf0gfb2p1" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/back.png" id="1_8ch3n"]
+[ext_resource type="Texture2D" uid="uid://caclkj7483hm7" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/cyberpunk-corridor-foreground.png" id="2_picgc"]
+[ext_resource type="Texture2D" uid="uid://b0pklsfqvr7mc" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/cyberpunk-corridor.png" id="3_8i1q1"]
+[ext_resource type="Texture2D" uid="uid://f0tibsq1kpy4" path="res://Assets/Environments/bulkhead-walls/PNG/bg-wall-with-supports.png" id="4_f6v0v"]
+[ext_resource type="Texture2D" uid="uid://cthpio2xa8x0u" path="res://Assets/Environments/bulkhead-walls/PNG/bg-wall.png" id="5_2v1yj"]
+[ext_resource type="Texture2D" uid="uid://bnl3o86m073h4" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/server-gabinetes.png" id="6_bd2d2"]
+[ext_resource type="Texture2D" uid="uid://cv6214keg2xwm" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/small-terminal.png" id="7_i5nmx"]
+[ext_resource type="Texture2D" uid="uid://cia6mbgvwe6vw" path="res://Assets/Environments/bulkhead-walls/PNG/floor.png" id="8_0eed3"]
+[ext_resource type="Texture2D" uid="uid://bhs30p5ydsly8" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/big-computer.png" id="8_picgc"]
+[ext_resource type="Texture2D" uid="uid://b7jo5sg4tkjgr" path="res://Assets/Environments/bulkhead-walls/PNG/foreground.png" id="9_dduy6"]
+[ext_resource type="Texture2D" uid="uid://dtkv0pouts74w" path="res://Assets/Character/AnimationSections.png" id="10_2shxv"]
+[ext_resource type="Texture2D" uid="uid://enwa2ibha3n6" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/cryo-pod.png" id="11_abu7t"]
+[ext_resource type="Texture2D" uid="uid://cbi86pfqp5qcn" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/cyberpunk-props-preview.png" id="12_frqin"]
+[ext_resource type="Texture2D" uid="uid://b0tie4t2r40go" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/elevator-track.png" id="13_wds32"]
+[ext_resource type="Texture2D" uid="uid://kbch73t3grho" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/elevator.png" id="14_s4mvq"]
+[ext_resource type="Texture2D" uid="uid://c8gklnhq5ivex" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/hanging-terminal.png" id="15_g16ut"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="17_f6v0v"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="18_2v1yj"]
+[ext_resource type="PackedScene" uid="uid://b3mdpbrk4gmba" path="res://Class/bigCom.tscn" id="19_2v1yj"]
+[ext_resource type="PackedScene" uid="uid://cc7ltniiv5cqm" path="res://Class/smolCom.tscn" id="20_bd2d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3r2b1"]
 texture = ExtResource("1_8ch3n")
@@ -2175,7 +2177,7 @@ sources/11 = SubResource("TileSetAtlasSource_f1gap")
 sources/12 = SubResource("TileSetAtlasSource_8i1q1")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bd2d2"]
-distance = -98.0
+distance = -94.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_f6v0v"]
 b = Vector2(0, 250)
@@ -2219,8 +2221,15 @@ tile_set = SubResource("TileSet_uuwuc")
 tile_map_data = PackedByteArray("AAAZAB8ACgAAAAAAAAAZACAACgAAAAEAAAAZACEACgAAAAIAAAAaAB8ACgABAAAAAAAaACAACgABAAEAAAAaACEACgABAAIAAAAbAB8ACgACAAAAAAAbACAACgACAAEAAAAbACEACgACAAIAAAAcAB8ACgADAAAAAAAcACAACgADAAEAAAAcACEACgADAAIAAAAXACAACwAAAAAAAAAXACEACwAAAAEAAAAYACAACwABAAAAAAAYACEACwABAAEAAAA=")
 tile_set = SubResource("TileSet_uuwuc")
 
+[node name="StaticBody2D3" parent="." instance=ExtResource("20_bd2d2")]
+position = Vector2(544, 544)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("19_2v1yj")]
+position = Vector2(736, 512)
+
 [node name="Character" parent="." instance=ExtResource("17_f6v0v")]
-position = Vector2(7, 540)
+position = Vector2(633, 563)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 position = Vector2(1, -5)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc7ltniiv5cqm"]
+
+[ext_resource type="Script" uid="uid://7l3m71bxbowo" path="res://Scripts/Items/smallCom.gd" id="1_0wbs6"]
+[ext_resource type="Texture2D" uid="uid://cv6214keg2xwm" path="res://Assets/Environments/cyberpunk-detective-prop-files/PNG/small-terminal.png" id="2_f1on1"]
+[ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="3_b1ms8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avedp"]
+texture = ExtResource("2_f1on1")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tk1p1"]
+sources/0 = SubResource("TileSetAtlasSource_avedp")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_063a2"]
+radius = 34.9857
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_0wbs6")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 255, 255, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_tk1p1")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_b1ms8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_063a2")

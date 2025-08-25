@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://s30bksfa0rtd"]
+
+[ext_resource type="Script" uid="uid://dphhmkrenhyou" path="res://Scripts/ending_1.gd" id="1_l1xwq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_l1xwq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 715.0
+focus_mode = 1
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 313.0
+offset_right = 1105.0
+offset_bottom = 353.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
