@@ -4,5 +4,9 @@ Big machine: Do you wish to submit the package?
 	Big machine: You submitted the package.
 	Big machine: A loud series of cling and clang filled the air.
 	Big machine: It seems like some kind of machine worked again after a long time.
+	set Global.package = true
+- No
+	Big machine: You dropped the package.
+	set Global.package = false
 - Leave => END
 => END

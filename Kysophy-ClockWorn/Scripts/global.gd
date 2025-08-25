@@ -14,6 +14,9 @@ var memory6 = false
 var memory7 = false
 var memory8 = false
 var package = true
+signal conversation_finished_1
+signal conversation_finished_2
+var ending = ""
 
 var game_data = {
 	"unlocked_level": 1,

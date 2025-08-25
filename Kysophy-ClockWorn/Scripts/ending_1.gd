@@ -1,7 +1,7 @@
-extends Node2D
+extends Control
 
-@onready var dialogue = $Dialogue
-@onready var black_screen = $BlackScreen
+@onready var dialogue = $CenterContainer/Label
+@onready var black_screen = $ColorRect
 
 var lines = [
 	"You submitted the package.",
@@ -19,8 +19,9 @@ var typing = false
 var timer : Timer
 
 func _ready():
+	var tween = create_tween()
+	tween.tween_property(black_screen, "modulate:a", 1.0, 2.0)
 	dialogue.text = ""
-	black_screen.modulate.a = 0.0
 	timer = Timer.new()
 	timer.one_shot = false
 	add_child(timer)

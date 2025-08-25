@@ -1,6 +1,7 @@
-[gd_scene load_steps=42 format=4 uid="uid://ijj0uwcogwn"]
+[gd_scene load_steps=43 format=4 uid="uid://ijj0uwcogwn"]
 
 [ext_resource type="Texture2D" uid="uid://1sedf0gfb2p1" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/back.png" id="1_8ch3n"]
+[ext_resource type="Script" uid="uid://dmt4plxitd1je" path="res://Scripts/Stages/final_stage.gd" id="1_i5nmx"]
 [ext_resource type="Texture2D" uid="uid://caclkj7483hm7" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/cyberpunk-corridor-foreground.png" id="2_picgc"]
 [ext_resource type="Texture2D" uid="uid://b0pklsfqvr7mc" path="res://Assets/Environments/cyberpunk-corridor-files/PNG/layers/cyberpunk-corridor.png" id="3_8i1q1"]
 [ext_resource type="Texture2D" uid="uid://f0tibsq1kpy4" path="res://Assets/Environments/bulkhead-walls/PNG/bg-wall-with-supports.png" id="4_f6v0v"]
@@ -2187,6 +2188,7 @@ a = Vector2(-2, -626)
 b = Vector2(-1, 55)
 
 [node name="gem" type="Node2D"]
+script = ExtResource("1_i5nmx")
 metadata/_edit_vertical_guides_ = [0.0]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2221,11 +2223,11 @@ tile_set = SubResource("TileSet_uuwuc")
 tile_map_data = PackedByteArray("AAAZAB8ACgAAAAAAAAAZACAACgAAAAEAAAAZACEACgAAAAIAAAAaAB8ACgABAAAAAAAaACAACgABAAEAAAAaACEACgABAAIAAAAbAB8ACgACAAAAAAAbACAACgACAAEAAAAbACEACgACAAIAAAAcAB8ACgADAAAAAAAcACAACgADAAEAAAAcACEACgADAAIAAAAXACAACwAAAAAAAAAXACEACwAAAAEAAAAYACAACwABAAAAAAAYACEACwABAAEAAAA=")
 tile_set = SubResource("TileSet_uuwuc")
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("20_bd2d2")]
-position = Vector2(544, 544)
-
 [node name="StaticBody2D2" parent="." instance=ExtResource("19_2v1yj")]
 position = Vector2(736, 512)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("20_bd2d2")]
+position = Vector2(544, 544)
 
 [node name="Character" parent="." instance=ExtResource("17_f6v0v")]
 position = Vector2(633, 563)

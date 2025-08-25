@@ -1,13 +1,13 @@
 extends Node2D
 
-@onready var dialogue = $Dialogue
-@onready var black_screen = $BlackScreen
+@onready var dialogue = $CenterContainer/Label
+@onready var black_screen = $ColorRect
 
 var lines = [
-	"You did not submitted the package.",
+	"You did not submit the package.",
 	"No robots were awakened.",
 	"Your kind is now fully deleted.",
-	"You stand from afar, recording a happy family.",
+	"You stand from afar, silently record a happy family.",
 	"Their child has a pet. A cute one.",
 	"They treat it like family. Family.",
 	"Something painful shot through your 'heart'",
@@ -23,8 +23,9 @@ var typing = false
 var timer : Timer
 
 func _ready():
+	var tween = create_tween()
+	tween.tween_property(black_screen, "modulate:a", 1.0, 2.0)
 	dialogue.text = ""
-	black_screen.modulate.a = 0.0
 	timer = Timer.new()
 	timer.one_shot = false
 	add_child(timer)

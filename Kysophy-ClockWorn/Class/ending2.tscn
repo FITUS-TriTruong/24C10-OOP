@@ -10,8 +10,11 @@ offset_right = 1282.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = 207.0
 offset_top = 330.0
-offset_right = 1076.0
-offset_bottom = 353.0
+offset_right = 1071.0
+offset_bottom = 370.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2

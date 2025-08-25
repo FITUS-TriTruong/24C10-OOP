@@ -11,4 +11,6 @@ func _ready():
 		interaction_area.interact = Callable(self, "_show_dialogue")
 	
 func _show_dialogue():
-	DialogueManager.show_example_dialogue_balloon(load("res://Scripts/Dialogues/smallCom.dialogue"), "start")
+	if Global.memory0 and Global.memory1 and Global.memory2 and Global.memory3 and Global.memory4 and Global.memory5 and Global.memory6 and Global.memory7 and Global.memory8:
+		DialogueManager.show_example_dialogue_balloon(load("res://Scripts/Dialogues/smallCom.dialogue"), "start")
+	DialogueManager.show_example_dialogue_balloon(load("res://Scripts/Dialogues/error.dialogue"), "start")

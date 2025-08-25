@@ -18,10 +18,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_left = 235.0
-offset_top = 313.0
-offset_right = 1105.0
-offset_bottom = 353.0
+offset_left = 204.0
+offset_top = 350.0
+offset_right = 1074.0
+offset_bottom = 390.0
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
