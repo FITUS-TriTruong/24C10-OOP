@@ -55,7 +55,7 @@ func _process(_delta):
 	current_offset = current_offset.lerp(target_offset, smoothness)
 	background.position = background_initial_pos + current_offset
 	
-	if not GlobalMenu.alreadyPlayed and Input.is_action_just_pressed("skip_intro"):
+	if Input.is_action_just_pressed("skip_intro"):
 		_skip_intro()
 	
 func introSequence():

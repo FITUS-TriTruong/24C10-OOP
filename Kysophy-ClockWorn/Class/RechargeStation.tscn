@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b65srsxaotn4j"]
+
+[ext_resource type="Script" uid="uid://cmu8m4d6jbi5t" path="res://Scripts/Items/Recharge.gd" id="1_fftc3"]
+[ext_resource type="Texture2D" uid="uid://dnv3b68kxudg8" path="res://Assets/Character/RechargeStation.png" id="2_fftc3"]
+[ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="3_6n5wd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1epq"]
+radius = 35.1283
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_fftc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.65625, 0.694125)
+texture = ExtResource("2_fftc3")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_6n5wd")]
+action_name = "recharge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_k1epq")

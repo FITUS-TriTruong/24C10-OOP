@@ -8,11 +8,7 @@ extends StageTemplate
 func stage_ready() -> void:
 	if interaction_area:
 		interaction_area.interact = Callable(self, "_show_dialogue")
-
-func stage_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("some_action"):
-		fallDmg()
-
+		
 # Your custom logic
 func fallDmg():
 	pass

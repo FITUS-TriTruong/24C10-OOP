@@ -1,12 +1,12 @@
 [gd_scene load_steps=27 format=4 uid="uid://bq72h3oetptpx"]
 
-[ext_resource type="Texture2D" uid="uid://lxq3cvbdvdsw" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
-[ext_resource type="Texture2D" uid="uid://b2lk2vtuq4027" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
-[ext_resource type="Texture2D" uid="uid://bwyqkyrnqqr8b" path="res://Assets/Environments/another-world/PNG/layered/back-towers.png" id="3_cw2t4"]
-[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_a2eh7"]
-[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="5_4axa8"]
-[ext_resource type="Texture2D" uid="uid://bnls1rsvj2dvr" path="res://Assets/Environments/sci-fi-interior-paltform/PNG/tile-set-sci-fi-interior-platform.png" id="6_4axa8"]
-[ext_resource type="Texture2D" uid="uid://dg8xsxc6ary68" path="res://Assets/Environments/sci-fi-environment-background-files/PNG/sci-fi-environment-tileset.png" id="6_a2eh7"]
+[ext_resource type="Texture2D" uid="uid://d3ckinjfgo7ru" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
+[ext_resource type="Texture2D" uid="uid://qadqty5wptkw" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
+[ext_resource type="Texture2D" uid="uid://d2ob8niyod5d0" path="res://Assets/Environments/another-world/PNG/layered/back-towers.png" id="3_cw2t4"]
+[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_a2eh7"]
+[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="5_4axa8"]
+[ext_resource type="Texture2D" uid="uid://dpcp23se0vw6f" path="res://Assets/Environments/sci-fi-interior-paltform/PNG/tile-set-sci-fi-interior-platform.png" id="6_4axa8"]
+[ext_resource type="Texture2D" uid="uid://bf7j5mqdg16ib" path="res://Assets/Environments/sci-fi-environment-background-files/PNG/sci-fi-environment-tileset.png" id="6_a2eh7"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="6_cw2t4"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="7_a2eh7"]
 [ext_resource type="PackedScene" uid="uid://bs36tdhu6d4pc" path="res://Class/memory0.tscn" id="10_hlng1"]
@@ -2613,7 +2613,7 @@ tile_set = SubResource("TileSet_kp5m6")
 [node name="TileMapLayer9" type="TileMapLayer" parent="p1"]
 tile_set = SubResource("TileSet_kp5m6")
 
-[node name="Character" parent="." instance=ExtResource("6_cw2t4")]
+[node name="Character" parent="." groups=["player"] instance=ExtResource("6_cw2t4")]
 position = Vector2(1076, 485)
 collision_layer = 2
 

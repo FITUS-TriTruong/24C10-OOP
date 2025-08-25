@@ -1,4 +1,4 @@
-#class_name StaminaSystem
+class_name StaminaSystem
 extends Node2D
 
 @export var max_stamina: float = 500.0
