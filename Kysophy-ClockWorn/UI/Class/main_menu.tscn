@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://dle5qbhoq8hkc"]
 
 [ext_resource type="Script" uid="uid://c5ji72xv4vg0d" path="res://UI/Scripts/main_menu.gd" id="1_670pd"]
-[ext_resource type="Texture2D" uid="uid://b31mymbe2myk1" path="res://Assets/UI/architecture-after-civilization-.png" id="2_hwkil"]
+[ext_resource type="Texture2D" uid="uid://d0a3yk21f8bik" path="res://Assets/MISC/MenuBackground_2.png" id="2_gjtv6"]
 [ext_resource type="FontFile" uid="uid://dlbimd8v1uvsy" path="res://Assets/Font/GrapeSoda.ttf" id="3_rfn2e"]
 [ext_resource type="Texture2D" uid="uid://cuu1wk66eq4rh" path="res://Assets/UI/ClockWorn.png" id="4_rfn2e"]
 [ext_resource type="PackedScene" uid="uid://cuvl6j1ra4or3" path="res://UI/Class/Settings/option_menu.tscn" id="5_wsmwr"]
@@ -97,7 +97,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6syg"]
-texture = ExtResource("2_hwkil")
+texture = ExtResource("2_gjtv6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfn2e"]
 texture = ExtResource("4_rfn2e")

@@ -1,28 +1,27 @@
 [gd_scene load_steps=12 format=3 uid="uid://bi4qkupp86sb0"]
 
 [ext_resource type="Script" uid="uid://ccosihpfv75oh" path="res://Class/level_select.gd" id="1_7qvd8"]
-[ext_resource type="Texture2D" uid="uid://dixj5862ypxp5" path="res://Assets/UI/menu_img.png" id="1_ip06w"]
-[ext_resource type="Texture2D" uid="uid://bh74lwgq7k6a" path="res://Assets/UI/9faade10-8081-4c09-a861-e9a73dadb13a.jpg" id="2_7qvd8"]
-[ext_resource type="Texture2D" uid="uid://r67dopqro6gh" path="res://Assets/f3951929-64e8-4f08-b68d-d51b553ccf6e.jpg" id="3_7qvd8"]
-[ext_resource type="Texture2D" uid="uid://cts74o555boej" path="res://Assets/UI/ClockWorn.png" id="3_cab3y"]
+[ext_resource type="Texture2D" uid="uid://d0a3yk21f8bik" path="res://Assets/MISC/MenuBackground_2.png" id="2_cab3y"]
+[ext_resource type="Texture2D" uid="uid://cuu1wk66eq4rh" path="res://Assets/UI/ClockWorn.png" id="3_cab3y"]
+[ext_resource type="Texture2D" uid="uid://colajvdvnn8qi" path="res://Assets/GUI.png" id="3_ip06w"]
+[ext_resource type="Script" uid="uid://bennf8hy77xik" path="res://Class/texture_button.gd" id="4_cab3y"]
 [ext_resource type="PackedScene" uid="uid://26akd4o0mes6" path="res://Class/grid_container.tscn" id="5_ve2ya"]
+[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="7_y1btu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01hak"]
-atlas = ExtResource("2_7qvd8")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1btu"]
+texture = ExtResource("2_cab3y")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hfvtg"]
-load_path = "res://.godot/imported/Button.png-d1b0ea27fb8ebacf3cfdbeda7cb2c31f.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qvd8"]
+atlas = ExtResource("3_ip06w")
+region = Rect2(17.1436, 232.869, 30.0297, 14.3271)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ip06w"]
-atlas = SubResource("CompressedTexture2D_hfvtg")
-region = Rect2(197, 2716, 181, 189)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cab3y"]
+atlas = ExtResource("3_ip06w")
+region = Rect2(64.8861, 240.889, 14.0979, 14.1552)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7qvd8"]
-load_path = "res://.godot/imported/Button.png-d1b0ea27fb8ebacf3cfdbeda7cb2c31f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xcrjd"]
-atlas = SubResource("CompressedTexture2D_7qvd8")
-region = Rect2(197, 972, 181, 190)
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1btu"]
+atlas = ExtResource("3_ip06w")
+region = Rect2(128.88, 240.964, 14.2469, 14.1208)
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -33,106 +32,109 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7qvd8")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_ip06w")
-expand_mode = 1
+[node name="BackgroundPanel" type="Panel" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 1380.0
+offset_bottom = 820.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_y1btu")
 
-[node name="TextureButton" type="TextureButton" parent="Background"]
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 995.0
-offset_top = 36.0
-offset_right = 1115.0
-offset_bottom = 111.0
-texture_normal = ExtResource("3_7qvd8")
+offset_left = 24.0
+offset_top = 608.0
+offset_right = 144.0
+offset_bottom = 683.0
+texture_normal = SubResource("AtlasTexture_7qvd8")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("4_cab3y")
 
-[node name="LevelMenu" type="TextureRect" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -238.0
-offset_top = -183.0
-offset_right = 238.0
-offset_bottom = 183.0
+offset_left = -388.0
+offset_top = 120.0
+offset_right = 388.0
+offset_bottom = 269.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_01hak")
-expand_mode = 1
-
-[node name="Title" type="TextureRect" parent="LevelMenu"]
-layout_mode = 0
-offset_left = -24.0
-offset_top = -121.0
-offset_right = 476.0
-offset_bottom = -21.0
 texture = ExtResource("3_cab3y")
 
-[node name="BackButton" type="TextureButton" parent="LevelMenu"]
+[node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -32.0
-offset_right = 21.0
-offset_bottom = 27.0
+offset_left = 384.0
+offset_top = 75.0
+offset_right = 460.0
+offset_bottom = 144.0
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_ip06w")
+texture_normal = SubResource("AtlasTexture_cab3y")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("4_cab3y")
 
-[node name="ClipControl" type="Control" parent="LevelMenu"]
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(654, 462)
+scale = Vector2(13, 7.6)
+texture = ExtResource("3_ip06w")
+region_enabled = true
+region_rect = Rect2(48.9032, 96.8951, 30.1808, 30.1808)
+
+[node name="ClipControl" type="Control" parent="."]
 clip_contents = true
 custom_minimum_size = Vector2(387, 160)
 layout_mode = 1
 anchor_left = 0.101
-anchor_top = 0.31100002
-anchor_right = 0.91400003
+anchor_top = 0.311
+anchor_right = 0.914
 anchor_bottom = 0.749
-offset_left = -0.07600021
-offset_top = 0.17399597
-offset_right = -0.06402588
-offset_bottom = -0.13400269
+offset_left = 330.72
+offset_top = 161.08
+offset_right = -322.92
+offset_bottom = 33.72
 
-[node name="HBoxContainer" type="HBoxContainer" parent="LevelMenu/ClipControl"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ClipControl"]
 custom_minimum_size = Vector2(387, 160)
-layout_mode = 0
 offset_right = 778.0
 offset_bottom = 160.0
 
-[node name="GridContainer" parent="LevelMenu/ClipControl/HBoxContainer" instance=ExtResource("5_ve2ya")]
+[node name="GridContainer" parent="ClipControl/HBoxContainer" instance=ExtResource("5_ve2ya")]
 layout_mode = 2
 
-[node name="GridContainer2" parent="LevelMenu/ClipControl/HBoxContainer" instance=ExtResource("5_ve2ya")]
+[node name="GridContainer2" parent="ClipControl/HBoxContainer" instance=ExtResource("5_ve2ya")]
 layout_mode = 2
 
-[node name="NextButton" type="TextureButton" parent="LevelMenu"]
+[node name="BackgroundPanel" type="Panel" parent="ClipControl/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y1btu")
+
+[node name="NextButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -28.0
-offset_right = 58.0
-offset_bottom = 31.0
+offset_left = -430.0
+offset_top = 75.0
+offset_right = -354.0
+offset_bottom = 144.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_xcrjd")
+texture_normal = SubResource("AtlasTexture_y1btu")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("4_cab3y")
 
-[connection signal="pressed" from="Background/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="LevelMenu/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="LevelMenu/NextButton" to="." method="_on_next_button_pressed"]
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y1btu")
+volume_db = -15.0
+bus = &"SFX"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

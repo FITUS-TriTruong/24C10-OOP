@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://5r6ebhmrlxig"]
+[gd_scene load_steps=36 format=4 uid="uid://5r6ebhmrlxig"]
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://bjfmwda33jk3l" path="res://Class/memory4.tscn" id="10_tl1xt"]
 [ext_resource type="PackedScene" uid="uid://51wbfi1fyjb4" path="res://Class/ClickNDrag_2.tscn" id="12_tl1xt"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="14_tl1xt"]
+[ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/RechargeStation.tscn" id="15_f3mqg"]
+[ext_resource type="AudioStream" uid="uid://br2itskcs8srp" path="res://Music & SFX/Stage_2.mp3" id="16_7jm7e"]
+[ext_resource type="AudioStream" uid="uid://kjvgioyg7kqd" path="res://Music & SFX/Stage_2_Ambience.mp3" id="17_gu2kl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lubu"]
 texture = ExtResource("2_v0c7u")
@@ -6281,7 +6284,7 @@ collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 position = Vector2(0, -10)
-zoom = Vector2(4.2, 4.2)
+zoom = Vector2(3.8, 3.8)
 limit_left = 0
 limit_top = 0
 limit_right = 1150
@@ -6374,7 +6377,7 @@ region_enabled = true
 region_rect = Rect2(416.015, 528.08, 22.9493, 15.9741)
 
 [node name="DraggabbleThing5" parent="." instance=ExtResource("12_tl1xt")]
-position = Vector2(130, 45)
+position = Vector2(100, -67)
 
 [node name="Sprite2D" type="Sprite2D" parent="DraggabbleThing5"]
 texture = ExtResource("1_iy6na")
@@ -6398,6 +6401,8 @@ region_enabled = true
 region_rect = Rect2(447.849, 528.066, 23.2008, 15.9061)
 
 [node name="next_level" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
 position = Vector2(577, 270)
@@ -6443,6 +6448,12 @@ position = Vector2(225, -19)
 [node name="dropZone17" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(130, 45)
 
+[node name="dropZone19" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(192, 13)
+
+[node name="dropZone20" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(100, -67)
+
 [node name="dropZone11" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(318, -50)
 
@@ -6472,6 +6483,23 @@ position = Vector2(-370, 95)
 
 [node name="dropZone6" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(-334, -67)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("15_f3mqg")]
+position = Vector2(-105, -79)
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_7jm7e")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_gu2kl")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]

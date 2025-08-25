@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnbpmsjjdwxjm"]
+
+[ext_resource type="Texture2D" uid="uid://l0g3wpwqolk0" path="res://Assets/MISC/FallingLeaves.png" id="1_5mc6m"]
+
+[sub_resource type="Curve" id="Curve_0k73u"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 293.878), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ehv7y"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 62.2449), 0.0, 0.0, 0, 0, Vector2(0.0526316, 66.3265), 0.0, 0.0, 0, 0, Vector2(0.992481, 100), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 60
+texture = ExtResource("1_5mc6m")
+lifetime = 3.0
+speed_scale = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+gravity = Vector2(120, 230)
+angular_velocity_max = 1.5
+angular_velocity_curve = SubResource("Curve_0k73u")
+radial_accel_max = 2.0
+damping_max = 2.0
+damping_curve = SubResource("Curve_ehv7y")
+scale_amount_min = 0.1
+scale_amount_max = 0.1

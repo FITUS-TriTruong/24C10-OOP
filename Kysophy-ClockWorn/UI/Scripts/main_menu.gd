@@ -60,7 +60,7 @@ func _process(_delta):
 	
 func introSequence():
 	animation_player.play("Intro")
-	await get_tree().create_timer(1.7).timeout
+	await get_tree().create_timer(1.8).timeout
 	ding.play()
 	await get_tree().create_timer(0.3).timeout
 	bg_music.play()

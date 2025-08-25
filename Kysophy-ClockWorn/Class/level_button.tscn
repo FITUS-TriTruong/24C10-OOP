@@ -1,23 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://doahvsqchabtg"]
+[gd_scene load_steps=5 format=3 uid="uid://doahvsqchabtg"]
 
-[ext_resource type="Texture2D" uid="uid://bh3nyw45xnu7v" path="res://Assets/button_atlas_texture.tres" id="1_tg03d"]
-[ext_resource type="Texture2D" uid="uid://dkdkk8owr2i8e" path="res://Assets/Button.png" id="2_2p27m"]
+[ext_resource type="Texture2D" uid="uid://bvkla11s00hu4" path="res://Assets/MISC/UnlockedLevels.png" id="1_2p27m"]
+[ext_resource type="Texture2D" uid="uid://bp3naojl167p3" path="res://Assets/MISC/LockedLevels.png" id="2_2p27m"]
 [ext_resource type="Script" uid="uid://ccupoiw5pu0q0" path="res://Class/level_button.gd" id="3_2p27m"]
-[ext_resource type="FontFile" uid="uid://c113etvao6v0j" path="res://Assets/LilitaOne-Regular.ttf" id="3_5th08"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wglnt"]
-atlas = ExtResource("2_2p27m")
-region = Rect2(1389, 668, 182, 189)
+[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_2p27m"]
 
 [node name="LevelButton" type="TextureButton"]
 custom_minimum_size = Vector2(50, 50)
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(2, 2)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
-texture_normal = ExtResource("1_tg03d")
-texture_disabled = SubResource("AtlasTexture_wglnt")
+texture_normal = ExtResource("1_2p27m")
+texture_disabled = ExtResource("2_2p27m")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("3_2p27m")
@@ -30,9 +27,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0.6901961, 0.8627451, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("3_5th08")
+theme_override_fonts/font = ExtResource("4_2p27m")
 theme_override_font_sizes/font_size = 35
 text = "1"
 horizontal_alignment = 1

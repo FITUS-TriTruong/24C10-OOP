@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cev0jqpth34l4"]
+
+[ext_resource type="Texture2D" uid="uid://kbs2x6vsbdg6" path="res://Assets/MISC/rain.png" id="1_01v51"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 300
+texture = ExtResource("1_01v51")
+lifetime = 2.4
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+gravity = Vector2(300, 980)
+angle_min = 25.0
+angle_max = 25.0
+scale_amount_min = 0.3

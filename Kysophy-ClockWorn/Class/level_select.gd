@@ -1,18 +1,31 @@
-# 
 extends Control
 
-@onready var grid_container := $LevelMenu/ClipControl/HBoxContainer
+@onready var grid_container: HBoxContainer = $ClipControl/HBoxContainer
+
+# background
+@onready var background: Panel = $BackgroundPanel
+var parallax_factor: float = 0.05
+var smoothness: float = 0.1
+var background_initial_pos: Vector2
+var current_offset: Vector2 = Vector2()
 
 var num_grids = 1
 var current_grid = 1
 var grid_width = 387
 
 func _ready():
-	# The 'Global' script is autoloaded, so we can access it directly.
+	background_initial_pos = background.position
 	num_grids = grid_container.get_child_count()
 	grid_width = grid_container.custom_minimum_size.x
 	setup_level_box()
 	connect_level_selected_to_level_box()
+
+func _process(_delta):
+	var mouse_pos = get_viewport().get_mouse_position()
+	var screen_center = Vector2(get_viewport().size.x, get_viewport().size.y) / 2
+	var target_offset = (mouse_pos - screen_center) * parallax_factor
+	current_offset = current_offset.lerp(target_offset, smoothness)
+	background.position = background_initial_pos + current_offset
 
 func setup_level_box():
 	# This function now correctly sets the locked status based on global progress.
@@ -51,7 +64,6 @@ func animateGridPosition(finalValue):
 	create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT).tween_property(
 		grid_container, "position:x", finalValue, 0.5
 		)
-
 
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/Class/main_menu.tscn")

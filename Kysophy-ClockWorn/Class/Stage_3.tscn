@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://bq72h3oetptpx"]
+[gd_scene load_steps=32 format=4 uid="uid://bq72h3oetptpx"]
 
 [ext_resource type="Texture2D" uid="uid://d3ckinjfgo7ru" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
+[ext_resource type="Script" uid="uid://dcrc1rtrlcyre" path="res://Class/stage_3.gd" id="1_g0keq"]
 [ext_resource type="Texture2D" uid="uid://qadqty5wptkw" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
 [ext_resource type="Texture2D" uid="uid://d2ob8niyod5d0" path="res://Assets/Environments/another-world/PNG/layered/back-towers.png" id="3_cw2t4"]
 [ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_a2eh7"]
@@ -15,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://dcc6cbjt0n3y1" path="res://Class/memory3.tscn" id="13_g0keq"]
 [ext_resource type="PackedScene" uid="uid://51wbfi1fyjb4" path="res://Class/ClickNDrag_2.tscn" id="14_kp5m6"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="15_g0keq"]
+[ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/RechargeStation.tscn" id="17_en1x5"]
+[ext_resource type="PackedScene" uid="uid://cev0jqpth34l4" path="res://Class/Raining.tscn" id="18_nacm3"]
+[ext_resource type="AudioStream" uid="uid://dkbwlt4fsx86h" path="res://Music & SFX/Stage_3.mp3" id="19_i87pi"]
+[ext_resource type="AudioStream" uid="uid://cgk141xk3aw7p" path="res://Music & SFX/Stage_3_Ambience.mp3" id="20_yeqj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vba5r"]
 texture = ExtResource("1_50uq0")
@@ -2519,6 +2524,7 @@ a = Vector2(-2, -626)
 b = Vector2(-1, 55)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_g0keq")
 
 [node name="BG" type="TileMap" parent="."]
 format = 2
@@ -2619,7 +2625,7 @@ collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 position = Vector2(2, -14)
-zoom = Vector2(3, 3)
+zoom = Vector2(3.8, 3.8)
 limit_left = 0
 limit_top = 0
 limit_right = 1150
@@ -2664,6 +2670,8 @@ shape = SubResource("WorldBoundaryShape2D_4axa8")
 
 [node name="next_level" type="Area2D" parent="."]
 position = Vector2(583, 333)
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="next_level"]
 position = Vector2(577, 270)
@@ -2851,6 +2859,26 @@ position = Vector2(629, 392)
 
 [node name="dropZone33" parent="." instance=ExtResource("15_g0keq")]
 position = Vector2(617, 392)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("17_en1x5")]
+position = Vector2(385, 524)
+
+[node name="Node2D" parent="StaticBody2D" instance=ExtResource("18_nacm3")]
+position = Vector2(172, -518)
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_i87pi")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_yeqj8")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]

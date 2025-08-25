@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://3it3dpypgpc6"]
+[gd_scene load_steps=10 format=3 uid="uid://3it3dpypgpc6"]
 
 [ext_resource type="PackedScene" uid="uid://cykge75gjj540" path="res://UI/Class/Settings/rebind_session.tscn" id="1_gkpdu"]
 [ext_resource type="Script" uid="uid://b0ppq8m4hw4gq" path="res://UI/Scripts/option_tabs.gd" id="1_ydrdh"]
 [ext_resource type="PackedScene" uid="uid://dcwjubvwxtqun" path="res://UI/Class/Settings/window_mode.tscn" id="2_8vj8d"]
+[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="2_53ae5"]
 [ext_resource type="PackedScene" uid="uid://bq8chde811e4v" path="res://UI/Class/Settings/resolution_mode.tscn" id="3_gtqr1"]
+[ext_resource type="Script" uid="uid://tgtbkfcfb250" path="res://UI/Class/Settings/graphics.gd" id="3_qikg0"]
+[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="7_vta8d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydrdh"]
 
@@ -36,6 +39,9 @@ clip_tabs = false
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_53ae5")
+theme_override_font_sizes/font_size = 16
+script = ExtResource("3_qikg0")
 metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics"]
@@ -77,6 +83,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_cimqh")
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_53ae5")
+script = ExtResource("3_qikg0")
 metadata/_tab_index = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls"]
@@ -130,4 +138,11 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_cimqh")
 [node name="Accessibility" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_53ae5")
+script = ExtResource("3_qikg0")
 metadata/_tab_index = 2
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vta8d")
+volume_db = -15.0
+bus = &"SFX"

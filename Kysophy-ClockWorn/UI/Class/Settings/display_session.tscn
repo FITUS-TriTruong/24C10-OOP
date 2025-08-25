@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd0worp5ywqtv"]
+[gd_scene load_steps=4 format=3 uid="uid://bd0worp5ywqtv"]
 
+[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="1_2b41r"]
 [ext_resource type="Script" uid="uid://c0x1e1jvfnmcw" path="res://UI/Class/Settings/option_button.gd" id="1_xaj5u"]
 [ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="2_6g1q3"]
 
@@ -19,7 +20,8 @@ theme_override_constants/separation = 160
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("1_2b41r")
+theme_override_font_sizes/font_size = 40
 text = "BASE_LABEL"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
@@ -28,6 +30,7 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2b41r")
 script = ExtResource("1_xaj5u")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cykge75gjj540"]
+[gd_scene load_steps=5 format=3 uid="uid://cykge75gjj540"]
 
 [ext_resource type="Script" uid="uid://bgvyseaix87j6" path="res://UI/Scripts/rebind_session.gd" id="1_rqcn2"]
+[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="2_reyvx"]
 [ext_resource type="Script" uid="uid://cxpr4k7nobjpm" path="res://UI/Class/Settings/button.gd" id="2_xg6i2"]
 [ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="3_reyvx"]
 
@@ -28,7 +29,8 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 30)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("2_reyvx")
+theme_override_font_sizes/font_size = 40
 text = "ACTION"
 vertical_alignment = 1
 
@@ -41,7 +43,8 @@ theme_override_constants/separation = 200
 clip_contents = true
 custom_minimum_size = Vector2(250, 30)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("2_reyvx")
+theme_override_font_sizes/font_size = 40
 toggle_mode = true
 text = "ACTION_KEY"
 script = ExtResource("2_xg6i2")

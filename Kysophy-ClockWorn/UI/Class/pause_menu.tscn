@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yst7q"]
 shader = ExtResource("2_tpa7j")
-shader_parameter/amount = 1.0350000491625
+shader_parameter/amount = 1.035
 
 [node name="PauseMenu" type="CanvasLayer"]
 scale = Vector2(2, 2)

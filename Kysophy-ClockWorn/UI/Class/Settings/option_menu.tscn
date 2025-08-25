@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuvl6j1ra4or3"]
+[gd_scene load_steps=7 format=3 uid="uid://cuvl6j1ra4or3"]
 
 [ext_resource type="Script" uid="uid://duv6ya3unnkx8" path="res://UI/Scripts/option_menu.gd" id="1_awtfk"]
-[ext_resource type="FontFile" uid="uid://bi0b0jtj6u31v" path="res://Assets/Font/GrapeSoda.ttf" id="2_ewwq4"]
+[ext_resource type="FontFile" uid="uid://dlbimd8v1uvsy" path="res://Assets/Font/GrapeSoda.ttf" id="2_ewwq4"]
 [ext_resource type="PackedScene" uid="uid://3it3dpypgpc6" path="res://UI/Class/Settings/option_tabs.tscn" id="3_h5wht"]
+[ext_resource type="Script" uid="uid://cxpr4k7nobjpm" path="res://UI/Class/Settings/button.gd" id="4_ewwq4"]
+[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_w02x1"]
+[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="5_h5wht"]
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3
@@ -41,5 +44,12 @@ custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("4_w02x1")
+theme_override_font_sizes/font_size = 30
 text = "Exit"
+script = ExtResource("4_ewwq4")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h5wht")
+volume_db = -15.0
+bus = &"SFX"
