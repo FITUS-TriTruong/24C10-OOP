@@ -5,6 +5,7 @@ extends StaticBody2D
 var alreadyReplenished = false
 @export var recharge_rate: float = 100.0   # stamina per second
 @export var refill_percent: float = 0.7    # 70% refill
+@onready var recharge_sound: AudioStreamPlayer = $RechargeSound
 
 var target_system: StaminaSystem = null
 var is_recharging: bool = false
@@ -27,6 +28,7 @@ func _start_recharge():
 	if alreadyReplenished:
 		pass
 	else:
+		recharge_sound.play()
 		alreadyReplenished = true
 		var player = get_overlapping_player()
 		if player and player.has_node("StaminaSystem"):

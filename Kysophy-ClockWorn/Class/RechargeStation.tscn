@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b65srsxaotn4j"]
+[gd_scene load_steps=6 format=3 uid="uid://b65srsxaotn4j"]
 
 [ext_resource type="Script" uid="uid://cmu8m4d6jbi5t" path="res://Scripts/Items/Recharge.gd" id="1_fftc3"]
 [ext_resource type="Texture2D" uid="uid://dnv3b68kxudg8" path="res://Assets/Character/RechargeStation.png" id="2_fftc3"]
 [ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="3_6n5wd"]
+[ext_resource type="AudioStream" uid="uid://c7jlsbvdxhcvo" path="res://Music & SFX/RechargeSound.mp3" id="4_lk71c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k1epq"]
 radius = 35.1283
@@ -20,3 +21,7 @@ action_name = "recharge"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_k1epq")
+
+[node name="RechargeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lk71c")
+volume_db = -8.0
