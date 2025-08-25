@@ -1,0 +1,9 @@
+~ start
+Machine: Beep...beep...
+Machine: Do you wish to check the package?
+- Check
+	Machine: ...
+	Machine: The package contains a special type of battery.
+	Machine: So strong that it restarts all robots.
+- Leave => END
+=> END

@@ -13,6 +13,7 @@ var memory5 = false
 var memory6 = false
 var memory7 = false
 var memory8 = false
+var package = true
 
 var game_data = {
 	"unlocked_level": 1,
