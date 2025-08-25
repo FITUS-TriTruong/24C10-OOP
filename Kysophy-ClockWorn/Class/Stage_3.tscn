@@ -2620,7 +2620,7 @@ tile_set = SubResource("TileSet_kp5m6")
 tile_set = SubResource("TileSet_kp5m6")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("6_cw2t4")]
-position = Vector2(1076, 485)
+position = Vector2(30, 510)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]

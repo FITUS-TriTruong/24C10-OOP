@@ -7833,7 +7833,7 @@ script = SubResource("GDScript_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(1120, 590)
+position = Vector2(100, 590)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]

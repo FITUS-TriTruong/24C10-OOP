@@ -6279,7 +6279,7 @@ tile_map_data = PackedByteArray("AAD8/wUAAAADAAgAAAD9/wUAAAADAAgAAAAGAAUAAAADAAg
 tile_set = SubResource("TileSet_mrbji")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("1_aq2pl")]
-position = Vector2(150, 45)
+position = Vector2(-550, 65)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
