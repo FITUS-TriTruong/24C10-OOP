@@ -99,10 +99,7 @@ func change_to_next_stage() -> void:
 		print("Stage continuation within level %d" % current_level_num)
 
 	# 🔹 Load the next stage
-	if FileAccess.file_exists(next_stage_path):
-		get_tree().change_scene_to_file(next_stage_path)
-	else:
-		push_error("ERROR: Next stage file not found: " + next_stage_path)
+	get_tree().change_scene_to_file(next_stage_path)
 
 func change_to_previous_stage() -> void:
 	print("Transitioning to previous stage: " + previous_stage_path)
