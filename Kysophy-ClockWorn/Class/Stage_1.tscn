@@ -1,8 +1,8 @@
-[gd_scene load_steps=46 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=47 format=4 uid="uid://8x5dtrf1ank4"]
 
-[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
+[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
-[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
 [ext_resource type="PackedScene" uid="uid://dnix68uldrl1d" path="res://Class/telekensis.tscn" id="5_bufok"]
 [ext_resource type="PackedScene" uid="uid://8h44kwitiiqa" path="res://Class/push.tscn" id="5_li1cj"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
@@ -14,9 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://boue3o78rvtjq" path="res://Class/fallDmg.tscn" id="14_b2uls"]
 [ext_resource type="PackedScene" uid="uid://dwb5f0j5ke7bi" path="res://Class/energyWarn.tscn" id="14_gtngy"]
 [ext_resource type="PackedScene" uid="uid://dnbpmsjjdwxjm" path="res://Class/LeavesFall.tscn" id="14_ibpph"]
-[ext_resource type="AudioStream" uid="uid://d0akyl7ekw17s" path="res://Music & SFX/Stage_1.mp3" id="15_b2uls"]
+[ext_resource type="PackedScene" uid="uid://51wbfi1fyjb4" path="res://Class/ClickNDrag_2.tscn" id="14_mrvk6"]
+[ext_resource type="AudioStream" uid="uid://2chfflypowje" path="res://Music & SFX/Stage_1.mp3" id="15_b2uls"]
 [ext_resource type="PackedScene" uid="uid://wi5ku4bgt7o6" path="res://Class/memory8.tscn" id="15_gtngy"]
-[ext_resource type="AudioStream" uid="uid://dmrrdgigk7bgi" path="res://Music & SFX/Stage_1_Ambience.mp3" id="16_b2uls"]
+[ext_resource type="AudioStream" uid="uid://dveu7v14jabgq" path="res://Music & SFX/Stage_1_Ambience.mp3" id="16_b2uls"]
 [ext_resource type="PackedScene" uid="uid://cwxs28s1ouav" path="res://Class/door1.tscn" id="16_bufok"]
 
 [sub_resource type="GDScript" id="GDScript_ibpph"]
@@ -46,7 +47,7 @@ func on_next_level_exited(body: CharacterBody2D) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74wb8"]
-size = Vector2(4.34783, 6)
+size = Vector2(2.60872, 6)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a18ea"]
 texture = ExtResource("1_kmgqk")
@@ -7819,7 +7820,7 @@ b = Vector2(1, 173)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t47l4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21hh7"]
-size = Vector2(15, 27)
+size = Vector2(17, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iars"]
 size = Vector2(238, 41)
@@ -7835,7 +7836,7 @@ script = SubResource("GDScript_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(11, 593)
+position = Vector2(50, 590)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -7853,8 +7854,8 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
-position = Vector2(0.7, -3)
-scale = Vector2(1.15, 1)
+position = Vector2(-0.5, -3)
+scale = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_74wb8")
 debug_color = Color(0.747274, 0.461592, 0, 0.42)
 
@@ -8072,14 +8073,14 @@ lock_rotation = true
 linear_damp = 1.295
 
 [node name="Sprite2D" type="Sprite2D" parent="PushableObject"]
-position = Vector2(-0.249964, -0.500015)
-scale = Vector2(1.03125, 1.17391)
+position = Vector2(0.50783, -1.00002)
+scale = Vector2(1.13229, 1.21739)
 texture = ExtResource("1_kmgqk")
 region_enabled = true
 region_rect = Rect2(464.086, 552.777, 15.926, 23.23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushableObject"]
-position = Vector2(-0.5, -0.5)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_21hh7")
 
 [node name="HitboxesForRigid" type="StaticBody2D" parent="."]
@@ -8131,7 +8132,7 @@ position = Vector2(-363, 252)
 position = Vector2(-187, 220)
 
 [node name="mem8" parent="." instance=ExtResource("15_gtngy")]
-position = Vector2(-389, 133)
+position = Vector2(257, -25)
 
 [node name="next_level" type="Area2D" parent="."]
 position = Vector2(471, 124)
@@ -8160,6 +8161,14 @@ texture = ExtResource("1_kmgqk")
 region_enabled = true
 region_rect = Rect2(415.741, 527.898, 23.3687, 16.157)
 
+[node name="DraggabbleThing" parent="." instance=ExtResource("14_mrvk6")]
+position = Vector2(-245, 228)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggabbleThing"]
+texture = ExtResource("1_kmgqk")
+region_enabled = true
+region_rect = Rect2(447.849, 528.066, 23.2008, 15.9061)
+
 [node name="dropZone" parent="." instance=ExtResource("8_dhhav")]
 position = Vector2(407, 148)
 
@@ -8171,6 +8180,75 @@ position = Vector2(477, 148)
 
 [node name="dropZone4" parent="." instance=ExtResource("8_dhhav")]
 position = Vector2(482, 148)
+
+[node name="dropZone5" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-245, 228)
+
+[node name="dropZone6" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-221, 149)
+
+[node name="dropZone7" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-207, 149)
+
+[node name="dropZone8" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-193, 149)
+
+[node name="dropZone9" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-167, 132)
+
+[node name="dropZone10" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-154, 132)
+
+[node name="dropZone11" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-141, 132)
+
+[node name="dropZone12" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-100, 52)
+
+[node name="dropZone13" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-83, 52)
+
+[node name="dropZone14" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-68, 52)
+
+[node name="dropZone15" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-18, -28)
+
+[node name="dropZone16" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-8, -28)
+
+[node name="dropZone17" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-32, -28)
+
+[node name="dropZone18" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(27, -12)
+
+[node name="dropZone19" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(43, -12)
+
+[node name="dropZone20" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(127, 147)
+
+[node name="dropZone21" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(127, 147)
+
+[node name="dropZone24" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-28, 147)
+
+[node name="dropZone25" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-83, 260)
+
+[node name="dropZone26" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-66, 260)
+
+[node name="dropZone27" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(-44, 260)
+
+[node name="dropZone23" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(52, 147)
+
+[node name="dropZone22" parent="." instance=ExtResource("8_dhhav")]
+position = Vector2(111, 147)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("13_78lwe")]
 position = Vector2(83, 136)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=36 format=4 uid="uid://5r6ebhmrlxig"]
+[gd_scene load_steps=37 format=4 uid="uid://5r6ebhmrlxig"]
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
-[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
-[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
+[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
+[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="5_kq63o"]
 [ext_resource type="PackedScene" uid="uid://d1bndlhdsml0m" path="res://Class/indoorNote.tscn" id="6_nnto4"]
 [ext_resource type="PackedScene" uid="uid://dj7qcxscseld" path="res://Class/warnStage2.tscn" id="7_nqqtr"]
@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://51wbfi1fyjb4" path="res://Class/ClickNDrag_2.tscn" id="12_tl1xt"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="14_tl1xt"]
 [ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/RechargeStation.tscn" id="15_f3mqg"]
-[ext_resource type="AudioStream" uid="uid://cb45ktu1gqf78" path="res://Music & SFX/Stage_2.mp3" id="16_7jm7e"]
-[ext_resource type="AudioStream" uid="uid://bvbhn75wbsjr0" path="res://Music & SFX/Stage_2_Ambience.mp3" id="17_gu2kl"]
+[ext_resource type="AudioStream" uid="uid://br2itskcs8srp" path="res://Music & SFX/Stage_2.mp3" id="16_7jm7e"]
+[ext_resource type="AudioStream" uid="uid://kjvgioyg7kqd" path="res://Music & SFX/Stage_2_Ambience.mp3" id="17_gu2kl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lubu"]
 texture = ExtResource("2_v0c7u")
@@ -6170,6 +6170,9 @@ distance = -98.0
 a = Vector2(-2, -626)
 b = Vector2(-1, 55)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu2kl"]
+size = Vector2(102, 32)
+
 [node name="Game" type="Node2D"]
 position = Vector2(578, 341)
 script = ExtResource("1_ay16k")
@@ -6252,7 +6255,7 @@ tile_set = SubResource("TileSet_fj4up")
 
 [node name="TileMapLayer14" type="TileMapLayer" parent="interactive2"]
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AAD4//f/AAAYACwAAAAHAA0AAAAcACEAAAAIAA0AAAAdACEAAAA=")
+tile_map_data = PackedByteArray("AAD4//f/AAAYACwAAAA=")
 tile_set = SubResource("TileSet_fj4up")
 
 [node name="interactive" type="TileMap" parent="."]
@@ -6387,6 +6390,14 @@ texture = ExtResource("1_iy6na")
 region_enabled = true
 region_rect = Rect2(447.849, 528.066, 23.2008, 15.9061)
 
+[node name="DraggabbleThing6" parent="." instance=ExtResource("12_tl1xt")]
+position = Vector2(167, 285)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggabbleThing6"]
+texture = ExtResource("1_iy6na")
+region_enabled = true
+region_rect = Rect2(447.849, 528.066, 23.2008, 15.9061)
+
 [node name="DraggabbleThing4" parent="." instance=ExtResource("12_tl1xt")]
 position = Vector2(-120, 238)
 
@@ -6464,6 +6475,21 @@ position = Vector2(17, 239)
 [node name="dropZone10" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(225, -19)
 
+[node name="dropZone23" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(167, 285)
+
+[node name="dropZone24" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(221, 285)
+
+[node name="dropZone25" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(226, 285)
+
+[node name="dropZone26" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(215, 285)
+
+[node name="dropZone27" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(279, 239)
+
 [node name="dropZone17" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(130, 45)
 
@@ -6522,6 +6548,18 @@ volume_db = -15.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="HitboxesForRigid2" type="StaticBody2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(380, 157)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxesForRigid2"]
+position = Vector2(-115, 153)
+shape = SubResource("RectangleShape2D_gu2kl")
+debug_color = Color(0.976471, 0, 0.423529, 0.419608)
 
 [connection signal="body_entered" from="Character/Area2D" to="Character" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Character/Area2D" to="Character" method="_on_area_2d_body_exited"]
