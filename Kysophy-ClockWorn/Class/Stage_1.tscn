@@ -1,8 +1,10 @@
-[gd_scene load_steps=44 format=4 uid="uid://8x5dtrf1ank4"]
+[gd_scene load_steps=46 format=4 uid="uid://8x5dtrf1ank4"]
 
-[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
+[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
-[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="PackedScene" uid="uid://dnix68uldrl1d" path="res://Class/telekensis.tscn" id="5_bufok"]
+[ext_resource type="PackedScene" uid="uid://8h44kwitiiqa" path="res://Class/push.tscn" id="5_li1cj"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="8_dhhav"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="9_63rak"]
@@ -12,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://boue3o78rvtjq" path="res://Class/fallDmg.tscn" id="14_b2uls"]
 [ext_resource type="PackedScene" uid="uid://dwb5f0j5ke7bi" path="res://Class/energyWarn.tscn" id="14_gtngy"]
 [ext_resource type="PackedScene" uid="uid://dnbpmsjjdwxjm" path="res://Class/LeavesFall.tscn" id="14_ibpph"]
-[ext_resource type="AudioStream" uid="uid://2chfflypowje" path="res://Music & SFX/Stage_1.mp3" id="15_b2uls"]
+[ext_resource type="AudioStream" uid="uid://d0akyl7ekw17s" path="res://Music & SFX/Stage_1.mp3" id="15_b2uls"]
 [ext_resource type="PackedScene" uid="uid://wi5ku4bgt7o6" path="res://Class/memory8.tscn" id="15_gtngy"]
-[ext_resource type="AudioStream" uid="uid://dveu7v14jabgq" path="res://Music & SFX/Stage_1_Ambience.mp3" id="16_b2uls"]
+[ext_resource type="AudioStream" uid="uid://dmrrdgigk7bgi" path="res://Music & SFX/Stage_1_Ambience.mp3" id="16_b2uls"]
 [ext_resource type="PackedScene" uid="uid://cwxs28s1ouav" path="res://Class/door1.tscn" id="16_bufok"]
 
 [sub_resource type="GDScript" id="GDScript_ibpph"]
@@ -7833,7 +7835,7 @@ script = SubResource("GDScript_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(275, 487)
+position = Vector2(11, 593)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -8106,6 +8108,12 @@ debug_color = Color(0.976471, 0, 0.423529, 0.419608)
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_63rak")]
 visible = false
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("5_li1cj")]
+position = Vector2(524, 139)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("5_bufok")]
+position = Vector2(-249, 220)
 
 [node name="Door1" parent="." instance=ExtResource("16_bufok")]
 position = Vector2(133, 236)

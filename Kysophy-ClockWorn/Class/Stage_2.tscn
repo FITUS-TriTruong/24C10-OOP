@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="1_aq2pl"]
 [ext_resource type="Script" uid="uid://sllbh2w7hjo0" path="res://Scripts/Stages/stage_2.gd" id="1_ay16k"]
-[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
-[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
+[ext_resource type="Texture2D" uid="uid://cej6126tdkd3h" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_iy6na"]
+[ext_resource type="Texture2D" uid="uid://p7id74nvw37t" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="2_v0c7u"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="5_kq63o"]
 [ext_resource type="PackedScene" uid="uid://d1bndlhdsml0m" path="res://Class/indoorNote.tscn" id="6_nnto4"]
 [ext_resource type="PackedScene" uid="uid://dj7qcxscseld" path="res://Class/warnStage2.tscn" id="7_nqqtr"]
@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://51wbfi1fyjb4" path="res://Class/ClickNDrag_2.tscn" id="12_tl1xt"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="14_tl1xt"]
 [ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/RechargeStation.tscn" id="15_f3mqg"]
-[ext_resource type="AudioStream" uid="uid://br2itskcs8srp" path="res://Music & SFX/Stage_2.mp3" id="16_7jm7e"]
-[ext_resource type="AudioStream" uid="uid://kjvgioyg7kqd" path="res://Music & SFX/Stage_2_Ambience.mp3" id="17_gu2kl"]
+[ext_resource type="AudioStream" uid="uid://cb45ktu1gqf78" path="res://Music & SFX/Stage_2.mp3" id="16_7jm7e"]
+[ext_resource type="AudioStream" uid="uid://bvbhn75wbsjr0" path="res://Music & SFX/Stage_2_Ambience.mp3" id="17_gu2kl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lubu"]
 texture = ExtResource("2_v0c7u")
@@ -3581,10 +3581,15 @@ texture = ExtResource("1_iy6na")
 10:1/0 = 0
 11:1/0 = 0
 12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:1/0 = 0
+15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:1/0 = 0
 18:1/0 = 0
 19:1/0 = 0
@@ -3665,9 +3670,13 @@ texture = ExtResource("1_iy6na")
 3:5/0 = 0
 4:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:5/0 = 0
 11:5/0 = 0
 1:6/0 = 0
@@ -3772,12 +3781,19 @@ texture = ExtResource("1_iy6na")
 17:15/0 = 0
 18:15/0 = 0
 0:16/0 = 0
+0:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:16/0 = 0
+1:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.79859, -8, 2.33816)
 2:16/0 = 0
+2:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.79859, -8, 2.33816)
 3:16/0 = 0
+3:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.79859, -8, 2.33816)
 4:16/0 = 0
+4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.79859, -8, 2.33816)
 5:16/0 = 0
+5:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.79859, -8, 2.33816)
 6:16/0 = 0
+6:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:16/0 = 0
 8:16/0 = 0
 9:16/0 = 0
@@ -6278,6 +6294,30 @@ tile_set = SubResource("TileSet_mrbji")
 tile_map_data = PackedByteArray("AAD8/wUAAAADAAgAAAD9/wUAAAADAAgAAAAGAAUAAAADAAgAAAAIAAUAAAADAAgAAAD5/wUAAAADAAgAAAD+/wUAAAAEAAgAAAAAAAUAAAAEAAgAAAAFAAUAAAAEAAgAAAAJAAUAAAAEAAgAAAAKAAUAAAAEAAgAAAAHAAUAAAADAAcAAAD//wUAAAADAAcAAAABAAUAAAADAAcAAAD6/wUAAAABAAcAAAD7/wUAAAAEAAgAAAALAAUAAAACAAgAAAAMAAQAAAABAAcAAAD//wYAAAADAAgAAAABAAYAAAADAAgAAAD8/wYAAAAEAAgAAAD9/wYAAAAEAAgAAAD5/wYAAAAEAAgAAAAGAAYAAAAEAAgAAAAIAAYAAAAEAAgAAAAHAAYAAAADAAgAAAA=")
 tile_set = SubResource("TileSet_mrbji")
 
+[node name="StaticBody2D" parent="." instance=ExtResource("15_f3mqg")]
+position = Vector2(-105, -79)
+
+[node name="key" parent="." instance=ExtResource("8_iiyir")]
+position = Vector2(-394, 250)
+
+[node name="warnsign" parent="." instance=ExtResource("7_nqqtr")]
+position = Vector2(395, 70)
+
+[node name="door" parent="." instance=ExtResource("6_nnto4")]
+position = Vector2(-254, 247)
+
+[node name="book" parent="." instance=ExtResource("7_nsl3p")]
+position = Vector2(-381, 182)
+
+[node name="mem5" parent="." instance=ExtResource("8_c0ix1")]
+position = Vector2(-1, -89)
+
+[node name="mem6" parent="." instance=ExtResource("9_tc0s8")]
+position = Vector2(281, -301)
+
+[node name="mem4" parent="." instance=ExtResource("10_tl1xt")]
+position = Vector2(200, 271)
+
 [node name="Character" parent="." groups=["player"] instance=ExtResource("1_aq2pl")]
 position = Vector2(-552, 68)
 collision_layer = 2
@@ -6300,27 +6340,6 @@ collision_mask = 3
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_kq63o")
 debug_color = Color(0.747274, 0.461592, 0, 0.42)
-
-[node name="key" parent="." instance=ExtResource("8_iiyir")]
-position = Vector2(-394, 250)
-
-[node name="warnsign" parent="." instance=ExtResource("7_nqqtr")]
-position = Vector2(395, 70)
-
-[node name="door" parent="." instance=ExtResource("6_nnto4")]
-position = Vector2(-254, 247)
-
-[node name="book" parent="." instance=ExtResource("7_nsl3p")]
-position = Vector2(-381, 182)
-
-[node name="mem5" parent="." instance=ExtResource("8_c0ix1")]
-position = Vector2(-1, -89)
-
-[node name="mem6" parent="." instance=ExtResource("9_tc0s8")]
-position = Vector2(281, -301)
-
-[node name="mem4" parent="." instance=ExtResource("10_tl1xt")]
-position = Vector2(200, 271)
 
 [node name="PushableObject" type="RigidBody2D" parent="." groups=["RigidBody"]]
 light_mask = 1055
@@ -6489,9 +6508,6 @@ position = Vector2(-370, 95)
 
 [node name="dropZone6" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(-334, -67)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("15_f3mqg")]
-position = Vector2(-105, -79)
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_7jm7e")
