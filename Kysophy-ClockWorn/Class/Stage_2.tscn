@@ -6284,7 +6284,7 @@ collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 position = Vector2(0, -10)
-zoom = Vector2(3.8, 3.8)
+zoom = Vector2(3.65, 3.65)
 limit_left = 0
 limit_top = 0
 limit_right = 1150
@@ -6447,6 +6447,12 @@ position = Vector2(225, -19)
 
 [node name="dropZone17" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(130, 45)
+
+[node name="dropZone21" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(144, 45)
+
+[node name="dropZone22" parent="." instance=ExtResource("14_tl1xt")]
+position = Vector2(116, 45)
 
 [node name="dropZone19" parent="." instance=ExtResource("14_tl1xt")]
 position = Vector2(192, 13)

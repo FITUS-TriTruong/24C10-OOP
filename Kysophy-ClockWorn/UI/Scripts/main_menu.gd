@@ -21,6 +21,7 @@ var current_offset: Vector2 = Vector2()
 @onready var button_click: AudioStreamPlayer = $ButtonClick
 
 # intro
+var skipped = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var bg_music: AudioStreamPlayer = $BgMusic
 @onready var ding: AudioStreamPlayer = $Ding
@@ -55,7 +56,8 @@ func _process(_delta):
 	current_offset = current_offset.lerp(target_offset, smoothness)
 	background.position = background_initial_pos + current_offset
 	
-	if Input.is_action_just_pressed("skip_intro"):
+	if Input.is_action_just_pressed("skip_intro") and not skipped:
+		skipped = true
 		_skip_intro()
 	
 func introSequence():
