@@ -1,8 +1,8 @@
 [gd_scene load_steps=44 format=4 uid="uid://8x5dtrf1ank4"]
 
-[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
+[ext_resource type="Texture2D" uid="uid://byw4n4vm1ya2f" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="1_kmgqk"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="2_l84uo"]
-[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
+[ext_resource type="Texture2D" uid="uid://xjarb087q1rr" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_4qh50"]
 [ext_resource type="PackedScene" uid="uid://b14d8pfh86j65" path="res://Class/ClickNDrag.tscn" id="7_b4scb"]
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="8_dhhav"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="9_63rak"]
@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://boue3o78rvtjq" path="res://Class/fallDmg.tscn" id="14_b2uls"]
 [ext_resource type="PackedScene" uid="uid://dwb5f0j5ke7bi" path="res://Class/energyWarn.tscn" id="14_gtngy"]
 [ext_resource type="PackedScene" uid="uid://dnbpmsjjdwxjm" path="res://Class/LeavesFall.tscn" id="14_ibpph"]
-[ext_resource type="AudioStream" uid="uid://2chfflypowje" path="res://Music & SFX/Stage_1.mp3" id="15_b2uls"]
+[ext_resource type="AudioStream" uid="uid://dthr4q2psas2s" path="res://Music & SFX/Stage_1.mp3" id="15_b2uls"]
 [ext_resource type="PackedScene" uid="uid://wi5ku4bgt7o6" path="res://Class/memory8.tscn" id="15_gtngy"]
-[ext_resource type="AudioStream" uid="uid://dveu7v14jabgq" path="res://Music & SFX/Stage_1_Ambience.mp3" id="16_b2uls"]
+[ext_resource type="AudioStream" uid="uid://nclpnym1i4i6" path="res://Music & SFX/Stage_1_Ambience.mp3" id="16_b2uls"]
 [ext_resource type="PackedScene" uid="uid://cwxs28s1ouav" path="res://Class/door1.tscn" id="16_bufok"]
 
 [sub_resource type="GDScript" id="GDScript_ibpph"]
@@ -7833,7 +7833,7 @@ script = SubResource("GDScript_ibpph")
 
 [node name="Character" parent="." groups=["player"] instance=ExtResource("2_l84uo")]
 top_level = true
-position = Vector2(100, 590)
+position = Vector2(275, 487)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -7947,7 +7947,7 @@ tile_set = SubResource("TileSet_5ha37")
 
 [node name="fence" type="TileMapLayer" parent="BG1"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD1/wEAAAASAAIAAAD1/wIAAAASAAMAAAD1/wMAAAASAAQAAAD2/wEAAAATAAIAAAD2/wIAAAATAAMAAAD2/wMAAAATAAQAAAD3/wEAAAAUAAIAAAD3/wIAAAAUAAMAAAD3/wMAAAAUAAQAAAD4/wEAAAAVAAIAAAD4/wIAAAAVAAMAAAD4/wMAAAAVAAQAAAD//wEAAAASAAIAAAD//wIAAAASAAMAAAD//wMAAAASAAQAAAAAAAEAAAATAAIAAAAAAAIAAAATAAMAAAAAAAMAAAATAAQAAAABAAEAAAAUAAIAAAABAAIAAAAUAAMAAAABAAMAAAAUAAQAAAACAAEAAAAVAAIAAAACAAIAAAAVAAMAAAACAAMAAAAVAAQAAAAHAAEAAAATAAIAAAAHAAIAAAATAAMAAAAHAAMAAAATAAQAAAAIAAEAAAAUAAIAAAAIAAIAAAAUAAMAAAAIAAMAAAAUAAQAAAAJAAEAAAAVAAIAAAAJAAIAAAAVAAMAAAAJAAMAAAAVAAQAAAD5/wEAAAAWAAIAAAD5/wIAAAAWAAMAAAD5/wMAAAAWAAQAAAD6/wEAAAAXAAIAAAD6/wIAAAAXAAMAAAD6/wMAAAAXAAQAAAD7/wEAAAAYAAIAAAD7/wIAAAAYAAMAAAD7/wMAAAAYAAQAAAD8/wEAAAAZAAIAAAD8/wIAAAAZAAMAAAD8/wMAAAAZAAQAAAD9/wEAAAAaAAIAAAD9/wIAAAAaAAMAAAD9/wMAAAAaAAQAAAD+/wEAAAAbAAIAAAD+/wIAAAAbAAMAAAD+/wMAAAAbAAQAAAADAAEAAAAWAAIAAAADAAIAAAAWAAMAAAADAAMAAAAWAAQAAAAEAAEAAAAXAAIAAAAEAAIAAAAXAAMAAAAEAAMAAAAXAAQAAAAFAAEAAAAYAAIAAAAFAAIAAAAYAAMAAAAFAAMAAAAYAAQAAAAGAAEAAAASAAIAAAAGAAIAAAASAAMAAAAGAAMAAAASAAQAAAA=")
+tile_map_data = PackedByteArray("AAD1/wEAAAASAAIAAAD1/wIAAAASAAMAAAD1/wMAAAASAAQAAAD2/wEAAAATAAIAAAD2/wIAAAATAAMAAAD2/wMAAAATAAQAAAD3/wEAAAAUAAIAAAD3/wIAAAAUAAMAAAD3/wMAAAAUAAQAAAD4/wEAAAAVAAIAAAD4/wIAAAAVAAMAAAD4/wMAAAAVAAQAAAD//wEAAAASAAIAAAD//wIAAAASAAMAAAD//wMAAAASAAQAAAAAAAEAAAATAAIAAAAAAAIAAAATAAMAAAAAAAMAAAATAAQAAAABAAEAAAAUAAIAAAABAAIAAAAUAAMAAAABAAMAAAAUAAQAAAACAAEAAAAVAAIAAAACAAIAAAAVAAMAAAACAAMAAAAVAAQAAAAHAAEAAAATAAIAAAAHAAIAAAATAAMAAAAHAAMAAAATAAQAAAAIAAEAAAAUAAIAAAAIAAIAAAAUAAMAAAAIAAMAAAAUAAQAAAAJAAEAAAAVAAIAAAAJAAIAAAAVAAMAAAAJAAMAAAAVAAQAAAD5/wEAAAAWAAIAAAD5/wIAAAAWAAMAAAD6/wEAAAAXAAIAAAD6/wIAAAAXAAMAAAD7/wEAAAAYAAIAAAD7/wIAAAAYAAMAAAD8/wEAAAAZAAIAAAD8/wIAAAAZAAMAAAD8/wMAAAAZAAQAAAD9/wEAAAAaAAIAAAD9/wIAAAAaAAMAAAD9/wMAAAAaAAQAAAD+/wEAAAAbAAIAAAD+/wIAAAAbAAMAAAD+/wMAAAAbAAQAAAADAAEAAAAWAAIAAAADAAIAAAAWAAMAAAADAAMAAAAWAAQAAAAEAAEAAAAXAAIAAAAEAAIAAAAXAAMAAAAEAAMAAAAXAAQAAAAFAAEAAAAYAAIAAAAFAAIAAAAYAAMAAAAFAAMAAAAYAAQAAAAGAAEAAAASAAIAAAAGAAIAAAASAAMAAAAGAAMAAAASAAQAAAD7/wMAAAAYAAQAAAD6/wMAAAAXAAQAAAD5/wMAAAAWAAQAAAA=")
 tile_set = SubResource("TileSet_5ha37")
 
 [node name="fence" type="TileMapLayer" parent="BG1/fence"]

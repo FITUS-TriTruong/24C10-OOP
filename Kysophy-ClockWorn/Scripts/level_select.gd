@@ -46,8 +46,16 @@ func connect_level_selected_to_level_box():
 			box.connect("level_selected", change_to_scene)
 			
 func change_to_scene(level_num: int):
-	var next_level: String = "res://Class/Stage_" + str(level_num) + ".tscn"
+	var next_level: String
+	if level_num == 4:
+		# Level 4 is the final stage
+		next_level = "res://Class/final_stage.tscn"
+	else:
+		next_level = "res://Class/Stage_" + str(level_num) + ".tscn"
+	
 	if FileAccess.file_exists(next_level):
+		# Initialize the level with its fresh starting state
+		Global.start_level(level_num)
 		get_tree().change_scene_to_file(next_level)
 	
 func _on_back_button_pressed() -> void:

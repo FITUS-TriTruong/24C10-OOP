@@ -10,8 +10,8 @@ func _ready() -> void:
 	super._ready()
 
 func stage_ready() -> void:
-	# Stage 2 specific initialization
-	print("Stage 2 loaded successfully!")
+	# Stage 3 specific initialization
+	print("Stage 3 loaded successfully!")
 
 # Override transition events if needed
 func on_next_level_entered(body: CharacterBody2D) -> void:

@@ -1,13 +1,13 @@
 [gd_scene load_steps=32 format=4 uid="uid://bq72h3oetptpx"]
 
-[ext_resource type="Texture2D" uid="uid://d3ckinjfgo7ru" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
-[ext_resource type="Script" uid="uid://dcrc1rtrlcyre" path="res://Class/stage_3.gd" id="1_g0keq"]
-[ext_resource type="Texture2D" uid="uid://qadqty5wptkw" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
-[ext_resource type="Texture2D" uid="uid://d2ob8niyod5d0" path="res://Assets/Environments/another-world/PNG/layered/back-towers.png" id="3_cw2t4"]
-[ext_resource type="Texture2D" uid="uid://fgq2gu7ygu2g" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_a2eh7"]
-[ext_resource type="Texture2D" uid="uid://b84xo7cr3m7rr" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="5_4axa8"]
-[ext_resource type="Texture2D" uid="uid://dpcp23se0vw6f" path="res://Assets/Environments/sci-fi-interior-paltform/PNG/tile-set-sci-fi-interior-platform.png" id="6_4axa8"]
-[ext_resource type="Texture2D" uid="uid://bf7j5mqdg16ib" path="res://Assets/Environments/sci-fi-environment-background-files/PNG/sci-fi-environment-tileset.png" id="6_a2eh7"]
+[ext_resource type="Texture2D" uid="uid://cquvvr2onbksm" path="res://Assets/Environments/another-world/PNG/layered/another-world-tileset.png" id="1_50uq0"]
+[ext_resource type="Script" uid="uid://dcrc1rtrlcyre" path="res://Scripts/stage_3.gd" id="1_g0keq"]
+[ext_resource type="Texture2D" uid="uid://bbmw82f0wlijf" path="res://Assets/Environments/another-world/PNG/layered/sky.png" id="2_s8xr4"]
+[ext_resource type="Texture2D" uid="uid://b2xbkoobs7cta" path="res://Assets/Environments/another-world/PNG/layered/back-towers.png" id="3_cw2t4"]
+[ext_resource type="Texture2D" uid="uid://xjarb087q1rr" path="res://Assets/Post Apocalipse City Ver2/Background00.png" id="4_a2eh7"]
+[ext_resource type="Texture2D" uid="uid://byw4n4vm1ya2f" path="res://Assets/Post Apocalipse City Ver2/TileSet00.png" id="5_4axa8"]
+[ext_resource type="Texture2D" uid="uid://c21t4p7562sgk" path="res://Assets/Environments/sci-fi-interior-paltform/PNG/tile-set-sci-fi-interior-platform.png" id="6_4axa8"]
+[ext_resource type="Texture2D" uid="uid://dmvdhv3pjdqcs" path="res://Assets/Environments/sci-fi-environment-background-files/PNG/sci-fi-environment-tileset.png" id="6_a2eh7"]
 [ext_resource type="PackedScene" uid="uid://dolcwxss8g3ji" path="res://Class/character.tscn" id="6_cw2t4"]
 [ext_resource type="PackedScene" uid="uid://xnm4yfd8aq6v" path="res://UI/Class/pause_menu.tscn" id="7_a2eh7"]
 [ext_resource type="PackedScene" uid="uid://bs36tdhu6d4pc" path="res://Class/memory0.tscn" id="10_hlng1"]
@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://gkef550nahpl" path="res://Class/Position.tscn" id="15_g0keq"]
 [ext_resource type="PackedScene" uid="uid://b65srsxaotn4j" path="res://Class/RechargeStation.tscn" id="17_en1x5"]
 [ext_resource type="PackedScene" uid="uid://cev0jqpth34l4" path="res://Class/Raining.tscn" id="18_nacm3"]
-[ext_resource type="AudioStream" uid="uid://dkbwlt4fsx86h" path="res://Music & SFX/Stage_3.mp3" id="19_i87pi"]
-[ext_resource type="AudioStream" uid="uid://cgk141xk3aw7p" path="res://Music & SFX/Stage_3_Ambience.mp3" id="20_yeqj8"]
+[ext_resource type="AudioStream" uid="uid://gnhkllu6t7h1" path="res://Music & SFX/Stage_3.mp3" id="19_i87pi"]
+[ext_resource type="AudioStream" uid="uid://bcnswursb7jkc" path="res://Music & SFX/Stage_3_Ambience.mp3" id="20_yeqj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vba5r"]
 texture = ExtResource("1_50uq0")
@@ -1541,7 +1541,9 @@ texture = ExtResource("5_4axa8")
 3:5/0 = 0
 4:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:5/0 = 0
 8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:5/0 = 0
@@ -1553,7 +1555,9 @@ texture = ExtResource("5_4axa8")
 3:6/0 = 0
 4:6/0 = 0
 6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:6/0 = 0
 8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:6/0 = 0

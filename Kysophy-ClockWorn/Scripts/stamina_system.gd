@@ -11,14 +11,44 @@ var time_since_use: float = 0.0
 var last_saved_stamina: float = 0.0  # Track when we last saved
 
 func _ready():
+	print("=== STAMINA SYSTEM INITIALIZING ===")
+	
+	# Get the current level number from Global
+	var level_number = Global.current_level
+	print("Current level from Global: %d" % level_number)
+	
+	# Set max stamina based on the level
+	var level_state = Global.get_level_initial_state(level_number)
+	max_stamina = level_state.max_stamina
+	print("Max stamina for level %d: %.1f" % [level_number, max_stamina])
+	
 	# Load stamina from Global save data
 	if Global:
-		current_stamina = Global.get_saved_stamina()
-		print("Loaded stamina from save: %.1f" % current_stamina)
+		print("Global exists, is_fresh_level_start: %s" % str(Global.is_fresh_level_start))
+		
+		if Global.is_fresh_level_start:
+			# Starting from level select - use carried over stamina for this level
+			if Global.game_data.has("level_stamina") and Global.game_data.level_stamina.has(level_number):
+				current_stamina = Global.game_data.level_stamina[level_number]
+			else:
+				current_stamina = level_state.stamina
+				print("Warning: No level_stamina data found, using initial stamina")
+			
+			Global.is_fresh_level_start = false  # Mark that we've initialized
+			print("Level %d - Starting with stamina: %.1f (Max: %.1f)" % [level_number, current_stamina, max_stamina])
+		else:
+			# Continuing or progressing - use current saved stamina
+			current_stamina = Global.get_saved_stamina()
+			print("Level %d - Continuing with stamina: %.1f (Max: %.1f)" % [level_number, current_stamina, max_stamina])
 	else:
+		print("Warning: Global not found, using max stamina")
 		current_stamina = max_stamina
 	
+	# Ensure stamina doesn't exceed the new level's max
+	current_stamina = min(current_stamina, max_stamina)
+	
 	last_saved_stamina = current_stamina
+	print("=== STAMINA SYSTEM READY - Final stamina: %.1f ===\n" % current_stamina)
 
 func _process(delta):
 	if current_stamina < max_stamina:

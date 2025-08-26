@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://doahvsqchabtg"]
 
-[ext_resource type="Texture2D" uid="uid://bvkla11s00hu4" path="res://Assets/MISC/UnlockedLevels.png" id="1_2p27m"]
-[ext_resource type="Texture2D" uid="uid://bp3naojl167p3" path="res://Assets/MISC/LockedLevels.png" id="2_2p27m"]
-[ext_resource type="Script" uid="uid://ccupoiw5pu0q0" path="res://Class/level_button.gd" id="3_2p27m"]
-[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_2p27m"]
+[ext_resource type="Texture2D" uid="uid://vhdjkpdd6lyp" path="res://Assets/MISC/UnlockedLevels.png" id="1_2p27m"]
+[ext_resource type="Texture2D" uid="uid://damkrih72hpoe" path="res://Assets/MISC/LockedLevels.png" id="2_2p27m"]
+[ext_resource type="Script" uid="uid://ccupoiw5pu0q0" path="res://Scripts/level_button.gd" id="3_2p27m"]
+[ext_resource type="FontFile" uid="uid://ck2vfpuybdqvc" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_2p27m"]
+
 
 [node name="LevelButton" type="TextureButton"]
 custom_minimum_size = Vector2(50, 50)

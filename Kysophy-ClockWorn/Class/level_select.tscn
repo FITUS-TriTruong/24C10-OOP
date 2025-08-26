@@ -1,12 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bi4qkupp86sb0"]
 
-[ext_resource type="Script" uid="uid://ccosihpfv75oh" path="res://Class/level_select.gd" id="1_7qvd8"]
-[ext_resource type="Texture2D" uid="uid://d0a3yk21f8bik" path="res://Assets/MISC/MenuBackground_2.png" id="2_cab3y"]
-[ext_resource type="Texture2D" uid="uid://cuu1wk66eq4rh" path="res://Assets/UI/ClockWorn.png" id="3_cab3y"]
-[ext_resource type="Texture2D" uid="uid://colajvdvnn8qi" path="res://Assets/GUI.png" id="3_ip06w"]
-[ext_resource type="Script" uid="uid://bennf8hy77xik" path="res://Class/texture_button.gd" id="4_cab3y"]
+[ext_resource type="Script" uid="uid://ccosihpfv75oh" path="res://Scripts/level_select.gd" id="1_7qvd8"]
+[ext_resource type="Texture2D" uid="uid://cgjavtuck5mio" path="res://Assets/MISC/MenuBackground_2.png" id="2_cab3y"]
+[ext_resource type="Texture2D" uid="uid://cts74o555boej" path="res://Assets/UI/ClockWorn.png" id="3_cab3y"]
+[ext_resource type="Texture2D" uid="uid://c18s834pb3odp" path="res://Assets/GUI.png" id="3_ip06w"]
+[ext_resource type="Script" uid="uid://bennf8hy77xik" path="res://Scripts/texture_button.gd" id="4_cab3y"]
 [ext_resource type="PackedScene" uid="uid://26akd4o0mes6" path="res://Class/grid_container.tscn" id="5_ve2ya"]
-[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="7_y1btu"]
+[ext_resource type="AudioStream" uid="uid://b8knhiqxh11xq" path="res://Music & SFX/Click.mp3" id="7_y1btu"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1btu"]
 texture = ExtResource("2_cab3y")

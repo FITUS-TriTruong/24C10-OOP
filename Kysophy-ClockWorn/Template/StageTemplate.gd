@@ -7,7 +7,7 @@ class_name StageTemplate
 @export var previous_stage_path: String = ""
 
 # Pause Menu properties
-@onready var pause_menu = $PauseMenu
+@onready var pause_menu = get_node_or_null("PauseMenu")
 var paused = false 
 
 # Transition states
@@ -19,6 +19,12 @@ var next_level_area: Area2D
 var previous_level_area: Area2D
 
 func _ready() -> void:
+	# Debug: Check if pause menu was found during @onready initialization
+	if pause_menu:
+		print("DEBUG: PauseMenu found during @onready initialization")
+	else:
+		print("DEBUG: PauseMenu NOT found during @onready initialization, will search later")
+	
 	next_level_area = find_child("next_level") as Area2D
 	previous_level_area = find_child("previous_level") as Area2D
 	
@@ -62,16 +68,35 @@ func change_to_next_stage() -> void:
 	# 🔹 Save character's stamina before stage transition
 	_save_character_stamina()
 
-	# 🔹 Unlock next stage before switching
+	# 🔹 Check if we're going to a new level or just a new stage
+	var current_level_num = Global.current_level
+	var next_level_num = current_level_num
+	
 	if next_stage_path != "":
 		var regex = RegEx.new()
 		if regex.compile("Stage_(\\d+)\\.tscn") == OK:
 			var match = regex.search(next_stage_path)
 			if match:
-				var next_num = int(match.get_string(1))
- # If Global is autoload
-				Global.unlock_level(next_num)
+				next_level_num = int(match.get_string(1))
+				Global.unlock_level(next_level_num)
 				Global.save_game() # ✅ Save immediately after unlocking
+		elif next_stage_path.contains("final_stage"):
+			# Special handling for final stage - treat it as level 4
+			next_level_num = 4
+			Global.unlock_level(next_level_num)
+			Global.save_game()
+			print("Final Stage unlocked as Level 4!")
+
+	# 🔹 Determine if this is level progression or stage continuation
+	if next_level_num != current_level_num:
+		# Going to a new level - carry over current stamina
+		var current_stamina = Global.game_data.current_stamina
+		Global.progress_to_next_level(next_level_num, current_stamina)
+		print("Level progression: %d → %d with stamina: %.1f" % [current_level_num, next_level_num, current_stamina])
+	else:
+		# Same level, different stage - continue normally
+		Global.continue_level()
+		print("Stage continuation within level %d" % current_level_num)
 
 	# 🔹 Load the next stage
 	if FileAccess.file_exists(next_stage_path):
@@ -84,6 +109,9 @@ func change_to_previous_stage() -> void:
 	
 	# 🔹 Save character's stamina before stage transition
 	_save_character_stamina()
+	
+	# 🔹 Mark that we're continuing within the same level progression
+	Global.continue_level()
 	
 	if previous_stage_path != "" and FileAccess.file_exists(previous_stage_path):
 		get_tree().change_scene_to_file(previous_stage_path)
@@ -142,6 +170,19 @@ func set_stage_paths(next: String, previous: String = "") -> void:
 
 # Pause Menu
 func pauseMenu():
+	# Ensure pause menu is found
+	if not pause_menu:
+		print("DEBUG: Searching for PauseMenu...")
+		pause_menu = find_child("PauseMenu", true, false)
+		if pause_menu:
+			print("DEBUG: PauseMenu found via find_child!")
+		else:
+			print("DEBUG: PauseMenu still not found after search")
+	
+	if not pause_menu:
+		print("Error: PauseMenu node not found in scene")
+		return
+	
 	paused = !paused
 	if not paused:
 		pause_menu.hide()
