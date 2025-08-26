@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cykge75gjj540"]
 
 [ext_resource type="Script" uid="uid://bgvyseaix87j6" path="res://UI/Scripts/rebind_session.gd" id="1_rqcn2"]
-[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="2_reyvx"]
-[ext_resource type="Script" uid="uid://cxpr4k7nobjpm" path="res://UI/Class/Settings/button.gd" id="2_xg6i2"]
-[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="3_reyvx"]
+[ext_resource type="FontFile" uid="uid://ck2vfpuybdqvc" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="2_reyvx"]
+[ext_resource type="Script" uid="uid://cxpr4k7nobjpm" path="res://UI/Scripts/button.gd" id="2_xg6i2"]
+[ext_resource type="AudioStream" uid="uid://b8knhiqxh11xq" path="res://Music & SFX/Click.mp3" id="3_reyvx"]
 
 [node name="RebindSession" type="Control" groups=["hotkey_button"]]
 layout_mode = 3

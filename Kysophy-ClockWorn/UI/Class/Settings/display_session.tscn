@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd0worp5ywqtv"]
 
-[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="1_2b41r"]
-[ext_resource type="Script" uid="uid://c0x1e1jvfnmcw" path="res://UI/Class/Settings/option_button.gd" id="1_xaj5u"]
-[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="2_6g1q3"]
+[ext_resource type="FontFile" uid="uid://ck2vfpuybdqvc" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="1_2b41r"]
+[ext_resource type="Script" uid="uid://c0x1e1jvfnmcw" path="res://UI/Scripts/option_button.gd" id="1_xaj5u"]
+[ext_resource type="AudioStream" uid="uid://b8knhiqxh11xq" path="res://Music & SFX/Click.mp3" id="2_6g1q3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

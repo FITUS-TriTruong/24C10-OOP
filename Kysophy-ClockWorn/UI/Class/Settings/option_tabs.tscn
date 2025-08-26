@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://3it3dpypgpc6"]
+[gd_scene load_steps=11 format=3 uid="uid://3it3dpypgpc6"]
 
 [ext_resource type="PackedScene" uid="uid://cykge75gjj540" path="res://UI/Class/Settings/rebind_session.tscn" id="1_gkpdu"]
 [ext_resource type="Script" uid="uid://b0ppq8m4hw4gq" path="res://UI/Scripts/option_tabs.gd" id="1_ydrdh"]
 [ext_resource type="PackedScene" uid="uid://dcwjubvwxtqun" path="res://UI/Class/Settings/window_mode.tscn" id="2_8vj8d"]
-[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="2_53ae5"]
+[ext_resource type="FontFile" uid="uid://ck2vfpuybdqvc" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="2_53ae5"]
 [ext_resource type="PackedScene" uid="uid://bq8chde811e4v" path="res://UI/Class/Settings/resolution_mode.tscn" id="3_gtqr1"]
-[ext_resource type="Script" uid="uid://tgtbkfcfb250" path="res://UI/Class/Settings/graphics.gd" id="3_qikg0"]
-[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="7_vta8d"]
+[ext_resource type="Script" uid="uid://tgtbkfcfb250" path="res://UI/Scripts/graphics.gd" id="3_qikg0"]
+[ext_resource type="PackedScene" uid="uid://ce5r8gqmg6ybo" path="res://UI/Class/Settings/audio_slider.tscn" id="7_3lgss"]
+[ext_resource type="AudioStream" uid="uid://b8knhiqxh11xq" path="res://Music & SFX/Click.mp3" id="7_vta8d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydrdh"]
 
@@ -34,10 +35,11 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 clip_tabs = false
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_53ae5")
 theme_override_font_sizes/font_size = 16
@@ -135,12 +137,52 @@ layout_mode = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_cimqh")
 
-[node name="Accessibility" type="TabBar" parent="TabContainer"]
-visible = false
+[node name="Sounds" type="TabBar" parent="TabContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_53ae5")
 script = ExtResource("3_qikg0")
 metadata/_tab_index = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sounds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sounds/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 80
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Sounds/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ydrdh")
+
+[node name="Master Volume" parent="TabContainer/Sounds/ScrollContainer/VBoxContainer" instance=ExtResource("7_3lgss")]
+layout_mode = 2
+
+[node name="Music Volume" parent="TabContainer/Sounds/ScrollContainer/VBoxContainer" instance=ExtResource("7_3lgss")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Sfx Volume" parent="TabContainer/Sounds/ScrollContainer/VBoxContainer" instance=ExtResource("7_3lgss")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Sounds/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cimqh")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_vta8d")

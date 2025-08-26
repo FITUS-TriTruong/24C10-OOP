@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://byul1gp4dkw1b"]
 
 [ext_resource type="Script" uid="uid://b8t50ntcsi5gr" path="res://UI/Scripts/death_screen.gd" id="1_s5w0o"]
-[ext_resource type="FontFile" uid="uid://dlbimd8v1uvsy" path="res://Assets/Font/GrapeSoda.ttf" id="2_lfrca"]
-[ext_resource type="FontFile" uid="uid://btotkgjiifk30" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="3_lfrca"]
-[ext_resource type="Script" uid="uid://boppdsfo7kkuh" path="res://UI/Class/retry_button.gd" id="4_0a28o"]
-[ext_resource type="AudioStream" uid="uid://vkdamkj5akwq" path="res://Music & SFX/DeathSound.mp3" id="4_g1hb0"]
-[ext_resource type="AudioStream" uid="uid://sch1kmwpno4i" path="res://Music & SFX/Click.mp3" id="6_vcscb"]
+[ext_resource type="FontFile" uid="uid://bi0b0jtj6u31v" path="res://Assets/Font/GrapeSoda.ttf" id="2_lfrca"]
+[ext_resource type="FontFile" uid="uid://ck2vfpuybdqvc" path="res://Assets/Font/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="3_lfrca"]
+[ext_resource type="Script" uid="uid://boppdsfo7kkuh" path="res://UI/Scripts/retry_button.gd" id="4_0a28o"]
+[ext_resource type="AudioStream" uid="uid://d3ku1gca2mca5" path="res://Music & SFX/DeathSound.mp3" id="4_g1hb0"]
+[ext_resource type="AudioStream" uid="uid://b8knhiqxh11xq" path="res://Music & SFX/Click.mp3" id="6_vcscb"]
 
 [sub_resource type="Animation" id="Animation_lfrca"]
 length = 0.001

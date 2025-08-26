@@ -18,6 +18,10 @@ boot_splash/show_image=false
 boot_splash/image="uid://6l25vwplaebc"
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Music & SFX/default_bus_layout.tres"
+
 [autoload]
 
 InteractionManager="*res://Template/Interaction/Manager/InteractionManager.tscn"
