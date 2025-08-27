@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr2qx8cwhqjt6"]
 
-[ext_resource type="Texture2D" uid="uid://bl84b2n5mc8ho" path="res://icon.svg" id="1_fp1g5"]
 [ext_resource type="Script" uid="uid://b4ebfi1hatqi5" path="res://Scripts/Items/key.gd" id="1_wio28"]
+[ext_resource type="Texture2D" uid="uid://yh8kovpqql5r" path="res://Assets/Keys.png" id="2_1iyf1"]
 [ext_resource type="PackedScene" uid="uid://ccg5vil3ph74c" path="res://Template/Interaction/Area/InteractionArea.tscn" id="2_wio28"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wio28"]
@@ -11,8 +11,8 @@ radius = 20.025
 script = ExtResource("1_wio28")
 
 [node name="Key" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.195)
-texture = ExtResource("1_fp1g5")
+scale = Vector2(0.365625, 0.3475)
+texture = ExtResource("2_1iyf1")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_wio28")]
 action_name = "pick up"

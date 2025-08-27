@@ -43,19 +43,26 @@ func _physics_process(delta):
 		global_position = lerp(global_position, rest_point, 10 * delta)
 
 func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				# Only allow selecting when mouse is close
-				if global_position.distance_to(get_global_mouse_position()) < mouse_detection_range:
-					selected = true
-			else:
-				selected = false
-				
-				var shortest_dist = 10
-				for child in rest_nodes:
-					var dist = global_position.distance_to(child.global_position)
-					if dist < shortest_dist:
-						child.select()
-						rest_point = child.global_position
-						shortest_dist = dist
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			# Only allow selecting when mouse is close
+			if global_position.distance_to(get_global_mouse_position()) < mouse_detection_range:
+				selected = true
+				# show hints
+				for z in rest_nodes:
+					z.show_hint = true
+					z.queue_redraw()
+		else:
+			selected = false
+			# hide hints
+			for z in rest_nodes:
+				z.show_hint = false
+				z.queue_redraw()
+
+			var shortest_dist = 10
+			for child in rest_nodes:
+				var dist = global_position.distance_to(child.global_position)
+				if dist < shortest_dist:
+					child.select()
+					rest_point = child.global_position
+					shortest_dist = dist
