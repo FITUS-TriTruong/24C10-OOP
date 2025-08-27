@@ -4,7 +4,7 @@
 - Trương Minh Trí (24127135)
 - Mã Đức Khải (24127407)
 - Trần Nhựt Đăng Khoa (24127427)
-- Nguyễn Trươnng Ngọc Thảo (24127543)
+- Nguyễn Trương Ngọc Thảo (24127543)
 
 ---
 
