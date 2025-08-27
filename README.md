@@ -180,7 +180,7 @@ health_controller.health_changed.connect(_on_health_changed)
 
 ---
 
-## 🚀 How to Compile and Run the Project
+## 🎮 How to Play ClockWorn - Complete Guide
 
 ### 📋 System Requirements
 
@@ -190,44 +190,136 @@ health_controller.health_changed.connect(_on_health_changed)
 - **Storage**: 500 MB free space
 - **Graphics**: DirectX 11 compatible graphics card
 
-#### For Development
-- **Godot Engine**: Version 4.5 or higher
-- **Additional Tools**: Git (for version control)
+### 🚀 Quick Start - Playing the Game
 
-### 🎮 Quick Start - Playing the Game
+#### Option 1: Download and Play (Recommended for Players)
 
-#### Method 1: Run Pre-built Executable (Recommended)
-
-1. **Download/Clone the Repository**
+1. **Get the Game**
    ```bash
    git clone https://github.com/FITUS-TriTruong/24C10-OOP.git
    cd 24C10-OOP/Kysophy-ClockWorn
    ```
 
-2. **Run the Game**
-   - Double-click `Clockworn.exe` to start the game
-   - Alternative: Run from command line:
-     ```cmd
-     ./Clockworn.exe
+2. **Launch ClockWorn**
+   - **Method A**: Double-click `Clockworn.exe`
+   - **Method B**: Run from PowerShell:
+     ```powershell
+     .\Clockworn.exe
      ```
+   - **Debug Mode**: Use `Clockworn.console.exe` for debug output
 
-3. **Console Version** (for debugging)
-   ```cmd
-   ./Clockworn.console.exe
+3. **Start Playing**
+   - Game launches to main menu
+   - Click "Play" to start Stage 1
+   - Use Level Select to choose unlocked stages
+
+### 🎮 Game Controls & Mechanics
+
+#### Basic Controls
+- **Movement**: A/D keys (left/right)
+- **Jump**: W key (also used for climbing ladders)
+- **Interact**: S key (collect memories, read notes, use keys)
+- **Pause**: ESC key (pause menu with resume/quit options)
+
+#### Game Mechanics
+- **Stamina System**: Your robot has limited energy that depletes with movement
+- **Memory Collection**: Find and collect 9 memory fragments to unlock the full story
+- **Level Progression**: Complete stages to unlock the next level
+- **Save System**: Progress automatically saves (stamina, unlocked levels, collected memories)
+
+#### Tips for Success
+- **Manage Stamina**: Plan your movements carefully, stamina recharges when stationary
+- **Explore Thoroughly**: Memories are hidden throughout stages
+- **Use Checkpoints**: Recharge stations restore your stamina
+- **Read Everything**: Notes and dialogue provide story context and hints
+
+### 🏆 Complete Gameplay Experience
+
+#### Stage Progression
+1. **Stage 1**: Tutorial - Learn basic mechanics and story setup
+2. **Stage 2**: Expanded platforming with environmental hazards  
+3. **Stage 3**: Complex navigation with puzzle elements
+4. **Final Stage**: Climactic ending with all story revelations
+
+#### Collectibles Guide
+- **Memory Fragments (9 total)**: Unlock story segments and lore
+- **Keys**: Required to progress through locked doors
+- **Notes**: Additional world-building and character backstory
+- **Recharge Stations**: Restore stamina during challenging sections
+
+#### Completion Goals
+- **Story Completion**: Reach the Final Stage and see the ending
+- **Full Collection**: Find all 9 memory fragments for complete story
+- **Exploration**: Read all notes and dialogue for full narrative experience
+
+### 🔄 Reset Game Progress
+
+If you want to start over or reset your progress:
+
+```powershell
+# Navigate to game directory
+cd "C:\path\to\your\24C10-OOP\Kysophy-ClockWorn"
+
+# Delete save file to reset all progress
+Remove-Item "$env:APPDATA\Godot\app_userdata\Clockworn\progress.dat" -ErrorAction SilentlyContinue
+
+# Or reset using PowerShell script
+$resetData = @{
+    unlocked_level = 1
+    current_stamina = 500.0
+    level_stamina = @{
+        "1" = 500.0; "2" = 500.0; "3" = 500.0; "4" = 500.0
+    }
+    collected_memories = @{
+        "memory0" = $false; "memory1" = $false; "memory2" = $false
+        "memory3" = $false; "memory4" = $false; "memory5" = $false
+        "memory6" = $false; "memory7" = $false; "memory8" = $false
+    }
+    found_key = $false
+    given_key = $false
+    package = $true
+    ending = ""
+} | ConvertTo-Json -Compress
+
+$resetData | Out-File -FilePath "$env:APPDATA\Godot\app_userdata\Clockworn\progress.dat" -Encoding UTF8 -NoNewline
+Write-Host "Game progress reset successfully!"
+```
+
+#### What Gets Reset
+- **Level Progress**: Back to Stage 1 only
+- **Memory Collection**: All memories need to be found again
+- **Stamina**: Reset to full (500.0) for all levels
+- **Story Progress**: All dialogue and story elements reset
+
+### 🛠️ For Developers - Development Setup
+
+#### Development Environment
+
+1. **Install Godot Engine 4.5+**
+   - Download from: https://godotengine.org/download
+   - Extract to preferred location (e.g., `C:\Godot\`)
+
+2. **Clone and Open Project**
+   ```bash
+   git clone https://github.com/FITUS-TriTruong/24C10-OOP.git
+   cd 24C10-OOP
    ```
 
-### 🛠️ Development Setup
+3. **Open in Godot**
+   ```bash
+   # If Godot is in PATH
+   godot Kysophy-ClockWorn/project.godot
+   
+   # Or use Godot Project Manager:
+   # 1. Launch Godot
+   # 2. Click "Import"  
+   # 3. Select Kysophy-ClockWorn/project.godot
+   ```
 
-#### Step 1: Install Godot Engine
-
-1. **Download Godot 4.5+**
-   - Visit: https://godotengine.org/download
-   - Download the Standard version for your OS
-   - Extract to a preferred location (e.g., `C:\Godot\`)
-
-2. **Add Godot to System PATH** (Optional but recommended)
-   - Add Godot installation directory to your system PATH
-   - This allows running `godot` from command line
+#### Running in Development
+- **Play Game**: Press F5 in Godot Editor
+- **Play Current Scene**: Press F6
+- **Main Scene**: `UI/Scripts/main_menu.tscn`
 
 #### Step 2: Clone and Open Project
 
@@ -441,5 +533,64 @@ This project is developed as part of an Object-Oriented Programming course assig
 - **Godot Engine** community for excellent documentation and resources
 - **Asset creators** for visual and audio resources used in the project
 - **Course instructors** for guidance on OOP principles and design patterns
+
+---
+
+## 📚 Troubleshooting & Support
+
+### Common Issues
+
+#### Game Won't Launch
+- Ensure you have Windows 10/11 (64-bit)
+- Install Microsoft Visual C++ Redistributable if missing
+- Verify DirectX 11 compatibility
+- Try running as administrator
+
+#### Save File Problems
+- Save location: `%APPDATA%\Godot\app_userdata\Clockworn\progress.dat`
+- Delete save file if corrupted and restart game
+- Use the reset instructions above to restore default state
+
+#### Performance Issues
+- Close other applications to free up memory
+- Update graphics drivers to latest version
+- Reduce screen resolution if experiencing lag
+- Check Task Manager for high CPU/memory usage
+
+#### Audio Problems
+- Verify Windows audio settings are correct
+- Ensure audio drivers are up to date
+- Adjust in-game volume if sound is too quiet/loud
+- Test with different audio output devices
+
+### Getting Help
+- **Bug Reports**: Create an issue on the GitHub repository
+- **Questions**: Use GitHub Discussions for community support
+- **Documentation**: Check the project Wiki for detailed guides
+- **Direct Contact**: Reach out to team members listed above
+
+---
+
+## 🎯 Final Publication Notes
+
+### About ClockWorn
+ClockWorn is a story-driven 2D platformer where you control a robot exploring post-apocalyptic environments while uncovering fragments of memory from the past. The game combines:
+
+- **Narrative Exploration**: Discover the story through scattered memory fragments
+- **Strategic Platforming**: Manage your robot's stamina while navigating challenging terrain
+- **Environmental Storytelling**: Rich world-building through visual design and interactive elements
+- **Progressive Gameplay**: Three main stages plus a climactic final stage
+
+### Complete Experience Checklist
+- ✅ **Launch the Game**: Run `Clockworn.exe` and start your adventure
+- ✅ **Master the Controls**: Learn movement, jumping, and interaction mechanics
+- ✅ **Collect All Memories**: Find all 9 memory fragments for the complete story
+- ✅ **Explore Every Stage**: Progress through all levels to reach the ending
+- ✅ **Discover the Lore**: Read notes and dialogue for full narrative context
+
+### Ready to Begin?
+Your ClockWorn journey starts now! Simply double-click `Clockworn.exe` in the `Kysophy-ClockWorn` folder and immerse yourself in this post-apocalyptic robot adventure. Remember - every memory you collect brings you closer to understanding the truth.
+
+**The mysteries of ClockWorn await your discovery!** 🤖⚙️🎮
 
 ---
