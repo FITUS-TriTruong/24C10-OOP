@@ -4,7 +4,7 @@
 - Trương Minh Trí (24127135)
 - Mã Đức Khải (24127407)
 - Trần Nhựt Đăng Khoa (24127427)
-- Nguyễn Trường Ngọc Thảo (24127543)
+- Nguyễn Trươnng Ngọc Thảo (24127543)
 
 ---
 
@@ -405,26 +405,6 @@ echo "*.import" >> .gitignore
 
 ---
 
-## 🔧 Development Notes
-
-### Recent Updates
-- ✅ Fixed character spawn positioning in Stage 2
-- ✅ Enhanced pause menu functionality with error handling
-- ✅ Integrated Final Stage as Level 4 in progression system
-- ✅ Fixed dialogue resource class inheritance issues
-- ✅ Comprehensive project error scanning and cleanup
-
-### Known Issues
-- None currently identified after recent comprehensive debugging
-
-### Future Enhancements
-- Additional stages and content
-- Enhanced visual effects and polish
-- Expanded dialogue and story content
-- Mobile platform support
-
----
-
 ## 📚 Documentation
 
 ### Additional Resources
@@ -461,14 +441,5 @@ This project is developed as part of an Object-Oriented Programming course assig
 - **Godot Engine** community for excellent documentation and resources
 - **Asset creators** for visual and audio resources used in the project
 - **Course instructors** for guidance on OOP principles and design patterns
-
----
-
-## 📞 Support
-
-For technical issues or questions about the project:
-1. Check the documentation in `DialogueGuide/README.md`
-2. Review the OOP analysis in `OOP_Design_Review.md`
-3. Contact team members through course channels
 
 ---
