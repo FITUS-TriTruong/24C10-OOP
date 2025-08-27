@@ -35,9 +35,9 @@ Character (CharacterBody2D)
 │   ├── Fall Damage
 │   └── Death Handling
 └── CharacterInteraction (Node)
-    ├── Object Detection
-    ├── Push/Pull System
-    └── Environment Interactions
+	├── Object Detection
+	├── Push/Pull System
+	└── Environment Interactions
 ```
 
 ## Component Responsibilities

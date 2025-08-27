@@ -1,0 +1,34 @@
+================================================
+           ClockWorn - Group 11 Project
+================================================
+
+Group Name: Group 11 - Object-Oriented Programming Project
+
+Project Name: ClockWorn
+Description: A 2D platformer adventure game built with Godot Engine 4.5
+
+================================================
+                 PARTICIPANTS
+================================================
+
+1. Trương Minh Trí (24127135)
+   Role: UI/UX designer, Systems Programmer
+
+2. Mã Đức Khải (24127407)
+   Role: Gameplay Programmer, Documentation
+
+3. Trần Nhựt Đăng Khoa (24127427)
+   Role: Gameplay Programmer, Project Lead
+
+4. Nguyễn Trương Ngọc Thảo (24127543)
+   Role: Map designer, Level designer
+   
+================================================
+                PROJECT LINKS
+================================================
+
+GitHub Repository:
+https://github.com/FITUS-TriTruong/24C10-OOP
+
+Google Drive Folder:
+https://drive.google.com/drive/folders/1QOUySajbYh8z2XUvpqQYQNeLoyLzSl6w?usp=drive_link

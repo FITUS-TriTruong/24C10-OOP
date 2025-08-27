@@ -26,7 +26,22 @@ var game_data = {
 		2: 500.0,  # Level 2 starting stamina (will be updated when progressing from Level 1)
 		3: 500.0,  # Level 3 starting stamina (will be updated when progressing from Level 2)
 		4: 500.0   # Level 4 (Final Stage) starting stamina
-	}
+	},
+	"collected_memories": {
+		"memory0": false,
+		"memory1": false,
+		"memory2": false,
+		"memory3": false,
+		"memory4": false,
+		"memory5": false,
+		"memory6": false,
+		"memory7": false,
+		"memory8": false
+	},
+	"found_key": false,
+	"given_key": false,
+	"package": true,
+	"ending": ""
 }
 
 # Level-specific initial states
@@ -97,6 +112,29 @@ func load_game():
 						game_data.level_stamina[level] = get_level_initial_stamina(level)
 						print("Initialized missing stamina for level %d" % level)
 				
+				# Restore memory collection states
+				if game_data.has("collected_memories"):
+					memory0 = game_data.collected_memories.get("memory0", false)
+					memory1 = game_data.collected_memories.get("memory1", false)
+					memory2 = game_data.collected_memories.get("memory2", false)
+					memory3 = game_data.collected_memories.get("memory3", false)
+					memory4 = game_data.collected_memories.get("memory4", false)
+					memory5 = game_data.collected_memories.get("memory5", false)
+					memory6 = game_data.collected_memories.get("memory6", false)
+					memory7 = game_data.collected_memories.get("memory7", false)
+					memory8 = game_data.collected_memories.get("memory8", false)
+					print("Restored memory collection states")
+				
+				# Restore other game states
+				if game_data.has("found_key"):
+					found_key = game_data.found_key
+				if game_data.has("given_key"):
+					given_key = game_data.given_key
+				if game_data.has("package"):
+					package = game_data.package
+				if game_data.has("ending"):
+					ending = game_data.ending
+				
 				print("Game loaded. Unlocked level: %d" % game_data.unlocked_level)
 				print("Level stamina states: ", game_data.level_stamina)
 	else:
@@ -111,6 +149,38 @@ func reset_progress():
 		3: 500.0,
 		4: 500.0
 	}
+	# Reset memory collection states
+	game_data.collected_memories = {
+		"memory0": false,
+		"memory1": false,
+		"memory2": false,
+		"memory3": false,
+		"memory4": false,
+		"memory5": false,
+		"memory6": false,
+		"memory7": false,
+		"memory8": false
+	}
+	game_data.found_key = false
+	game_data.given_key = false
+	game_data.package = true
+	game_data.ending = ""
+	
+	# Reset local variables
+	memory0 = false
+	memory1 = false
+	memory2 = false
+	memory3 = false
+	memory4 = false
+	memory5 = false
+	memory6 = false
+	memory7 = false
+	memory8 = false
+	found_key = false
+	given_key = false
+	package = true
+	ending = ""
+	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(game_data))
@@ -124,6 +194,59 @@ func save_stamina(stamina_value: float):
 	game_data.current_stamina = stamina_value
 	save_game()
 	print("Stamina saved: %.1f" % stamina_value)
+
+# === MEMORY COLLECTION PERSISTENCE ===
+func save_memory_collection():
+	"""Save current memory collection states to the save file"""
+	game_data.collected_memories = {
+		"memory0": memory0,
+		"memory1": memory1,
+		"memory2": memory2,
+		"memory3": memory3,
+		"memory4": memory4,
+		"memory5": memory5,
+		"memory6": memory6,
+		"memory7": memory7,
+		"memory8": memory8
+	}
+	game_data.found_key = found_key
+	game_data.given_key = given_key
+	game_data.package = package
+	game_data.ending = ending
+	save_game()
+	print("Memory collection progress saved")
+
+func collect_memory(memory_id: String):
+	"""Call this function when a memory is collected to persist the state"""
+	match memory_id:
+		"memory0": memory0 = true
+		"memory1": memory1 = true
+		"memory2": memory2 = true
+		"memory3": memory3 = true
+		"memory4": memory4 = true
+		"memory5": memory5 = true
+		"memory6": memory6 = true
+		"memory7": memory7 = true
+		"memory8": memory8 = true
+	
+	save_memory_collection()
+	print("Memory %s collected and saved!" % memory_id)
+
+func get_memory_collection_status() -> Dictionary:
+	"""Returns the current memory collection status"""
+	return {
+		"memory0": memory0,
+		"memory1": memory1,
+		"memory2": memory2,
+		"memory3": memory3,
+		"memory4": memory4,
+		"memory5": memory5,
+		"memory6": memory6,
+		"memory7": memory7,
+		"memory8": memory8,
+		"total_collected": int(memory0) + int(memory1) + int(memory2) + int(memory3) + int(memory4) + int(memory5) + int(memory6) + int(memory7) + int(memory8),
+		"completion_percentage": float(int(memory0) + int(memory1) + int(memory2) + int(memory3) + int(memory4) + int(memory5) + int(memory6) + int(memory7) + int(memory8)) / 9.0 * 100.0
+	}
 
 func get_saved_stamina() -> float:
 	# If this is a fresh level start, return the level's carried over stamina

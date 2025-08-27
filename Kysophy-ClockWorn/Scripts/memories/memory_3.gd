@@ -4,11 +4,16 @@ extends StaticBody2D
 @onready var mem = $AnimatedSprite2D
 
 func _ready():
-	mem.play("default")
-	interaction_area.interact = Callable(self, "_key_acquire")
+	# Check if memory was already collected
+	if Global.memory3:
+		queue_free()  # Remove the memory object if already collected
+		return
 	
-func _key_acquire():
+	mem.play("default")
+	interaction_area.interact = Callable(self, "_memory_acquire")
+	
+func _memory_acquire():
 	DialogueManager.show_example_dialogue_balloon(load("res://Scripts/Dialogues/Mem3.dialogue"))
 	mem.visible = false
 	interaction_area.queue_free()
-	Global.memory3 = true
+	Global.collect_memory("memory3")
